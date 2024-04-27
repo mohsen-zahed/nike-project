@@ -1,7 +1,26 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:nike_project/features/data/repository/iproducts_repository.dart';
+import 'package:nike_project/theme/theme.dart';
+import 'package:nike_project/translations/codegen_loader.g.dart';
+import 'package:nike_project/translations/locale_keys.g.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en'),
+        Locale('fa'),
+        Locale('ps'),
+      ],
+      path: 'assets/translations/',
+      fallbackLocale: const Locale('fa'),
+      assetLoader: const CodegenLoader(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,59 +29,61 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: const [
+        Locale('en'),
+        Locale('fa'),
+        Locale('ps'),
+      ],
+      locale: context.locale,
+      title: 'Nike App',
+      theme: theme(),
+      home: const HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    productRepository.getAllProducts(0).then((value) {
+      debugPrint(value.toString());
+    }).onError((error, stackTrace) {
+      debugPrint(error.toString());
+    });
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(LocaleKeys.app_name.tr()),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+          children: [
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              LocaleKeys.welcome_text.tr(),
             ),
+            ElevatedButton(
+              onPressed: () async {
+                await context.setLocale(const Locale('en'));
+              },
+              child: const Text('En'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await context.setLocale(const Locale('fa'));
+              },
+              child: const Text('Fa'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await context.setLocale(const Locale('ps'));
+              },
+              child: const Text('Psfdas'),
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
