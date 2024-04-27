@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_project/features/data/repository/iproducts_repository.dart';
+import 'package:nike_project/features/data/repository/ibanners_repository.dart';
 import 'package:nike_project/theme/theme.dart';
 import 'package:nike_project/translations/codegen_loader.g.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
@@ -48,8 +48,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    productRepository.getAllProducts(0).then((value) {
-      debugPrint(value.toString());
+    bannerRepository.getAllBanners().then((value) {
+      debugPrint(value[0].image.toString());
     }).onError((error, stackTrace) {
       debugPrint(error.toString());
     });
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () async {
                 await context.setLocale(const Locale('ps'));
               },
-              child: const Text('Psfdas'),
+              child: const Text('Ps'),
             )
           ],
         ),
