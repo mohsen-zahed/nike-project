@@ -20,6 +20,6 @@ class IBannerRepositoryImp implements IBannerRepository {
   IBannerRepositoryImp({required this.iBannerRepositoryRemoteSource});
 
   @override
-  Future<List<BannerModel>> getAllBanners() =>
-      iBannerRepositoryRemoteSource.getAllBanners();
+  Future<List<BannerModel>> getAllBanners() async =>
+      await iBannerRepositoryRemoteSource.getAllBanners();
 }

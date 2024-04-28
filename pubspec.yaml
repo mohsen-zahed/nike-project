@@ -44,6 +44,7 @@ flutter:
   assets:
     - assets/images/lottie_type/
     - assets/images/other_type/
+    - assets/images/other_type/app_logo/
     - assets/images/svg_type/
     - assets/translations/
 

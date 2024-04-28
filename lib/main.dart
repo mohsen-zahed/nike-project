@@ -1,9 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/features/data/repository/ibanners_repository.dart';
+import 'package:nike_project/features/data/repository/iproducts_repository.dart';
+import 'package:nike_project/features/data/source/ibanners_repository_remote_source.dart';
+import 'package:nike_project/features/data/source/iproducts_repository_remote_source.dart';
+import 'package:nike_project/features/presenation/screens/home_screen/bloc/home_bloc.dart';
+import 'package:nike_project/features/presenation/screens/home_screen/home_screen.dart';
+import 'package:nike_project/packages/dio/dio_package.dart';
 import 'package:nike_project/theme/theme.dart';
 import 'package:nike_project/translations/codegen_loader.g.dart';
-import 'package:nike_project/translations/locale_keys.g.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,61 +36,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       localizationsDelegates: context.localizationDelegates,
-      supportedLocales: const [
-        Locale('en'),
-        Locale('fa'),
-        Locale('ps'),
-      ],
+      supportedLocales: context.supportedLocales,
+      debugShowCheckedModeBanner: false,
       locale: context.locale,
       title: 'Nike App',
       theme: theme(),
       home: const HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    bannerRepository.getAllBanners().then((value) {
-      debugPrint(value[0].image.toString());
-    }).onError((error, stackTrace) {
-      debugPrint(error.toString());
-    });
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(LocaleKeys.app_name.tr()),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              LocaleKeys.welcome_text.tr(),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                await context.setLocale(const Locale('en'));
-              },
-              child: const Text('En'),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                await context.setLocale(const Locale('fa'));
-              },
-              child: const Text('Fa'),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                await context.setLocale(const Locale('ps'));
-              },
-              child: const Text('Ps'),
-            )
-          ],
-        ),
-      ),
     );
   }
 }
