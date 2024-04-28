@@ -3,10 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/exception/app_exception.dart';
 import 'package:nike_project/features/data/repository/ibanners_repository.dart';
 import 'package:nike_project/features/data/repository/iproducts_repository.dart';
-import 'package:nike_project/features/data/source/ibanners_repository_remote_source.dart';
-import 'package:nike_project/features/data/source/iproducts_repository_remote_source.dart';
 import 'package:nike_project/features/presenation/screens/home_screen/bloc/home_bloc.dart';
-import 'package:nike_project/packages/dio/dio_package.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
