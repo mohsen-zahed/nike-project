@@ -1,5 +1,11 @@
 {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
   "something_went_wrong": "خطایی نامشخص رخ داده است!",
-  "app_name": "برنامه نایکی"
+  "app_name": "برنامه نایکی",
+  "try_again": "تلاش دوباره!",
+  "dio_error_bad_response": "درخواست ناموفق!",
+  "dio_error_connection_error": "لطفا اتصال خود را چک کنید!",
+  "dio_error_connection_timeout": "خطا در اتصال، اینترنت خود را چک نموده و دوباره امتحان کنید!",
+  "dio_error_sent_timeout": "خطایی در اتصال با سرور رخ داده است، دوباره امتحان کنید!",
+  "dio_error_unknown": "خطایی نامشخص رخ داده است!"
 }

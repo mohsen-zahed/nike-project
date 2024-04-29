@@ -1,5 +1,11 @@
 {
-  "welcome_text": "سلام، په نایکی برنامه کی شه راغلاست!",
-  "something_went_wrong": "یو نامشخص خطا کی رخ کوی!",
-  "app_name": "برنامه نایکی"
+  "welcome_text": "سلامونه او نیکې هیلې!",
+  "something_went_wrong": "یوه ناپېژندلې تېروتنه رامنځته شوه!",
+  "app_name": "نیک اپلیکیشن",
+  "try_again": "یو ځل بیا هڅه وکړئ",
+  "dio_error_bad_response": "ناکامه غوښتنه!",
+  "dio_error_connection_error": "مهربانی وکړئ خپل ارتباط وګورئ!",
+  "dio_error_connection_timeout": "د نښلولو تېروتنه، خپل انټرنیټ وګورئ او بیا هڅه وکړئ!",
+  "dio_error_sent_timeout": "د سرور سره په اړیکه کې یوه تېروتنه پیښه شوې ، بیا هڅه وکړئ!",
+  "dio_error_unknown": "یوه ناپېژندلې تېروتنه رامنځته شوه!"
 }

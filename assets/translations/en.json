@@ -1,5 +1,11 @@
 {
   "welcome_text": "Hi, welcome to Nike App!",
   "something_went_wrong": "Something went wrong!",
-  "app_name": "Nike App"
+  "app_name": "Nike App",
+  "try_again": "try again!",
+  "dio_error_bad_response": "Request failed!",
+  "dio_error_connection_error": "Check your connection please!",
+  "dio_error_connection_timeout": "Connection failure, check your connection and try again!",
+  "dio_error_sent_timeout": "Host not responding, double check and try again!",
+  "dio_error_unknown": "Something went wrong!"
 }

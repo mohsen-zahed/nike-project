@@ -17,17 +17,35 @@ class CodegenLoader extends AssetLoader{
   static const Map<String,dynamic> en = {
   "welcome_text": "Hi, welcome to Nike App!",
   "something_went_wrong": "Something went wrong!",
-  "app_name": "Nike App"
+  "app_name": "Nike App",
+  "try_again": "try again!",
+  "dio_error_bad_response": "Request failed!",
+  "dio_error_connection_error": "Check your connection please!",
+  "dio_error_connection_timeout": "Connection failure, check your connection and try again!",
+  "dio_error_sent_timeout": "Host not responding, double check and try again!",
+  "dio_error_unknown": "Something went wrong!"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
   "something_went_wrong": "خطایی نامشخص رخ داده است!",
-  "app_name": "برنامه نایکی"
+  "app_name": "برنامه نایکی",
+  "try_again": "تلاش دوباره!",
+  "dio_error_bad_response": "درخواست ناموفق!",
+  "dio_error_connection_error": "لطفا اتصال خود را چک کنید!",
+  "dio_error_connection_timeout": "خطا در اتصال، اینترنت خود را چک نموده و دوباره امتحان کنید!",
+  "dio_error_sent_timeout": "خطایی در اتصال با سرور رخ داده است، دوباره امتحان کنید!",
+  "dio_error_unknown": "خطایی نامشخص رخ داده است!"
 };
 static const Map<String,dynamic> ps = {
-  "welcome_text": "سلام، په نایکی برنامه کی شه راغلاست!",
-  "something_went_wrong": "یو نامشخص خطا کی رخ کوی!",
-  "app_name": "برنامه نایکی"
+  "welcome_text": "سلامونه او نیکې هیلې!",
+  "something_went_wrong": "یوه ناپېژندلې تېروتنه رامنځته شوه!",
+  "app_name": "نیک اپلیکیشن",
+  "try_again": "یو ځل بیا هڅه وکړئ",
+  "dio_error_bad_response": "ناکامه غوښتنه!",
+  "dio_error_connection_error": "مهربانی وکړئ خپل ارتباط وګورئ!",
+  "dio_error_connection_timeout": "د نښلولو تېروتنه، خپل انټرنیټ وګورئ او بیا هڅه وکړئ!",
+  "dio_error_sent_timeout": "د سرور سره په اړیکه کې یوه تېروتنه پیښه شوې ، بیا هڅه وکړئ!",
+  "dio_error_unknown": "یوه ناپېژندلې تېروتنه رامنځته شوه!"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }
