@@ -23,7 +23,10 @@ class CodegenLoader extends AssetLoader{
   "dio_error_connection_error": "Check your connection please!",
   "dio_error_connection_timeout": "Connection failure, check your connection and try again!",
   "dio_error_sent_timeout": "Host not responding, double check and try again!",
-  "dio_error_unknown": "Something went wrong!"
+  "dio_error_unknown": "Something went wrong!",
+  "newest_text": "Latest",
+  "see_all_text": "See all",
+  "most_viewed_text": "Most viewed"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -34,7 +37,10 @@ static const Map<String,dynamic> fa = {
   "dio_error_connection_error": "لطفا اتصال خود را چک کنید!",
   "dio_error_connection_timeout": "خطا در اتصال، اینترنت خود را چک نموده و دوباره امتحان کنید!",
   "dio_error_sent_timeout": "خطایی در اتصال با سرور رخ داده است، دوباره امتحان کنید!",
-  "dio_error_unknown": "خطایی نامشخص رخ داده است!"
+  "dio_error_unknown": "خطایی نامشخص رخ داده است!",
+  "newest_text": "جدیدترین ها",
+  "see_all_text": "مشاهده همه",
+  "most_viewed_text": "پربازدیدترین ها"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -45,7 +51,10 @@ static const Map<String,dynamic> ps = {
   "dio_error_connection_error": "مهربانی وکړئ خپل ارتباط وګورئ!",
   "dio_error_connection_timeout": "د نښلولو تېروتنه، خپل انټرنیټ وګورئ او بیا هڅه وکړئ!",
   "dio_error_sent_timeout": "د سرور سره په اړیکه کې یوه تېروتنه پیښه شوې ، بیا هڅه وکړئ!",
-  "dio_error_unknown": "یوه ناپېژندلې تېروتنه رامنځته شوه!"
+  "dio_error_unknown": "یوه ناپېژندلې تېروتنه رامنځته شوه!",
+  "newest_text": "وروستی",
+  "see_all_text": "ټول وګورئ",
+  "most_viewed_text": "ډېرې کتل کېدۍ"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

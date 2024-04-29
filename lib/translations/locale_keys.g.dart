@@ -10,5 +10,8 @@ abstract class  LocaleKeys {
   static const dio_error_connection_timeout = 'dio_error_connection_timeout';
   static const dio_error_sent_timeout = 'dio_error_sent_timeout';
   static const dio_error_unknown = 'dio_error_unknown';
+  static const newest_text = 'newest_text';
+  static const see_all_text = 'see_all_text';
+  static const most_viewed_text = 'most_viewed_text';
 
 }
