@@ -5,7 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/models/product_model.dart';
-import 'package:nike_project/features/presenation/screens/home_screen/sub_screens/widgets/custom_floating_action_button.dart';
+import 'package:nike_project/features/presenation/screens/home_screen/product_details_screen/comments/comments_list_widget.dart';
+import 'package:nike_project/features/presenation/screens/home_screen/product_details_screen/widgets/custom_floating_action_button.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
 import 'package:nike_project/utils/media_query.dart';
@@ -58,7 +59,7 @@ class ProductDetailsScreen extends StatelessWidget {
                           children: [
                             Text(
                               product.previousPrice.withPriceLabel,
-                              style: Theme.of(context).textTheme.bodySmall,
+                              style: Theme.of(context).textTheme.titleSmall!.copyWith(decoration: TextDecoration.lineThrough),
                               maxLines: 1,
                               overflow: TextOverflow.clip,
                             ),
@@ -76,6 +77,10 @@ class ProductDetailsScreen extends StatelessWidget {
                   const Divider(),
                   Text(
                     'این کتونی شدیدا برای دویدن و راه رفتن مناسب هست و تقریبا هیچ فشار مخربی رو نمیذاره به پا و زانوهای شما انتقال پیدا کنه.',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(height: 1.8),
                   ),
                   const SizedBox(height: 10),
                   Row(
@@ -100,14 +105,11 @@ class ProductDetailsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Container(
-                    color: kBlueColor,
-                    height: 1000,
-                  ),
                 ],
               ),
             ),
           ),
+          CommentsListWidget(productId: product.id),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

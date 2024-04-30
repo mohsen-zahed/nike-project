@@ -42,6 +42,20 @@ ThemeData lightTheme() {
       ),
       bodySmall: TextStyle(
         color: kCaptionsTextColor,
+      ),
+      titleLarge: TextStyle(
+        color: kPrimaryTextColor,
+      ),
+      titleMedium: TextStyle(
+        color: kPrimaryTextColor,
+      ),
+      titleSmall: TextStyle(
+        color: kCaptionsTextColor,
+      ),
+      labelLarge: TextStyle(),
+      labelMedium: TextStyle(),
+      labelSmall: TextStyle(
+        color: kCaptionsTextColor,
         decoration: TextDecoration.lineThrough,
       ),
     ),
@@ -50,6 +64,12 @@ ThemeData lightTheme() {
       backgroundColor: kPrimaryColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(100)),
+      ),
+    ),
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStatePropertyAll(kWhiteColor),
+        backgroundColor: MaterialStatePropertyAll(kPrimaryColor),
       ),
     ),
   );

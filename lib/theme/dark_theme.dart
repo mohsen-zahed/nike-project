@@ -41,6 +41,20 @@ ThemeData darkTheme() {
       ),
       bodySmall: TextStyle(
         color: kCaptionsTextColor,
+      ),
+      titleLarge: TextStyle(
+        color: kWhiteColor,
+      ),
+      titleMedium: TextStyle(
+        color: kWhiteColor,
+      ),
+      titleSmall: TextStyle(
+        color: kCaptionsTextColor,
+      ),
+      labelLarge: TextStyle(),
+      labelMedium: TextStyle(),
+      labelSmall: TextStyle(
+        color: kCaptionsTextColor,
         decoration: TextDecoration.lineThrough,
       ),
     ),
@@ -52,5 +66,10 @@ ThemeData darkTheme() {
         borderRadius: BorderRadius.all(Radius.circular(100)),
       ),
     ),
+    elevatedButtonTheme: const ElevatedButtonThemeData(
+        style: ButtonStyle(
+      foregroundColor: MaterialStatePropertyAll(kPrimaryTextColor),
+      backgroundColor: MaterialStatePropertyAll(kWhiteColor),
+    )),
   );
 }

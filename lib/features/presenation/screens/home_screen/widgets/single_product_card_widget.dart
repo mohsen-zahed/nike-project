@@ -75,10 +75,10 @@ class SingleProductCardWidget extends StatelessWidget {
                   horizontal: getMediaQueryWidth(context, 0.01),
                 ),
                 child: Text(
-                  latestProduct.price.withPriceLabel,
+                  latestProduct.previousPrice.withPriceLabel,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  style: Theme.of(context).textTheme.titleSmall!.copyWith(
                         color: kGreyColor,
                         decoration: TextDecoration.lineThrough,
                       ),

@@ -1,10 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:nike_project/features/data/models/banner_model.dart';
 import 'package:nike_project/features/data/source/ibanners_repository_remote_source.dart';
-
-final httpClient = Dio(BaseOptions(
-  baseUrl: 'http://expertdevelopers.ir/api/v1/',
-));
+import 'package:nike_project/packages/dio/dio_package.dart';
 
 final bannerRepository = IBannerRepositoryImp(
     iBannerRepositoryRemoteSource:

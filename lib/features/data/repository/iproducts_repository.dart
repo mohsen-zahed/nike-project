@@ -1,12 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:nike_project/features/data/source/iproducts_repository_remote_source.dart';
-
-//* just for test
-
-final httpClient = Dio(BaseOptions(
-  baseUrl: 'http://expertdevelopers.ir/api/v1/',
-));
+import 'package:nike_project/packages/dio/dio_package.dart';
 
 final productRepository = IProductsRepositoryImp(
   iProductsRepositoryRemoteSource:

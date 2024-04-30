@@ -12,6 +12,7 @@ import 'package:nike_project/features/presenation/screens/home_screen/widgets/ca
 import 'package:nike_project/features/presenation/screens/home_screen/widgets/horizontal_list_view_builder.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
+import 'package:nike_project/widgets/app_exception_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -80,24 +81,11 @@ class HomeScreen extends StatelessWidget {
                 },
               );
             } else if (state is HomeFailed) {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(state.errorMessage),
-                    SizedBox(
-                      height: getMediaQueryHeight(context, 0.02),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        BlocProvider.of<HomeBloc>(context).add(HomeRefresh());
-                      },
-                      child: Text(
-                        LocaleKeys.try_again.tr(),
-                      ),
-                    ),
-                  ],
-                ),
+              return AppExceptionWidget(
+                errorMessage: state.errorMessage,
+                onPressed: () {
+                  BlocProvider.of<HomeBloc>(context).add(HomeRefresh());
+                },
               );
             } else if (state is HomeLoading) {
               return const Center(
