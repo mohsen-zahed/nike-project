@@ -2,7 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/add_to_cart_screen/add_to_cart_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/home_screen.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/profile_screen/profile_screen.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 
 int homeIndex = 0;
@@ -19,9 +21,9 @@ class MainHomeScreen extends StatefulWidget {
 class _MainHomeScreenState extends State<MainHomeScreen> {
   int selectedHomeIndex = homeIndex;
   final List<int> _history = [];
-  GlobalKey<NavigatorState> _homeKey = GlobalKey();
-  GlobalKey<NavigatorState> _cartKey = GlobalKey();
-  GlobalKey<NavigatorState> _profileKey = GlobalKey();
+  final GlobalKey<NavigatorState> _homeKey = GlobalKey();
+  final GlobalKey<NavigatorState> _cartKey = GlobalKey();
+  final GlobalKey<NavigatorState> _profileKey = GlobalKey();
 
   late final map = {
     homeIndex: _homeKey,
@@ -113,27 +115,5 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               ),
             ),
           );
-  }
-}
-
-class AddToCartScreen extends StatelessWidget {
-  const AddToCartScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Cart Screen'),
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Profile Screen'),
-    );
   }
 }
