@@ -90,7 +90,8 @@ class SingleProductCardWidget extends StatelessWidget {
                   BoxConstraints(maxWidth: getMediaQueryWidth(context)),
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: getMediaQueryWidth(context, 0.01)),
+                  horizontal: getMediaQueryWidth(context, 0.01),
+                ),
                 child: Text(
                   latestProduct.price.withPriceLabel,
                   maxLines: 1,

@@ -13,5 +13,8 @@
   "most_viewed_text": "Most viewed",
   "users_comments": "Comments",
   "leave_a_comment": "Comment",
-  "add_to_cart": "Add To Cart"
+  "add_to_cart": "Add To Cart",
+  "home_text": "Home",
+  "cart_text": "Cart",
+  "profile_text": "Profile"
 }

@@ -16,5 +16,8 @@ abstract class  LocaleKeys {
   static const users_comments = 'users_comments';
   static const leave_a_comment = 'leave_a_comment';
   static const add_to_cart = 'add_to_cart';
+  static const home_text = 'home_text';
+  static const cart_text = 'cart_text';
+  static const profile_text = 'profile_text';
 
 }

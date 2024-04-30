@@ -29,7 +29,10 @@ class CodegenLoader extends AssetLoader{
   "most_viewed_text": "Most viewed",
   "users_comments": "Comments",
   "leave_a_comment": "Comment",
-  "add_to_cart": "Add To Cart"
+  "add_to_cart": "Add To Cart",
+  "home_text": "Home",
+  "cart_text": "Cart",
+  "profile_text": "Profile"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -46,7 +49,10 @@ static const Map<String,dynamic> fa = {
   "most_viewed_text": "پربازدیدترین ها",
   "users_comments": "نظرات کاربران",
   "leave_a_comment": "ثبت نظر",
-  "add_to_cart": "افزودن به سبد خرید"
+  "add_to_cart": "افزودن به سبد خرید",
+  "home_text": "خانه",
+  "cart_text": "سبد خرید",
+  "profile_text": "پروفایل"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -63,7 +69,10 @@ static const Map<String,dynamic> ps = {
   "most_viewed_text": "ډېرې کتل کېدۍ",
   "users_comments": "کارن څرګندونونه",
   "leave_a_comment": "د تبصرې ثبتول",
-  "add_to_cart": "د پیرودلو ټوکرۍ ته اضافه کړئ"
+  "add_to_cart": "د پیرودلو ټوکرۍ ته اضافه کړئ",
+  "home_text": "کور",
+  "cart_text": "خرید سبد",
+  "profile_text": "پېژنیالونه"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }
