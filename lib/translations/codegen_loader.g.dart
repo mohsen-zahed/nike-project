@@ -26,7 +26,10 @@ class CodegenLoader extends AssetLoader{
   "dio_error_unknown": "Something went wrong!",
   "newest_text": "Latest",
   "see_all_text": "See all",
-  "most_viewed_text": "Most viewed"
+  "most_viewed_text": "Most viewed",
+  "users_comments": "Comments",
+  "leave_a_comment": "Comment",
+  "add_to_cart": "Add To Cart"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -40,7 +43,10 @@ static const Map<String,dynamic> fa = {
   "dio_error_unknown": "خطایی نامشخص رخ داده است!",
   "newest_text": "جدیدترین ها",
   "see_all_text": "مشاهده همه",
-  "most_viewed_text": "پربازدیدترین ها"
+  "most_viewed_text": "پربازدیدترین ها",
+  "users_comments": "نظرات کاربران",
+  "leave_a_comment": "ثبت نظر",
+  "add_to_cart": "افزودن به سبد خرید"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -54,7 +60,10 @@ static const Map<String,dynamic> ps = {
   "dio_error_unknown": "یوه ناپېژندلې تېروتنه رامنځته شوه!",
   "newest_text": "وروستی",
   "see_all_text": "ټول وګورئ",
-  "most_viewed_text": "ډېرې کتل کېدۍ"
+  "most_viewed_text": "ډېرې کتل کېدۍ",
+  "users_comments": "کارن څرګندونونه",
+  "leave_a_comment": "د تبصرې ثبتول",
+  "add_to_cart": "د پیرودلو ټوکرۍ ته اضافه کړئ"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

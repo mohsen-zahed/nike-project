@@ -10,5 +10,8 @@
   "dio_error_unknown": "Something went wrong!",
   "newest_text": "Latest",
   "see_all_text": "See all",
-  "most_viewed_text": "Most viewed"
+  "most_viewed_text": "Most viewed",
+  "users_comments": "Comments",
+  "leave_a_comment": "Comment",
+  "add_to_cart": "Add To Cart"
 }

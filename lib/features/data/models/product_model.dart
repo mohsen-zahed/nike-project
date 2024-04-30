@@ -2,9 +2,9 @@ class ProductModel {
   final int id;
   final String title;
   final String image;
-  final dynamic price;
-  final dynamic discount;
-  final dynamic previousPrice;
+  final int price;
+  final int discount;
+  final int previousPrice;
 
   ProductModel.fromJson(Map<String, dynamic> json)
       : id = json['id'],

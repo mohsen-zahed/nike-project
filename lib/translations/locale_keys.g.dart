@@ -13,5 +13,8 @@ abstract class  LocaleKeys {
   static const newest_text = 'newest_text';
   static const see_all_text = 'see_all_text';
   static const most_viewed_text = 'most_viewed_text';
+  static const users_comments = 'users_comments';
+  static const leave_a_comment = 'leave_a_comment';
+  static const add_to_cart = 'add_to_cart';
 
 }

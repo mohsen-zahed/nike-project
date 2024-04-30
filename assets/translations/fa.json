@@ -10,5 +10,8 @@
   "dio_error_unknown": "خطایی نامشخص رخ داده است!",
   "newest_text": "جدیدترین ها",
   "see_all_text": "مشاهده همه",
-  "most_viewed_text": "پربازدیدترین ها"
+  "most_viewed_text": "پربازدیدترین ها",
+  "users_comments": "نظرات کاربران",
+  "leave_a_comment": "ثبت نظر",
+  "add_to_cart": "افزودن به سبد خرید"
 }

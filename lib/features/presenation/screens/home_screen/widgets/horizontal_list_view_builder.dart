@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:nike_project/features/presenation/screens/home_screen/sub_screens/product_details_screen.dart';
-import 'package:nike_project/features/presenation/screens/home_screen/widgets/products_card_widget.dart';
+import 'package:nike_project/features/presenation/screens/home_screen/widgets/single_product_card_widget.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class HorizontalListViewBuilder extends StatelessWidget {
@@ -32,7 +32,7 @@ class HorizontalListViewBuilder extends StatelessWidget {
                   ),
                 );
               },
-              latestProducts: listViewBuilderlist[index],
+              latestProduct: listViewBuilderlist[index],
               index: index,
             );
           }),

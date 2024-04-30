@@ -10,5 +10,8 @@
   "dio_error_unknown": "یوه ناپېژندلې تېروتنه رامنځته شوه!",
   "newest_text": "وروستی",
   "see_all_text": "ټول وګورئ",
-  "most_viewed_text": "ډېرې کتل کېدۍ"
+  "most_viewed_text": "ډېرې کتل کېدۍ",
+  "users_comments": "کارن څرګندونونه",
+  "leave_a_comment": "د تبصرې ثبتول",
+  "add_to_cart": "د پیرودلو ټوکرۍ ته اضافه کړئ"
 }
