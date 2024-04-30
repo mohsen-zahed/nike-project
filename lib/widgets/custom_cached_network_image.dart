@@ -4,22 +4,19 @@ import 'package:nike_project/core/constants/images_paths.dart';
 
 class CustomCachedNetworkImage extends StatelessWidget {
   final double borderRadius;
-  final int index;
+  final String imageUrl;
   const CustomCachedNetworkImage({
     super.key,
-    required this.list,
-    required this.index,
     required this.borderRadius,
+    required this.imageUrl,
   });
-
-  final List<dynamic> list;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(borderRadius),
       child: CachedNetworkImage(
-        imageUrl: list[index].image,
+        imageUrl: imageUrl,
         fit: BoxFit.cover,
         placeholder: (context, url) => const Center(
           child: CircularProgressIndicator(),

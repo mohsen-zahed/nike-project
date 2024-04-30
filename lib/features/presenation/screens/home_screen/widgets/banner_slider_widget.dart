@@ -30,8 +30,7 @@ class BannerSliderWidget extends StatelessWidget {
                   horizontal:
                       getMediaQueryWidth(context, kDefaultPaddingWidth20)),
               child: CustomCachedNetworkImage(
-                index: index,
-                list: banners,
+                imageUrl: banners[index].image,
                 borderRadius: borderRadius,
               ),
             ),

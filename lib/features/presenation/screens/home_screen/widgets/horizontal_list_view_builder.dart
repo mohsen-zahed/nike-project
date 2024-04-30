@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:nike_project/features/data/models/product_model.dart';
+import 'package:nike_project/features/presenation/screens/home_screen/sub_screens/product_details_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screen/widgets/products_card_widget.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class HorizontalListViewBuilder extends StatelessWidget {
-  final List<dynamic> listViewBuilderlist;
+  final List<ProductModel> listViewBuilderlist;
   const HorizontalListViewBuilder({
     super.key,
     required this.listViewBuilderlist,
@@ -19,9 +21,19 @@ class HorizontalListViewBuilder extends StatelessWidget {
           itemCount: listViewBuilderlist.length,
           itemBuilder: (context, index) {
             // every latest's card widget
-            return ProductsCardWidget(
+            return SingleProductCardWidget(
+              onSingleProductTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProductDetailsScreen(
+                      product: listViewBuilderlist[index],
+                    ),
+                  ),
+                );
+              },
+              latestProducts: listViewBuilderlist[index],
               index: index,
-              latestProducts: listViewBuilderlist,
             );
           }),
     );

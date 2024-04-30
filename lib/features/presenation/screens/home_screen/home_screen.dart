@@ -51,22 +51,22 @@ class HomeScreen extends StatelessWidget {
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          //! latest and seeAll widgets...
+                          //* latest and seeAll widgets...
                           CardTitleAndSeeAllTexts(
                             title: LocaleKeys.newest_text.tr(),
                             onTap: () {},
                           ),
-                          //! latest horizontal scrolling list...
+                          //* latest horizontal scrolling list...
                           HorizontalListViewBuilder(
                             listViewBuilderlist: state.latestProducts,
                           ),
                           SizedBox(height: kDefautlVerticalGap20),
-                          //! popular and seeAll widgets...
+                          //* popular and seeAll widgets...
                           CardTitleAndSeeAllTexts(
                             title: LocaleKeys.most_viewed_text.tr(),
                             onTap: () {},
                           ),
-                          //! popular horizontal scrolling list...
+                          //* popular horizontal scrolling list...
                           HorizontalListViewBuilder(
                             listViewBuilderlist: state.popularProducts,
                           ),

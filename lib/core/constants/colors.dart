@@ -4,6 +4,7 @@ const Color kBlackColor = Colors.black;
 const Color kWhiteColor = Colors.white;
 const Color kRedColor = Colors.red;
 const Color kBlueColor = Colors.blue;
+const Color kTransparentColor = Colors.transparent;
 const Color kGreyColor = Colors.grey;
 Color kGreyColorShade100 = Colors.grey.shade100;
 Color kGreyColorShade200 = Colors.grey.shade200;
