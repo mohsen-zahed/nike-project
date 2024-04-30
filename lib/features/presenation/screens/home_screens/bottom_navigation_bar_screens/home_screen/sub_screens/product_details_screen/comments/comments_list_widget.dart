@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/repository/icomment_repository.dart';
-import 'package:nike_project/features/presenation/screens/root_screen/home_screen/product_details_screen/comments/bloc/comments_list_bloc.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/comments/bloc/comments_list_bloc.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets/app_exception_widget.dart';
 

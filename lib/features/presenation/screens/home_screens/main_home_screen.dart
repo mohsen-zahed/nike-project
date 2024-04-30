@@ -2,21 +2,21 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
-import 'package:nike_project/features/presenation/screens/root_screen/home_screen/home_screen.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/home_screen.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 
 int homeIndex = 0;
 int cartIndex = 1;
 int profileIndex = 2;
 
-class RootScreen extends StatefulWidget {
-  const RootScreen({super.key});
+class MainHomeScreen extends StatefulWidget {
+  const MainHomeScreen({super.key});
 
   @override
-  State<RootScreen> createState() => _RootScreenState();
+  State<MainHomeScreen> createState() => _MainHomeScreenState();
 }
 
-class _RootScreenState extends State<RootScreen> {
+class _MainHomeScreenState extends State<MainHomeScreen> {
   int selectedHomeIndex = homeIndex;
   final List<int> _history = [];
   GlobalKey<NavigatorState> _homeKey = GlobalKey();
@@ -64,9 +64,6 @@ class _RootScreenState extends State<RootScreen> {
               _history.remove(selectedHomeIndex);
               _history.add(selectedHomeIndex);
               selectedHomeIndex = selectedIndex;
-              // print('$selectedHomeIndex $homeIndex');
-              // print('$selectedHomeIndex $cartIndex');
-              // print('$selectedHomeIndex $profileIndex');
             });
           },
           selectedItemColor: kSecondaryColor,
