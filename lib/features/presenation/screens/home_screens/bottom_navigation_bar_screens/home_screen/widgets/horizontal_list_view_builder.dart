@@ -15,7 +15,7 @@ class HorizontalListViewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: getMediaQueryWidth(context),
-      height: getMediaQueryHeight(context, 0.4),
+      height: getMediaQueryHeight(context, 0.41),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: listViewBuilderlist.length,

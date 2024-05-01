@@ -61,7 +61,7 @@ class SingleProductCardWidget extends StatelessWidget {
                     vertical: getMediaQueryHeight(context, 0.01)),
                 child: Text(
                   latestProduct.title,
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.headlineSmall,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),

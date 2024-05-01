@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
+import 'package:nike_project/core/constants/numeric_contants.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
@@ -37,12 +38,6 @@ ThemeData lightTheme() {
     ),
 
     textTheme: const TextTheme(
-      bodyMedium: TextStyle(
-        color: kPrimaryTextColor,
-      ),
-      bodySmall: TextStyle(
-        color: kCaptionsTextColor,
-      ),
       titleLarge: TextStyle(
         color: kPrimaryTextColor,
       ),
@@ -50,11 +45,20 @@ ThemeData lightTheme() {
         color: kPrimaryTextColor,
       ),
       titleSmall: TextStyle(
+        color: kBlueColor,
+      ),
+      bodyLarge: TextStyle(
+        color: kCaptionsTextColor,
+      ),
+      bodyMedium: TextStyle(
+        color: kPrimaryTextColor,
+      ),
+      bodySmall: TextStyle(
         color: kCaptionsTextColor,
       ),
       labelLarge: TextStyle(),
       labelMedium: TextStyle(
-        color: kBlueColor,
+        color: kCaptionsTextColor,
       ),
       labelSmall: TextStyle(
         color: kCaptionsTextColor,
@@ -85,6 +89,41 @@ ThemeData lightTheme() {
       ),
       unselectedItemColor: kGreyColor,
       unselectedLabelStyle: TextStyle(color: kGreyColor),
+    ),
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: kPrimaryColor,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      hintStyle: TextStyle(color: kGreyColorShade400),
+      labelStyle: TextStyle(color: kGreyColorShade400),
+      suffixIconColor: kGreyColorShade400,
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(kDefaultTextFieldBorderRadius10),
+        ),
+        borderSide: const BorderSide(
+          color: kWhiteColor,
+        ),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(kDefaultTextFieldBorderRadius10),
+        ),
+        borderSide: const BorderSide(
+          color: kWhiteColor,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(kDefaultTextFieldBorderRadius10),
+          ),
+          borderSide: const BorderSide(
+            color: kWhiteColor,
+          )),
+      disabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+        color: kWhiteColor,
+      )),
     ),
   );
 }

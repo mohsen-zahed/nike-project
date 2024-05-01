@@ -32,7 +32,16 @@ class CodegenLoader extends AssetLoader{
   "add_to_cart": "Add To Cart",
   "home_text": "Home",
   "cart_text": "Cart",
-  "profile_text": "Profile"
+  "profile_text": "Profile",
+  "login_to_account_text": "Login to your account!",
+  "login_text": "Logi",
+  "dont_have_an_account": "Don't have an account?",
+  "password_text": "Passwor",
+  "email_address_text": "Email address",
+  "enter_your_email_and_password": "Enter your E-mail and Password",
+  "signup_text": "Sign up",
+  "already_have_an_account": "Already have an account?",
+  "signup_to_account_text": "Enter a valid E-mail address and Password to continue!"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -52,7 +61,16 @@ static const Map<String,dynamic> fa = {
   "add_to_cart": "افزودن به سبد خرید",
   "home_text": "خانه",
   "cart_text": "سبد خرید",
-  "profile_text": "پروفایل"
+  "profile_text": "پروفایل",
+  "login_to_account_text": "وارد حساب کاربری خود شوید!",
+  "login_text": "ورود",
+  "dont_have_an_account": "حساب کاربری ندارید؟",
+  "password_text": "رمز عبور",
+  "email_address_text": "آدرس ایمیل",
+  "enter_your_email_and_password": "آدرس ایمیل و رمز عبور خود را وارد کنید!",
+  "signup_text": "ثبت نام",
+  "already_have_an_account": "از قبل حساب کاربری دارید؟",
+  "signup_to_account_text": "برای ادامه یک آدرس ایمیل و رمز عبور معتبر وارد کنید!"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -72,7 +90,16 @@ static const Map<String,dynamic> ps = {
   "add_to_cart": "د پیرودلو ټوکرۍ ته اضافه کړئ",
   "home_text": "کور",
   "cart_text": "خرید سبد",
-  "profile_text": "پېژنیالونه"
+  "profile_text": "پېژنیالونه",
+  "login_to_account_text": "خپل حساب ته ننوتل!",
+  "login_text": "دننه شه",
+  "dont_have_an_account": "ایا تاسو حساب نه لرئ؟",
+  "password_text": "تېرنویې",
+  "email_address_text": "برېښلیک پته",
+  "enter_your_email_and_password": "خپل بریښنالیک ادرس او پاسورډ ولیکئ!",
+  "signup_text": "ګډون وکړه",
+  "already_have_an_account": "ایا تاسو دمخه یو حساب لرئ؟",
+  "signup_to_account_text": "د دوام لپاره یو باوری بریښنالیک ادرس او پټنوم ولیکئ!"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

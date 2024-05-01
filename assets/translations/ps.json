@@ -16,5 +16,14 @@
   "add_to_cart": "د پیرودلو ټوکرۍ ته اضافه کړئ",
   "home_text": "کور",
   "cart_text": "خرید سبد",
-  "profile_text": "پېژنیالونه"
+  "profile_text": "پېژنیالونه",
+  "login_to_account_text": "خپل حساب ته ننوتل!",
+  "login_text": "دننه شه",
+  "dont_have_an_account": "ایا تاسو حساب نه لرئ؟",
+  "password_text": "تېرنویې",
+  "email_address_text": "برېښلیک پته",
+  "enter_your_email_and_password": "خپل بریښنالیک ادرس او پاسورډ ولیکئ!",
+  "signup_text": "ګډون وکړه",
+  "already_have_an_account": "ایا تاسو دمخه یو حساب لرئ؟",
+  "signup_to_account_text": "د دوام لپاره یو باوری بریښنالیک ادرس او پټنوم ولیکئ!"
 }

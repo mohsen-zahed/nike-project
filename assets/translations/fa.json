@@ -16,5 +16,14 @@
   "add_to_cart": "افزودن به سبد خرید",
   "home_text": "خانه",
   "cart_text": "سبد خرید",
-  "profile_text": "پروفایل"
+  "profile_text": "پروفایل",
+  "login_to_account_text": "وارد حساب کاربری خود شوید!",
+  "login_text": "ورود",
+  "dont_have_an_account": "حساب کاربری ندارید؟",
+  "password_text": "رمز عبور",
+  "email_address_text": "آدرس ایمیل",
+  "enter_your_email_and_password": "آدرس ایمیل و رمز عبور خود را وارد کنید!",
+  "signup_text": "ثبت نام",
+  "already_have_an_account": "از قبل حساب کاربری دارید؟",
+  "signup_to_account_text": "برای ادامه یک آدرس ایمیل و رمز عبور معتبر وارد کنید!"
 }

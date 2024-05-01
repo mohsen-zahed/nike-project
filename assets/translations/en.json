@@ -16,5 +16,14 @@
   "add_to_cart": "Add To Cart",
   "home_text": "Home",
   "cart_text": "Cart",
-  "profile_text": "Profile"
+  "profile_text": "Profile",
+  "login_to_account_text": "Login to your account!",
+  "login_text": "Logi",
+  "dont_have_an_account": "Don't have an account?",
+  "password_text": "Passwor",
+  "email_address_text": "Email address",
+  "enter_your_email_and_password": "Enter your E-mail and Password",
+  "signup_text": "Sign up",
+  "already_have_an_account": "Already have an account?",
+  "signup_to_account_text": "Enter a valid E-mail address and Password to continue!"
 }

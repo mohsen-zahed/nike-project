@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/add_to_cart_screen/add_to_cart_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/home_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/profile_screen/profile_screen.dart';
@@ -68,25 +67,21 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               selectedHomeIndex = selectedIndex;
             });
           },
-          // selectedItemColor: kSecondaryColor,
-          // unselectedItemColor: kGreyColor,
-          // selectedLabelStyle: const TextStyle(color: kSecondaryColor),
-          // unselectedLabelStyle: const TextStyle(color: kGreyColor),
           items: [
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: const Icon(
                 CupertinoIcons.house,
               ),
               label: LocaleKeys.home_text.tr(),
             ),
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: const Icon(
                 CupertinoIcons.cart,
               ),
               label: LocaleKeys.cart_text.tr(),
             ),
             BottomNavigationBarItem(
-              icon: Icon(
+              icon: const Icon(
                 CupertinoIcons.person,
               ),
               label: LocaleKeys.profile_text.tr(),

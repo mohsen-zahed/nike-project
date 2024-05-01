@@ -75,7 +75,12 @@ class CommentsListWidget extends StatelessWidget {
                                   state.commentsList[index].email,
                                   overflow: TextOverflow.clip,
                                   maxLines: 1,
-                                  style: Theme.of(context).textTheme.titleSmall,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(
+                                        color: kCaptionsTextColor,
+                                      ),
                                 ),
                               ),
                             ],
@@ -85,7 +90,10 @@ class CommentsListWidget extends StatelessWidget {
                                 maxWidth: getMediaQueryWidth(context, 0.4)),
                             child: Text(
                               state.commentsList[index].date,
-                              style: Theme.of(context).textTheme.titleSmall,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall!
+                                  .copyWith(color: kCaptionsTextColor),
                               maxLines: 1,
                               overflow: TextOverflow.clip,
                               textAlign: TextAlign.end,

@@ -48,7 +48,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         flex: 2,
                         child: Text(
                           product.title,
-                          style: Theme.of(context).textTheme.titleLarge,
+                          style: Theme.of(context).textTheme.headlineSmall,
                           maxLines: 2,
                           overflow: TextOverflow.clip,
                         ),
@@ -63,6 +63,7 @@ class ProductDetailsScreen extends StatelessWidget {
                                   .textTheme
                                   .titleSmall!
                                   .copyWith(
+                                      color: kCaptionsTextColor,
                                       decoration: TextDecoration.lineThrough),
                               maxLines: 1,
                               overflow: TextOverflow.clip,
@@ -94,14 +95,14 @@ class ProductDetailsScreen extends StatelessWidget {
                         LocaleKeys.users_comments.tr(),
                         style: Theme.of(context)
                             .textTheme
-                            .titleSmall!
+                            .titleMedium!
                             .copyWith(color: kGreyColor),
                       ),
                       TextButton(
                         onPressed: () {},
                         child: Text(
                           LocaleKeys.leave_a_comment.tr(),
-                          style: Theme.of(context).textTheme.labelMedium,
+                          style: Theme.of(context).textTheme.titleSmall,
                         ),
                       ),
                     ],

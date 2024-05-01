@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
+import 'package:nike_project/core/constants/numeric_contants.dart';
 
 ThemeData darkTheme() {
   return ThemeData(
@@ -36,12 +37,6 @@ ThemeData darkTheme() {
       ),
     ),
     textTheme: TextTheme(
-      bodyMedium: const TextStyle(
-        color: kWhiteColor,
-      ),
-      bodySmall: const TextStyle(
-        color: kCaptionsTextColor,
-      ),
       titleLarge: const TextStyle(
         color: kWhiteColor,
       ),
@@ -49,6 +44,15 @@ ThemeData darkTheme() {
         color: kWhiteColor,
       ),
       titleSmall: const TextStyle(
+        color: kCaptionsTextColor,
+      ),
+      bodyLarge: const TextStyle(
+        color: kCaptionsTextColor,
+      ),
+      bodyMedium: const TextStyle(
+        color: kWhiteColor,
+      ),
+      bodySmall: const TextStyle(
         color: kCaptionsTextColor,
       ),
       labelLarge: const TextStyle(),
@@ -85,6 +89,44 @@ ThemeData darkTheme() {
       ),
       unselectedItemColor: kGreyColor,
       unselectedLabelStyle: TextStyle(color: kGreyColor),
+    ),
+
+    progressIndicatorTheme: ProgressIndicatorThemeData(
+      color: kWhiteColor,
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      hintStyle: TextStyle(color: kGreyColorShade400),
+      labelStyle: TextStyle(color: kGreyColorShade400),
+      suffixIconColor: kGreyColorShade400,
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(kDefaultTextFieldBorderRadius10),
+        ),
+        borderSide: BorderSide(
+          color: kGreyColorShade400,
+        ),
+      ),
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(kDefaultTextFieldBorderRadius10),
+        ),
+        borderSide: BorderSide(
+          color: kGreyColorShade400,
+        ),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(kDefaultTextFieldBorderRadius10),
+        ),
+        borderSide: BorderSide(
+          color: kGreyColorShade400,
+        ),
+      ),
+      disabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: kGreyColorShade400,
+        ),
+      ),
     ),
   );
 }

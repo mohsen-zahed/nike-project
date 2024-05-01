@@ -27,7 +27,7 @@ class CardTitleAndSeeAllTexts extends StatelessWidget {
         children: [
           Text(
             title,
-            style: Theme.of(context).textTheme.labelLarge!.copyWith(
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
                   fontWeight: kDefaultTitleFontWeight700,
                 ),
           ),
@@ -35,7 +35,10 @@ class CardTitleAndSeeAllTexts extends StatelessWidget {
             onTap: onTap,
             child: Text(
               LocaleKeys.see_all_text.tr(),
-              style: Theme.of(context).textTheme.labelSmall,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall!
+                  .copyWith(fontSize: getMediaQueryHeight(context, 0.015)),
             ),
           ),
         ],

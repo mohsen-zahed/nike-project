@@ -19,5 +19,14 @@ abstract class  LocaleKeys {
   static const home_text = 'home_text';
   static const cart_text = 'cart_text';
   static const profile_text = 'profile_text';
+  static const login_to_account_text = 'login_to_account_text';
+  static const login_text = 'login_text';
+  static const dont_have_an_account = 'dont_have_an_account';
+  static const password_text = 'password_text';
+  static const email_address_text = 'email_address_text';
+  static const enter_your_email_and_password = 'enter_your_email_and_password';
+  static const signup_text = 'signup_text';
+  static const already_have_an_account = 'already_have_an_account';
+  static const signup_to_account_text = 'signup_to_account_text';
 
 }

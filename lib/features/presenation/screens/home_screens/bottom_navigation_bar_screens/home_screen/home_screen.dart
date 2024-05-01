@@ -13,6 +13,7 @@ import 'package:nike_project/features/presenation/screens/home_screens/bottom_na
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets/app_exception_widget.dart';
+import 'package:nike_project/widgets/nike_image_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,8 +38,8 @@ class HomeScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   switch (index) {
                     case 0:
-                      return Image.asset(
-                        ImagesPaths.appLogo,
+                      return NikeImageWidget(
+                        imagePath: ImagesPaths.darkAppLogo,
                         height: getMediaQueryHeight(context, 0.1),
                       );
                     case 2:
