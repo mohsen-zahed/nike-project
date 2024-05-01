@@ -4,12 +4,14 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomEmailTextField extends StatelessWidget {
+  final TextEditingController controller;
   final String labelText;
   final String hintText;
   const CustomEmailTextField({
     super.key,
     required this.labelText,
     required this.hintText,
+    required this.controller,
   });
 
   @override
@@ -19,6 +21,7 @@ class CustomEmailTextField extends StatelessWidget {
         horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
       ),
       child: TextField(
+        controller: controller,
         keyboardType: TextInputType.emailAddress,
         style: Theme.of(context)
             .textTheme

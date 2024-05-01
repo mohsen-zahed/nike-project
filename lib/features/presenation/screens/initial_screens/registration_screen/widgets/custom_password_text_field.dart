@@ -4,12 +4,14 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomPasswordTextField extends StatefulWidget {
+  final TextEditingController controller;
   final String labelText;
   final String hintText;
   const CustomPasswordTextField({
     super.key,
     required this.labelText,
     required this.hintText,
+    required this.controller,
   });
 
   @override
@@ -26,6 +28,7 @@ class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
         horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
       ),
       child: TextField(
+        controller: widget.controller,
         style: Theme.of(context)
             .textTheme
             .titleMedium!

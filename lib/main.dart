@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/registration_screen.dart';
 import 'package:nike_project/theme/dark_theme.dart';
 import 'package:nike_project/theme/light_theme.dart';
@@ -8,6 +9,7 @@ import 'package:nike_project/translations/codegen_loader.g.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  authRepository.loadAuthInfo();
   runApp(
     EasyLocalization(
       supportedLocales: const [

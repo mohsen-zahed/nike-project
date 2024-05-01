@@ -20,8 +20,10 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController =
+      TextEditingController(text: "test@gmail.com");
+  final TextEditingController _passwordController =
+      TextEditingController(text: "123456");
   bool isLogin = true;
   @override
   Widget build(BuildContext context) {
@@ -61,12 +63,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 const SizedBox(height: 20),
                 //* E-mail textField...
                 CustomEmailTextField(
+                  controller: _emailController,
                   hintText: LocaleKeys.email_address_text.tr(),
                   labelText: LocaleKeys.email_address_text.tr(),
                 ),
                 SizedBox(height: kDefautlTextFieldVerticalGap10),
                 //* Password textField...
                 CustomPasswordTextField(
+                  controller: _passwordController,
                   labelText: LocaleKeys.password_text.tr(),
                   hintText: LocaleKeys.password_text.tr(),
                 ),
@@ -78,7 +82,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       : LocaleKeys.signup_text.tr(),
                   onPressed: () async {
                     // await authRepository.login('test@gmail.com', '123456');
-                    authRepository.refreshToken();
+                    authRepository.login(
+                        _emailController.text, _passwordController.text);
                   },
                 ),
                 SizedBox(height: kDefaultTextFieldBorderRadius10 + 15),
