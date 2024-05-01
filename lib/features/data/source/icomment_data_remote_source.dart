@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:nike_project/features/data/models/comment_model.dart';
 
-abstract class ICommentRepositoryRemoteSource {
+abstract class ICommentDataRemoteSource {
   Future<List<CommentModel>> getAllComments({required int productId});
 }
 
-class CommentRepositoryRemoteSourceImp extends ICommentRepositoryRemoteSource {
+class CommentDataRemoteSourceImp extends ICommentDataRemoteSource {
   final Dio httpClient;
 
-  CommentRepositoryRemoteSourceImp({required this.httpClient});
+  CommentDataRemoteSourceImp({required this.httpClient});
   @override
   Future<List<CommentModel>> getAllComments({required int productId}) async {
     final response = await httpClient.get('comment/list?product_id=$productId');

@@ -1,10 +1,10 @@
 import 'package:nike_project/features/data/models/product_model.dart';
-import 'package:nike_project/features/data/source/iproducts_repository_remote_source.dart';
+import 'package:nike_project/features/data/source/iproducts_data_remote_source.dart';
 import 'package:nike_project/packages/dio/dio_package.dart';
 
 final productRepository = ProductsRepositoryImp(
   iProductsRepositoryRemoteSource:
-      ProductsRepositoryRemoteSourceImp(httpClient: httpClient),
+      ProductsDataRemoteSourceImp(httpClient: httpClient),
 );
 
 //* -----_----- *\\
@@ -15,7 +15,7 @@ abstract class IProductsRepository {
 }
 
 class ProductsRepositoryImp implements IProductsRepository {
-  final IProductsRepositoryRemoteSource iProductsRepositoryRemoteSource;
+  final IProductsDataRemoteSource iProductsRepositoryRemoteSource;
 
   ProductsRepositoryImp({required this.iProductsRepositoryRemoteSource});
   @override

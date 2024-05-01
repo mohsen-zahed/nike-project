@@ -4,15 +4,15 @@ import 'package:nike_project/core/exception/app_exception.dart';
 import 'package:nike_project/features/data/models/banner_model.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 
-abstract class IBannerRepositoryRemoteSource {
+abstract class IBannerDataRemoteSource {
   Future<List<BannerModel>> getAllBanners();
 }
 
-class BannerRepositoryRemoteSourceImp
-    implements IBannerRepositoryRemoteSource {
+class BannerDataRemoteSourceImp
+    implements IBannerDataRemoteSource {
   final Dio httpClient;
 
-  BannerRepositoryRemoteSourceImp({required this.httpClient});
+  BannerDataRemoteSourceImp({required this.httpClient});
   @override
   Future<List<BannerModel>> getAllBanners() async {
     final response = await httpClient.get('banner/slider');

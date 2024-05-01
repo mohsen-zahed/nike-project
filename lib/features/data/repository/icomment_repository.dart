@@ -1,10 +1,10 @@
 import 'package:nike_project/features/data/models/comment_model.dart';
-import 'package:nike_project/features/data/source/icomment_repository_remote_source.dart';
+import 'package:nike_project/features/data/source/icomment_data_remote_source.dart';
 import 'package:nike_project/packages/dio/dio_package.dart';
 
 final commentRepository = CommentRepositoryImp(
   iCommentRepositoryRemoteSource:
-      CommentRepositoryRemoteSourceImp(httpClient: httpClient),
+      CommentDataRemoteSourceImp(httpClient: httpClient),
 );
 
 abstract class ICommentRepository {
@@ -12,7 +12,7 @@ abstract class ICommentRepository {
 }
 
 class CommentRepositoryImp extends ICommentRepository {
-  final ICommentRepositoryRemoteSource iCommentRepositoryRemoteSource;
+  final ICommentDataRemoteSource iCommentRepositoryRemoteSource;
 
   CommentRepositoryImp({required this.iCommentRepositoryRemoteSource});
   @override

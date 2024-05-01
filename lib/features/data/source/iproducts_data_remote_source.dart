@@ -4,16 +4,16 @@ import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:dio/dio.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 
-abstract class IProductsRepositoryRemoteSource {
+abstract class IProductsDataRemoteSource {
   Future<List<ProductModel>> getAllProducts(int sort);
   Future<List<ProductModel>> searchProducts(String searchTerm);
 }
 
-class ProductsRepositoryRemoteSourceImp
-    implements IProductsRepositoryRemoteSource {
+class ProductsDataRemoteSourceImp
+    implements IProductsDataRemoteSource {
   final Dio httpClient;
 
-  ProductsRepositoryRemoteSourceImp({required this.httpClient});
+  ProductsDataRemoteSourceImp({required this.httpClient});
   @override
   Future<List<ProductModel>> getAllProducts(int sort) async {
     final response = await httpClient.get('product/list?sort=$sort');
