@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
+import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/account_text_and_login_signup.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_email_text_field.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_password_text_field.dart';
@@ -75,7 +76,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   buttonText: isLogin
                       ? LocaleKeys.login_text.tr()
                       : LocaleKeys.signup_text.tr(),
-                  onPressed: () {},
+                  onPressed: () async {
+                    // await authRepository.login('test@gmail.com', '123456');
+                    authRepository.refreshToken();
+                  },
                 ),
                 SizedBox(height: kDefaultTextFieldBorderRadius10 + 15),
                 //* Two texts under the Elevated Button...
