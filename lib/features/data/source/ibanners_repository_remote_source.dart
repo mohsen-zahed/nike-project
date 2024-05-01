@@ -8,11 +8,11 @@ abstract class IBannerRepositoryRemoteSource {
   Future<List<BannerModel>> getAllBanners();
 }
 
-class IBannerRepositoryRemoteSourceImp
+class BannerRepositoryRemoteSourceImp
     implements IBannerRepositoryRemoteSource {
   final Dio httpClient;
 
-  IBannerRepositoryRemoteSourceImp({required this.httpClient});
+  BannerRepositoryRemoteSourceImp({required this.httpClient});
   @override
   Future<List<BannerModel>> getAllBanners() async {
     final response = await httpClient.get('banner/slider');

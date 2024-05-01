@@ -9,11 +9,11 @@ abstract class IProductsRepositoryRemoteSource {
   Future<List<ProductModel>> searchProducts(String searchTerm);
 }
 
-class IProductsRepositoryRemoteSourceImp
+class ProductsRepositoryRemoteSourceImp
     implements IProductsRepositoryRemoteSource {
   final Dio httpClient;
 
-  IProductsRepositoryRemoteSourceImp({required this.httpClient});
+  ProductsRepositoryRemoteSourceImp({required this.httpClient});
   @override
   Future<List<ProductModel>> getAllProducts(int sort) async {
     final response = await httpClient.get('product/list?sort=$sort');

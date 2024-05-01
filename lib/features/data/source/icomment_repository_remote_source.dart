@@ -5,10 +5,10 @@ abstract class ICommentRepositoryRemoteSource {
   Future<List<CommentModel>> getAllComments({required int productId});
 }
 
-class ICommentRepositoryRemoteSourceImp extends ICommentRepositoryRemoteSource {
+class CommentRepositoryRemoteSourceImp extends ICommentRepositoryRemoteSource {
   final Dio httpClient;
 
-  ICommentRepositoryRemoteSourceImp({required this.httpClient});
+  CommentRepositoryRemoteSourceImp({required this.httpClient});
   @override
   Future<List<CommentModel>> getAllComments({required int productId}) async {
     final response = await httpClient.get('comment/list?product_id=$productId');
