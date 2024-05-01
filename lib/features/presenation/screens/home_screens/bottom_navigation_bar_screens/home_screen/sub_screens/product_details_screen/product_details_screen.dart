@@ -59,7 +59,11 @@ class ProductDetailsScreen extends StatelessWidget {
                           children: [
                             Text(
                               product.previousPrice.withPriceLabel,
-                              style: Theme.of(context).textTheme.titleSmall!.copyWith(decoration: TextDecoration.lineThrough),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall!
+                                  .copyWith(
+                                      decoration: TextDecoration.lineThrough),
                               maxLines: 1,
                               overflow: TextOverflow.clip,
                             ),
@@ -97,10 +101,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         onPressed: () {},
                         child: Text(
                           LocaleKeys.leave_a_comment.tr(),
-                          style: Theme.of(context)
-                              .textTheme
-                              .titleSmall!
-                              .copyWith(color: kBlueColor),
+                          style: Theme.of(context).textTheme.labelMedium,
                         ),
                       ),
                     ],

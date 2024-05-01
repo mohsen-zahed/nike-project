@@ -68,32 +68,26 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               selectedHomeIndex = selectedIndex;
             });
           },
-          selectedItemColor: kSecondaryColor,
-          unselectedItemColor: kGreyColor,
-          // showSelectedLabels: true,
-          // showUnselectedLabels: true,
-          selectedLabelStyle: const TextStyle(color: kSecondaryColor),
-          unselectedLabelStyle: const TextStyle(color: kGreyColor),
+          // selectedItemColor: kSecondaryColor,
+          // unselectedItemColor: kGreyColor,
+          // selectedLabelStyle: const TextStyle(color: kSecondaryColor),
+          // unselectedLabelStyle: const TextStyle(color: kGreyColor),
           items: [
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.house,
-                color: selectedHomeIndex == homeIndex ? kBlueColor : kGreyColor,
               ),
               label: LocaleKeys.home_text.tr(),
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.cart,
-                color: selectedHomeIndex == cartIndex ? kBlueColor : kGreyColor,
               ),
               label: LocaleKeys.cart_text.tr(),
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.person,
-                color:
-                    selectedHomeIndex == profileIndex ? kBlueColor : kGreyColor,
               ),
               label: LocaleKeys.profile_text.tr(),
             ),

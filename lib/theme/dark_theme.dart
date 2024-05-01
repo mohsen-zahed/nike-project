@@ -35,25 +35,27 @@ ThemeData darkTheme() {
         overlayColor: MaterialStatePropertyAll(kGreyColorShade400),
       ),
     ),
-    textTheme: const TextTheme(
-      bodyMedium: TextStyle(
+    textTheme: TextTheme(
+      bodyMedium: const TextStyle(
         color: kWhiteColor,
       ),
-      bodySmall: TextStyle(
+      bodySmall: const TextStyle(
         color: kCaptionsTextColor,
       ),
-      titleLarge: TextStyle(
+      titleLarge: const TextStyle(
         color: kWhiteColor,
       ),
-      titleMedium: TextStyle(
+      titleMedium: const TextStyle(
         color: kWhiteColor,
       ),
-      titleSmall: TextStyle(
+      titleSmall: const TextStyle(
         color: kCaptionsTextColor,
       ),
-      labelLarge: TextStyle(),
-      labelMedium: TextStyle(),
-      labelSmall: TextStyle(
+      labelLarge: const TextStyle(),
+      labelMedium: TextStyle(
+        color: kGreyColorShade400,
+      ),
+      labelSmall: const TextStyle(
         color: kCaptionsTextColor,
         decoration: TextDecoration.lineThrough,
       ),
@@ -67,9 +69,22 @@ ThemeData darkTheme() {
       ),
     ),
     elevatedButtonTheme: const ElevatedButtonThemeData(
-        style: ButtonStyle(
-      foregroundColor: MaterialStatePropertyAll(kPrimaryTextColor),
-      backgroundColor: MaterialStatePropertyAll(kWhiteColor),
-    )),
+      style: ButtonStyle(
+        foregroundColor: MaterialStatePropertyAll(kPrimaryTextColor),
+        backgroundColor: MaterialStatePropertyAll(kWhiteColor),
+      ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedIconTheme: IconThemeData(
+        color: kWhiteColor,
+      ),
+      selectedItemColor: kWhiteColor,
+      selectedLabelStyle: TextStyle(color: kWhiteColor),
+      unselectedIconTheme: IconThemeData(
+        color: kGreyColor,
+      ),
+      unselectedItemColor: kGreyColor,
+      unselectedLabelStyle: TextStyle(color: kGreyColor),
+    ),
   );
 }

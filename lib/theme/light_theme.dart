@@ -53,7 +53,9 @@ ThemeData lightTheme() {
         color: kCaptionsTextColor,
       ),
       labelLarge: TextStyle(),
-      labelMedium: TextStyle(),
+      labelMedium: TextStyle(
+        color: kBlueColor,
+      ),
       labelSmall: TextStyle(
         color: kCaptionsTextColor,
         decoration: TextDecoration.lineThrough,
@@ -71,6 +73,18 @@ ThemeData lightTheme() {
         foregroundColor: MaterialStatePropertyAll(kWhiteColor),
         backgroundColor: MaterialStatePropertyAll(kPrimaryColor),
       ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedIconTheme: IconThemeData(
+        color: kBlueColor,
+      ),
+      selectedItemColor: kBlueColor,
+      selectedLabelStyle: TextStyle(color: kBlueColor),
+      unselectedIconTheme: IconThemeData(
+        color: kGreyColor,
+      ),
+      unselectedItemColor: kGreyColor,
+      unselectedLabelStyle: TextStyle(color: kGreyColor),
     ),
   );
 }
