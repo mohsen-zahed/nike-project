@@ -8,8 +8,7 @@ abstract class IBannerDataRemoteSource {
   Future<List<BannerModel>> getAllBanners();
 }
 
-class BannerDataRemoteSourceImp
-    implements IBannerDataRemoteSource {
+class BannerDataRemoteSourceImp implements IBannerDataRemoteSource {
   final Dio httpClient;
 
   BannerDataRemoteSourceImp({required this.httpClient});

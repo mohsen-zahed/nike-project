@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
+import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/account_text_and_login_signup.dart';
+import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_email_text_field.dart';
+import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_password_text_field.dart';
+import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_registration_button.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets/nike_image_widget.dart';
@@ -30,11 +34,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                //* App image...
                 NikeImageWidget(
                   imagePath: ImagesPaths.lightAppLogo,
                   height: getMediaQueryHeight(context, 0.1),
                 ),
                 SizedBox(height: kDefautlVerticalGap20),
+                //* Welcome text...
                 Text(
                   LocaleKeys.welcome_text.tr(),
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -42,6 +48,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ),
                 ),
                 SizedBox(height: kDefautlTextFieldVerticalGap10),
+                //* Login or Signup texts...
                 Text(
                   isLogin
                       ? LocaleKeys.login_to_account_text.tr()
@@ -51,10 +58,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ),
                 ),
                 const SizedBox(height: 20),
-                const CustomEmailTextField(),
+                //* E-mail textField...
+                CustomEmailTextField(
+                  hintText: LocaleKeys.email_address_text.tr(),
+                  labelText: LocaleKeys.email_address_text.tr(),
+                ),
                 SizedBox(height: kDefautlTextFieldVerticalGap10),
-                const CustomPasswordTextField(),
+                //* Password textField...
+                CustomPasswordTextField(
+                  labelText: LocaleKeys.password_text.tr(),
+                  hintText: LocaleKeys.password_text.tr(),
+                ),
                 SizedBox(height: kDefaultTextFieldBorderRadius10),
+                //* Login-Signup Elevated Button...
                 CustomRegistrationButton(
                   buttonText: isLogin
                       ? LocaleKeys.login_text.tr()
@@ -62,6 +78,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   onPressed: () {},
                 ),
                 SizedBox(height: kDefaultTextFieldBorderRadius10 + 15),
+                //* Two texts under the Elevated Button...
                 AccountTextAndLoginSignup(
                   accountText: isLogin
                       ? LocaleKeys.dont_have_an_account.tr()
@@ -78,162 +95,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomRegistrationButton extends StatelessWidget {
-  const CustomRegistrationButton({
-    super.key,
-    required this.buttonText,
-    required this.onPressed,
-  });
-
-  final String buttonText;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.06,
-      margin: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
-      ),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
-          ),
-          backgroundColor: kWhiteColor,
-          foregroundColor: kPrimaryTextColor,
-        ),
-        child: Text(
-          buttonText,
-        ),
-      ),
-    );
-  }
-}
-
-class AccountTextAndLoginSignup extends StatelessWidget {
-  final String accountText;
-  final String registerText;
-  final VoidCallback onTap;
-  const AccountTextAndLoginSignup({
-    super.key,
-    required this.accountText,
-    required this.registerText,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            accountText,
-            style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  color: kCaptionsTextColor,
-                ),
-          ),
-          SizedBox(
-            width: getMediaQueryWidth(context, kDefaultPaddingWidth20),
-          ),
-          GestureDetector(
-            onTap: onTap,
-            child: Text(
-              registerText,
-              style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    decoration: TextDecoration.underline,
-                    decorationColor:
-                        Theme.of(context).textTheme.titleSmall!.color,
-                    decorationThickness: 3,
-                  ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class CustomEmailTextField extends StatelessWidget {
-  const CustomEmailTextField({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
-      ),
-      child: TextField(
-        keyboardType: TextInputType.emailAddress,
-        style: Theme.of(context)
-            .textTheme
-            .titleMedium!
-            .copyWith(color: kCaptionsTextColor),
-        decoration: InputDecoration(
-          label: Text(
-            LocaleKeys.email_address_text.tr(),
-          ),
-          hintText: LocaleKeys.email_address_text.tr(),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomPasswordTextField extends StatefulWidget {
-  const CustomPasswordTextField({
-    super.key,
-  });
-
-  @override
-  State<CustomPasswordTextField> createState() =>
-      _CustomPasswordTextFieldState();
-}
-
-class _CustomPasswordTextFieldState extends State<CustomPasswordTextField> {
-  bool isObsecured = true;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
-      ),
-      child: TextField(
-        style: Theme.of(context)
-            .textTheme
-            .titleMedium!
-            .copyWith(color: kCaptionsTextColor),
-        obscureText: isObsecured,
-        decoration: InputDecoration(
-          suffixIcon: GestureDetector(
-            onTap: () {
-              setState(() {
-                isObsecured = !isObsecured;
-              });
-            },
-            child: Icon(
-              isObsecured ? Icons.visibility : Icons.visibility_off,
-            ),
-          ),
-          label: Text(
-            LocaleKeys.password_text.tr(),
-          ),
-          hintText: LocaleKeys.password_text.tr(),
         ),
       ),
     );
