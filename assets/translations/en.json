@@ -28,5 +28,6 @@
   "signup_to_account_text": "Enter a valid E-mail address and Password to continue!",
   "logout_text": "Logout",
   "no_user_existed_error": "No user is existed with this username or email!",
-  "email_username_already_exists_error": "Already registered with this e-mail and username!"
+  "email_username_already_exists_error": "Already registered with this e-mail and username!",
+  "item_added_to_cart_successfully": "Item successfully added to your cart!"
 }

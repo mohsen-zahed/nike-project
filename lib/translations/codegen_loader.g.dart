@@ -44,7 +44,8 @@ class CodegenLoader extends AssetLoader{
   "signup_to_account_text": "Enter a valid E-mail address and Password to continue!",
   "logout_text": "Logout",
   "no_user_existed_error": "No user is existed with this username or email!",
-  "email_username_already_exists_error": "Already registered with this e-mail and username!"
+  "email_username_already_exists_error": "Already registered with this e-mail and username!",
+  "item_added_to_cart_successfully": "Item successfully added to your cart!"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -76,7 +77,8 @@ static const Map<String,dynamic> fa = {
   "signup_to_account_text": "برای ادامه یک آدرس ایمیل و رمز عبور معتبر وارد کنید!",
   "logout_text": "خروج از حساب",
   "no_user_existed_error": "هیچ کاربری با این نام کاربری یا آدرس ایمیل وجود ندارد!",
-  "email_username_already_exists_error": "قبلا با این آدرس ایمیل و نام کاربری ثبت نام شده است!"
+  "email_username_already_exists_error": "قبلا با این آدرس ایمیل و نام کاربری ثبت نام شده است!",
+  "item_added_to_cart_successfully": "این محصول موفقانه به سبد خرید شما اضافه شد!"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -108,7 +110,8 @@ static const Map<String,dynamic> ps = {
   "signup_to_account_text": "د دوام لپاره یو باوری بریښنالیک ادرس او پټنوم ولیکئ!",
   "logout_text": "له حساب څخه لرې شئ",
   "no_user_existed_error": "د دې کارن-نوم یا بریښنالیک پتې سره هیڅ کارن شتون نلری!",
-  "email_username_already_exists_error": "مخکې د دې بریښنالیک پته او کارن نوم سره ثبت شوی!"
+  "email_username_already_exists_error": "مخکې د دې بریښنالیک پته او کارن نوم سره ثبت شوی!",
+  "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

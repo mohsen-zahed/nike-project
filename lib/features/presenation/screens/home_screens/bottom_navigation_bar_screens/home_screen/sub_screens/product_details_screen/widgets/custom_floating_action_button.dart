@@ -5,8 +5,13 @@ import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
+  final Widget widget;
+  final Function() onPressed;
+
   const CustomFloatingActionButton({
     super.key,
+    required this.onPressed,
+    required this.widget,
   });
 
   @override
@@ -17,10 +22,8 @@ class CustomFloatingActionButton extends StatelessWidget {
         horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
       ),
       child: FloatingActionButton.extended(
-        onPressed: () {},
-        label: Text(
-          LocaleKeys.add_to_cart.tr(),
-        ),
+        onPressed: onPressed,
+        label: widget,
       ),
     );
   }

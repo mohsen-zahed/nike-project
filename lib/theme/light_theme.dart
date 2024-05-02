@@ -1,10 +1,13 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
+    appBarTheme: const AppBarTheme(
+      backgroundColor: kWhiteColor,
+    ),
+    scaffoldBackgroundColor: kWhiteColor,
     colorScheme: const ColorScheme.light(),
     brightness: Brightness.light,
     useMaterial3: true,
@@ -80,6 +83,7 @@ ThemeData lightTheme() {
       ),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: kWhiteColor,
       selectedIconTheme: IconThemeData(
         color: kBlueColor,
       ),
@@ -127,7 +131,7 @@ ThemeData lightTheme() {
       )),
     ),
     snackBarTheme: const SnackBarThemeData(
-      backgroundColor: kSnackbarColor,
+      backgroundColor: kSecondaryColor,
       closeIconColor: kWhiteColor,
       showCloseIcon: true,
       contentTextStyle: TextStyle(

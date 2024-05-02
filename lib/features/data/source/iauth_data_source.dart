@@ -34,7 +34,7 @@ class AuthDataSourceImp implements IAuthDataSource {
       );
     } catch (e) {
       debugPrint(e.toString());
-      throw LocaleKeys.no_user_existed_error.tr();
+      throw LocaleKeys.something_went_wrong.tr();
     }
   }
 
@@ -75,7 +75,7 @@ class AuthDataSourceImp implements IAuthDataSource {
       return login(username, password);
     } catch (e) {
       debugPrint(e.toString());
-      throw LocaleKeys.email_username_already_exists_error.tr();
+      throw LocaleKeys.something_went_wrong.tr();
     }
   }
 }

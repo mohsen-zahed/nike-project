@@ -4,6 +4,10 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 
 ThemeData darkTheme() {
   return ThemeData(
+    appBarTheme: const AppBarTheme(
+      backgroundColor: kPrimaryColor,
+    ),
+    scaffoldBackgroundColor: kPrimaryColor,
     colorScheme: const ColorScheme.dark(),
     brightness: Brightness.dark,
     useMaterial3: true,
@@ -79,6 +83,7 @@ ThemeData darkTheme() {
       ),
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: kSnackbarColor,
       selectedIconTheme: IconThemeData(
         color: kWhiteColor,
       ),
@@ -130,10 +135,10 @@ ThemeData darkTheme() {
     ),
     snackBarTheme: const SnackBarThemeData(
       backgroundColor: kSnackbarColor,
-      closeIconColor: kPrimaryTextColor,
+      closeIconColor: kWhiteColor,
       showCloseIcon: true,
       contentTextStyle: TextStyle(
-        color: kPrimaryTextColor,
+        color: kWhiteColor,
         fontFamily: "IranYekan",
       ),
     ),

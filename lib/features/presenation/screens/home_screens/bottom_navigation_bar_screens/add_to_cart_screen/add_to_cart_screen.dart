@@ -43,6 +43,14 @@ class AddToCartScreen extends StatelessWidget {
                         : LocaleKeys.login_text.tr(),
                   ),
                 ),
+                ElevatedButton(
+                  onPressed: () async{
+                    await authRepository.refreshToken();
+                  },
+                  child: Text(
+                    'Refresh token',
+                  ),
+                ),
               ],
             ),
           );

@@ -28,5 +28,6 @@
   "signup_to_account_text": "برای ادامه یک آدرس ایمیل و رمز عبور معتبر وارد کنید!",
   "logout_text": "خروج از حساب",
   "no_user_existed_error": "هیچ کاربری با این نام کاربری یا آدرس ایمیل وجود ندارد!",
-  "email_username_already_exists_error": "قبلا با این آدرس ایمیل و نام کاربری ثبت نام شده است!"
+  "email_username_already_exists_error": "قبلا با این آدرس ایمیل و نام کاربری ثبت نام شده است!",
+  "item_added_to_cart_successfully": "این محصول موفقانه به سبد خرید شما اضافه شد!"
 }

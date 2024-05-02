@@ -31,5 +31,6 @@ abstract class  LocaleKeys {
   static const logout_text = 'logout_text';
   static const no_user_existed_error = 'no_user_existed_error';
   static const email_username_already_exists_error = 'email_username_already_exists_error';
+  static const item_added_to_cart_successfully = 'item_added_to_cart_successfully';
 
 }

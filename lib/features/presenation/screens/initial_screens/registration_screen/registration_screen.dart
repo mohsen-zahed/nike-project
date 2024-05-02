@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
@@ -104,9 +105,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       //* Login-Signup Elevated Button...
                       CustomRegistrationButton(
                         child: state is AuthLoading
-                            ? const Center(
-                                child: CircularProgressIndicator(),
-                              )
+                            ? const CupertinoActivityIndicator()
                             : Text(
                                 state.isLoginMode
                                     ? LocaleKeys.login_text.tr()
