@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
-import 'package:nike_project/features/data/models/cart_item_model.dart';
+import 'package:nike_project/features/data/models/add_to_cart_response_model.dart';
 import 'package:nike_project/features/data/models/cart_response_model.dart';
 
 abstract class ICartDataSource {
-  Future<CartResponseModel> add(int productId);
+  Future<AddToCartResponseModel> add(int productId);
   Future<void> delete(int cartItemId);
-  Future<CartResponseModel> changeCount(int cartItemId, int count);
+  Future<AddToCartResponseModel> changeCount(int cartItemId, int count);
   Future<int> count();
-  Future<List<CartItemModel>> getAll();
+  Future<CartResponseModel> getAll();
 }
 
 class CartDataSourceImp extends ICartDataSource {
@@ -15,15 +15,15 @@ class CartDataSourceImp extends ICartDataSource {
 
   CartDataSourceImp({required this.httpClient});
   @override
-  Future<CartResponseModel> add(int productId) async {
+  Future<AddToCartResponseModel> add(int productId) async {
     final response = await httpClient.post('cart/add', data: {
       "product_id": productId,
     });
-    return CartResponseModel.fromJson(response.data);
+    return AddToCartResponseModel.fromJson(response.data);
   }
 
   @override
-  Future<CartResponseModel> changeCount(int cartItemId, int count) {
+  Future<AddToCartResponseModel> changeCount(int cartItemId, int count) {
     throw UnimplementedError();
   }
 
@@ -38,7 +38,8 @@ class CartDataSourceImp extends ICartDataSource {
   }
 
   @override
-  Future<List<CartItemModel>> getAll() {
-    throw UnimplementedError();
+  Future<CartResponseModel> getAll() async {
+    final response = await httpClient.get('cart/list');
+    return CartResponseModel.fromJson(response.data);
   }
 }
