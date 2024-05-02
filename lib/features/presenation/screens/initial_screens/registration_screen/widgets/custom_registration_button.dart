@@ -6,11 +6,10 @@ import 'package:nike_project/utils/media_query.dart';
 class CustomRegistrationButton extends StatelessWidget {
   const CustomRegistrationButton({
     super.key,
-    required this.buttonText,
     required this.onPressed,
+    required this.child,
   });
-
-  final String buttonText;
+  final Widget child;
   final VoidCallback onPressed;
 
   @override
@@ -22,19 +21,16 @@ class CustomRegistrationButton extends StatelessWidget {
         horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
       ),
       child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius:
-                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+            ),
+            backgroundColor: kWhiteColor,
+            foregroundColor: kPrimaryTextColor,
           ),
-          backgroundColor: kWhiteColor,
-          foregroundColor: kPrimaryTextColor,
-        ),
-        child: Text(
-          buttonText,
-        ),
-      ),
+          child: child),
     );
   }
 }

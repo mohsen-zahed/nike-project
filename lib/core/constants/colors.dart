@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-const Color kPrimaryColor = Color(0xff262a35);
+const Color kPrimaryColor = Color.fromARGB(255, 29, 33, 43);
+const Color kSnackbarColor = Color(0xff262a35);
 const Color kSecondaryColor = Color(0xff217cf3);
 const Color kPrimaryTextColor = Color(0xff262a35);
 const Color kCaptionsTextColor = Color(0xffb3b6be);

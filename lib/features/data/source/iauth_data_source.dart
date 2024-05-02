@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/client_secret.dart';
 import 'package:nike_project/features/data/models/auth_info_model.dart';
+import 'package:nike_project/translations/locale_keys.g.dart';
 
 abstract class IAuthDataSource {
   Future<AuthInfoModel> login(String username, String password);
@@ -24,7 +26,7 @@ class AuthDataSourceImp implements IAuthDataSource {
         "password": password,
       });
       if (response.statusCode != 200) {
-        throw 'bad response';
+        throw response.statusMessage.toString();
       }
       return AuthInfoModel(
         accessToken: response.data["access_token"],
@@ -32,7 +34,7 @@ class AuthDataSourceImp implements IAuthDataSource {
       );
     } catch (e) {
       debugPrint(e.toString());
-      throw 'Error';
+      throw LocaleKeys.no_user_existed_error.tr();
     }
   }
 
@@ -47,7 +49,7 @@ class AuthDataSourceImp implements IAuthDataSource {
       });
 
       if (response.statusCode != 200) {
-        throw "Exception";
+        throw response.statusMessage.toString();
       }
       return AuthInfoModel(
         accessToken: response.data["access_token"],
@@ -68,12 +70,12 @@ class AuthDataSourceImp implements IAuthDataSource {
       });
 
       if (response.statusCode != 200) {
-        throw 'error happened';
+        throw response.statusMessage.toString();
       }
       return login(username, password);
     } catch (e) {
       debugPrint(e.toString());
-      throw 'Error';
+      throw LocaleKeys.email_username_already_exists_error.tr();
     }
   }
 }

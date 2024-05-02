@@ -28,5 +28,8 @@ abstract class  LocaleKeys {
   static const signup_text = 'signup_text';
   static const already_have_an_account = 'already_have_an_account';
   static const signup_to_account_text = 'signup_to_account_text';
+  static const logout_text = 'logout_text';
+  static const no_user_existed_error = 'no_user_existed_error';
+  static const email_username_already_exists_error = 'email_username_already_exists_error';
 
 }

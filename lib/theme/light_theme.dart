@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
@@ -90,8 +91,8 @@ ThemeData lightTheme() {
       unselectedItemColor: kGreyColor,
       unselectedLabelStyle: TextStyle(color: kGreyColor),
     ),
-    progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: kPrimaryColor,
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: kBlueColor,
     ),
     inputDecorationTheme: InputDecorationTheme(
       hintStyle: TextStyle(color: kGreyColorShade400),
@@ -124,6 +125,15 @@ ThemeData lightTheme() {
           borderSide: BorderSide(
         color: kWhiteColor,
       )),
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: kSnackbarColor,
+      closeIconColor: kWhiteColor,
+      showCloseIcon: true,
+      contentTextStyle: TextStyle(
+        color: kWhiteColor,
+        fontFamily: "IranYekan",
+      ),
     ),
   );
 }

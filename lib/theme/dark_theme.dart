@@ -91,7 +91,7 @@ ThemeData darkTheme() {
       unselectedLabelStyle: TextStyle(color: kGreyColor),
     ),
 
-    progressIndicatorTheme: ProgressIndicatorThemeData(
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: kWhiteColor,
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -126,6 +126,15 @@ ThemeData darkTheme() {
         borderSide: BorderSide(
           color: kGreyColorShade400,
         ),
+      ),
+    ),
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: kSnackbarColor,
+      closeIconColor: kPrimaryTextColor,
+      showCloseIcon: true,
+      contentTextStyle: TextStyle(
+        color: kPrimaryTextColor,
+        fontFamily: "IranYekan",
       ),
     ),
   );

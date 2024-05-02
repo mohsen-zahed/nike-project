@@ -25,5 +25,8 @@
   "enter_your_email_and_password": "Enter your E-mail and Password",
   "signup_text": "Sign up",
   "already_have_an_account": "Already have an account?",
-  "signup_to_account_text": "Enter a valid E-mail address and Password to continue!"
+  "signup_to_account_text": "Enter a valid E-mail address and Password to continue!",
+  "logout_text": "Logout",
+  "no_user_existed_error": "No user is existed with this username or email!",
+  "email_username_already_exists_error": "Already registered with this e-mail and username!"
 }

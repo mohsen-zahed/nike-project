@@ -25,5 +25,8 @@
   "enter_your_email_and_password": "آدرس ایمیل و رمز عبور خود را وارد کنید!",
   "signup_text": "ثبت نام",
   "already_have_an_account": "از قبل حساب کاربری دارید؟",
-  "signup_to_account_text": "برای ادامه یک آدرس ایمیل و رمز عبور معتبر وارد کنید!"
+  "signup_to_account_text": "برای ادامه یک آدرس ایمیل و رمز عبور معتبر وارد کنید!",
+  "logout_text": "خروج از حساب",
+  "no_user_existed_error": "هیچ کاربری با این نام کاربری یا آدرس ایمیل وجود ندارد!",
+  "email_username_already_exists_error": "قبلا با این آدرس ایمیل و نام کاربری ثبت نام شده است!"
 }

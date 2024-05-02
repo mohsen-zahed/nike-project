@@ -25,5 +25,8 @@
   "enter_your_email_and_password": "خپل بریښنالیک ادرس او پاسورډ ولیکئ!",
   "signup_text": "ګډون وکړه",
   "already_have_an_account": "ایا تاسو دمخه یو حساب لرئ؟",
-  "signup_to_account_text": "د دوام لپاره یو باوری بریښنالیک ادرس او پټنوم ولیکئ!"
+  "signup_to_account_text": "د دوام لپاره یو باوری بریښنالیک ادرس او پټنوم ولیکئ!",
+  "logout_text": "له حساب څخه لرې شئ",
+  "no_user_existed_error": "د دې کارن-نوم یا بریښنالیک پتې سره هیڅ کارن شتون نلری!",
+  "email_username_already_exists_error": "مخکې د دې بریښنالیک پته او کارن نوم سره ثبت شوی!"
 }
