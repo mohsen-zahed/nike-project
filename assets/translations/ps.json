@@ -29,5 +29,8 @@
   "logout_text": "له حساب څخه لرې شئ",
   "no_user_existed_error": "د دې کارن-نوم یا بریښنالیک پتې سره هیڅ کارن شتون نلری!",
   "email_username_already_exists_error": "مخکې د دې بریښنالیک پته او کارن نوم سره ثبت شوی!",
-  "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!"
+  "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!",
+  "currency_unit_text": "تومان",
+  "remove_from_cart": "د پیرودلو ټوکرۍ څخه لرې کړئ",
+  "count_text": "شمېره"
 }

@@ -29,5 +29,8 @@
   "logout_text": "خروج از حساب",
   "no_user_existed_error": "هیچ کاربری با این نام کاربری یا آدرس ایمیل وجود ندارد!",
   "email_username_already_exists_error": "قبلا با این آدرس ایمیل و نام کاربری ثبت نام شده است!",
-  "item_added_to_cart_successfully": "این محصول موفقانه به سبد خرید شما اضافه شد!"
+  "item_added_to_cart_successfully": "این محصول موفقانه به سبد خرید شما اضافه شد!",
+  "currency_unit_text": "تومان",
+  "remove_from_cart": "حذف از سبد خرید",
+  "count_text": "تعداد"
 }

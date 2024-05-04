@@ -5,7 +5,9 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 ThemeData darkTheme() {
   return ThemeData(
     appBarTheme: const AppBarTheme(
-      backgroundColor: kPrimaryColor,
+      backgroundColor: kSnackbarColor,
+      elevation: 0.3,
+      foregroundColor: kWhiteColor,
     ),
     scaffoldBackgroundColor: kPrimaryColor,
     colorScheme: const ColorScheme.dark(),

@@ -5,7 +5,9 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 ThemeData lightTheme() {
   return ThemeData(
     appBarTheme: const AppBarTheme(
-      backgroundColor: kWhiteColor,
+      backgroundColor: kSecondaryColor,
+      elevation: 0.3,
+      foregroundColor: kWhiteColor,
     ),
     scaffoldBackgroundColor: kWhiteColor,
     colorScheme: const ColorScheme.light(),
@@ -32,7 +34,6 @@ ThemeData lightTheme() {
     dividerTheme: DividerThemeData(
       color: kGreyColorShade300,
       thickness: 1,
-      space: 30,
     ),
     iconButtonTheme: IconButtonThemeData(
       style: ButtonStyle(

@@ -29,5 +29,8 @@
   "logout_text": "Logout",
   "no_user_existed_error": "No user is existed with this username or email!",
   "email_username_already_exists_error": "Already registered with this e-mail and username!",
-  "item_added_to_cart_successfully": "Item successfully added to your cart!"
+  "item_added_to_cart_successfully": "Item successfully added to your cart!",
+  "currency_unit_text": "Toman",
+  "remove_from_cart": "Remove from Cart",
+  "count_text": "Count"
 }
