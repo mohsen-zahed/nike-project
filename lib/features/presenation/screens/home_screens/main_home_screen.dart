@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/add_to_cart_screen/add_to_cart_screen.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/cart_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/home_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/profile_screen/profile_screen.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
