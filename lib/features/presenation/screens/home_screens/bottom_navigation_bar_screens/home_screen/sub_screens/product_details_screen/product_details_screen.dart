@@ -59,6 +59,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           body: CustomScrollView(
             slivers: [
               SliverAppBar(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(kDefaultBorderRadius20),
+                ),
                 expandedHeight: getMediaQueryWidth(context, 0.8),
                 flexibleSpace: CustomCachedNetworkImage(
                   imageUrl: widget.product.image,

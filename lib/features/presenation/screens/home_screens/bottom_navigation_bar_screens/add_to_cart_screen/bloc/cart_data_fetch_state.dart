@@ -21,3 +21,5 @@ final class CartDataFetchSuccess extends CartDataFetchState {
   const CartDataFetchSuccess({required this.cartResponseItems});
   List<Object> get props => [cartResponseItems];
 }
+
+final class CartAuthRequested extends CartDataFetchState {}

@@ -5,8 +5,11 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
+import 'package:nike_project/features/data/models/auth_info_model.dart';
+import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/add_to_cart_screen/bloc/cart_data_fetch_bloc.dart';
+import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/registration_screen.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
 import 'package:nike_project/utils/media_query.dart';
@@ -14,15 +17,44 @@ import 'package:nike_project/widgets/app_exception_widget.dart';
 import 'package:nike_project/widgets/custom_cached_network_image.dart';
 import 'package:nike_project/widgets/custom_divider_widget.dart';
 
-class AddToCartScreen extends StatelessWidget {
+class AddToCartScreen extends StatefulWidget {
   const AddToCartScreen({super.key});
+
+  @override
+  State<AddToCartScreen> createState() => _AddToCartScreenState();
+}
+
+class _AddToCartScreenState extends State<AddToCartScreen> {
+  CartDataFetchBloc? cartBloc;
+  @override
+  void initState() {
+    super.initState();
+    AuthRepositoryImpl.authChangeNotifier
+        .addListener(authChangedNotifierListener);
+  }
+
+  void authChangedNotifierListener() {
+    cartBloc?.add(
+      CartAuthInfoChanged(
+          authInfoModel: AuthRepositoryImpl.authChangeNotifier.value),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    AuthRepositoryImpl.authChangeNotifier.removeListener(() {});
+    cartBloc?.close();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CartDataFetchBloc>(
       create: (context) {
         final bloc = CartDataFetchBloc(cartRepository);
-        bloc.add(CartDataFetchStarted());
+        cartBloc = bloc;
+        bloc.add(CartDataFetchStarted(
+            authInfoModel: AuthRepositoryImpl.authChangeNotifier.value));
         return bloc;
       },
       child: Scaffold(
@@ -41,6 +73,7 @@ class AddToCartScreen extends StatelessWidget {
               } else if (state is CartDataFetchFailed) {
                 return AppExceptionWidget(
                   errorMessage: state.errorMessage.toString(),
+                  buttonText: LocaleKeys.try_again.tr(),
                   onPressed: () {},
                 );
               } else if (state is CartDataFetchSuccess) {
@@ -228,6 +261,17 @@ class AddToCartScreen extends StatelessWidget {
                               .withOpacity(0.2),
                         ),
                       ],
+                    );
+                  },
+                );
+              } else if (state is CartAuthRequested) {
+                return AppExceptionWidget(
+                  errorMessage: LocaleKeys.login_to_account_text.tr(),
+                  buttonText: LocaleKeys.login_text.tr(),
+                  onPressed: () {
+                    Navigator.of(context, rootNavigator: true).push(
+                      MaterialPageRoute(
+                          builder: (context) => const RegistrationScreen()),
                     );
                   },
                 );

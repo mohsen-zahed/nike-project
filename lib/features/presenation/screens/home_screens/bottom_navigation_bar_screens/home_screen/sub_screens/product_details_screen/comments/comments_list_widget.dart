@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/repository/icomment_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/comments/bloc/comments_list_bloc.dart';
+import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets/app_exception_widget.dart';
 
@@ -127,6 +129,7 @@ class CommentsListWidget extends StatelessWidget {
           return SliverToBoxAdapter(
             child: AppExceptionWidget(
               errorMessage: state.errorMessage,
+              buttonText: LocaleKeys.try_again.tr(),
               onPressed: () {
                 BlocProvider.of<CommentsListBloc>(context).add(
                   CommentsListStarted(),

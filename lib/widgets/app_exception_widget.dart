@@ -5,11 +5,13 @@ import 'package:nike_project/utils/media_query.dart';
 
 class AppExceptionWidget extends StatelessWidget {
   final String errorMessage;
+  final String buttonText;
   final VoidCallback onPressed;
   const AppExceptionWidget({
     super.key,
     required this.errorMessage,
     required this.onPressed,
+    required this.buttonText,
   });
 
   @override
@@ -25,7 +27,7 @@ class AppExceptionWidget extends StatelessWidget {
           ElevatedButton(
             onPressed: onPressed,
             child: Text(
-              LocaleKeys.try_again.tr(),
+              buttonText,
             ),
           ),
         ],

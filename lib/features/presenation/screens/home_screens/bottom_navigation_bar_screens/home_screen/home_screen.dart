@@ -84,6 +84,7 @@ class HomeScreen extends StatelessWidget {
             } else if (state is HomeFailed) {
               return AppExceptionWidget(
                 errorMessage: state.errorMessage,
+                buttonText: LocaleKeys.try_again.tr(),
                 onPressed: () {
                   BlocProvider.of<HomeBloc>(context).add(HomeRefresh());
                 },
