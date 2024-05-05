@@ -47,7 +47,11 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
   Future<void> loadCartItems(Emitter<CartDataFetchState> emit) async {
     try {
       final result = await iCartRepository.getAll();
-      emit(CartDataFetchSuccess(cartResponseItems: result));
+      if (result.cartItems.isEmpty) {
+        emit(CartEmptyData());
+      } else {
+        emit(CartDataFetchSuccess(cartResponseItems: result));
+      }
     } on DioException catch (e) {
       if (e.type == DioExceptionType.badResponse) {
         emit(

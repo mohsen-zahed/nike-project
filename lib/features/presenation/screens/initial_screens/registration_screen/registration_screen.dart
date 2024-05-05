@@ -13,7 +13,7 @@ import 'package:nike_project/features/presenation/screens/initial_screens/regist
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_registration_button.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
-import 'package:nike_project/widgets/nike_image_widget.dart';
+import 'package:nike_project/widgets_common_in_all_screens/nike_image_widget.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -65,7 +65,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     children: [
                       //* App image...
                       NikeImageWidget(
-                        imagePath: ImagesPaths.lightAppLogo,
+                        imagePath: ImagesPaths.lightAppLogoPath,
                         height: getMediaQueryHeight(context, 0.1),
                       ),
                       SizedBox(height: kDefautlVerticalGap20),

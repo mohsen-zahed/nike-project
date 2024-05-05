@@ -7,7 +7,7 @@ import 'package:nike_project/features/data/repository/icomment_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/comments/bloc/comments_list_bloc.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
-import 'package:nike_project/widgets/app_exception_widget.dart';
+import 'package:nike_project/widgets_common_in_all_screens/app_exception_widget.dart';
 
 class CommentsListWidget extends StatelessWidget {
   final int productId;

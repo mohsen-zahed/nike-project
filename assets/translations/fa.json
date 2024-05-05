@@ -32,5 +32,7 @@
   "item_added_to_cart_successfully": "این محصول موفقانه به سبد خرید شما اضافه شد!",
   "currency_unit_text": "تومان",
   "remove_from_cart": "حذف از سبد خرید",
-  "count_text": "تعداد"
+  "count_text": "تعداد",
+  "login_to_see_cart_items": "برای مشاهده خرید ها، وارد حساب کاربری خود شوید!",
+  "your_cart_is_empty": "هنوز هیچ خریدی به سبد خرید خود ثبت نکرده اید!"
 }

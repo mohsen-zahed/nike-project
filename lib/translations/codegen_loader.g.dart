@@ -48,7 +48,9 @@ class CodegenLoader extends AssetLoader{
   "item_added_to_cart_successfully": "Item successfully added to your cart!",
   "currency_unit_text": "Toman",
   "remove_from_cart": "Remove from Cart",
-  "count_text": "Count"
+  "count_text": "Count",
+  "login_to_see_cart_items": "Login to your account to see your cart items!",
+  "your_cart_is_empty": "You have not added any item to your cart yet!"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -84,7 +86,9 @@ static const Map<String,dynamic> fa = {
   "item_added_to_cart_successfully": "این محصول موفقانه به سبد خرید شما اضافه شد!",
   "currency_unit_text": "تومان",
   "remove_from_cart": "حذف از سبد خرید",
-  "count_text": "تعداد"
+  "count_text": "تعداد",
+  "login_to_see_cart_items": "برای مشاهده خرید ها، وارد حساب کاربری خود شوید!",
+  "your_cart_is_empty": "هنوز هیچ خریدی به سبد خرید خود ثبت نکرده اید!"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -120,7 +124,9 @@ static const Map<String,dynamic> ps = {
   "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!",
   "currency_unit_text": "تومان",
   "remove_from_cart": "د پیرودلو ټوکرۍ څخه لرې کړئ",
-  "count_text": "شمېره"
+  "count_text": "شمېره",
+  "login_to_see_cart_items": "د پیرود لیدلو لپاره ، خپل حساب دننه کړئ!",
+  "your_cart_is_empty": "تاسو لاهم د خپل پلورنځی باسکیټ کې هیڅ پیرود نه دی راجستر کړی!"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

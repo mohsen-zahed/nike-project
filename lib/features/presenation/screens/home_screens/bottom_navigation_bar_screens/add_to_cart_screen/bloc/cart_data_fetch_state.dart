@@ -23,3 +23,5 @@ final class CartDataFetchSuccess extends CartDataFetchState {
 }
 
 final class CartAuthRequested extends CartDataFetchState {}
+
+final class CartEmptyData extends CartDataFetchState {}

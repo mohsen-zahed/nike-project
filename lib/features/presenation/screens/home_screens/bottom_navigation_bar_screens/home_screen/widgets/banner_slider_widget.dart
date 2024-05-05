@@ -3,7 +3,7 @@ import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/models/banner_model.dart';
 import 'package:nike_project/utils/media_query.dart';
-import 'package:nike_project/widgets/custom_cached_network_image.dart';
+import 'package:nike_project/widgets_common_in_all_screens/custom_cached_network_image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class BannerSliderWidget extends StatelessWidget {

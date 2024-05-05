@@ -32,5 +32,7 @@
   "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!",
   "currency_unit_text": "تومان",
   "remove_from_cart": "د پیرودلو ټوکرۍ څخه لرې کړئ",
-  "count_text": "شمېره"
+  "count_text": "شمېره",
+  "login_to_see_cart_items": "د پیرود لیدلو لپاره ، خپل حساب دننه کړئ!",
+  "your_cart_is_empty": "تاسو لاهم د خپل پلورنځی باسکیټ کې هیڅ پیرود نه دی راجستر کړی!"
 }

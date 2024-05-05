@@ -12,8 +12,8 @@ import 'package:nike_project/features/presenation/screens/home_screens/bottom_na
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/widgets/horizontal_list_view_builder.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
-import 'package:nike_project/widgets/app_exception_widget.dart';
-import 'package:nike_project/widgets/nike_image_widget.dart';
+import 'package:nike_project/widgets_common_in_all_screens/app_exception_widget.dart';
+import 'package:nike_project/widgets_common_in_all_screens/nike_image_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,7 +39,7 @@ class HomeScreen extends StatelessWidget {
                   switch (index) {
                     case 0:
                       return NikeImageWidget(
-                        imagePath: ImagesPaths.darkAppLogo,
+                        imagePath: ImagesPaths.darkAppLogoPath,
                         height: getMediaQueryHeight(context, 0.1),
                       );
                     case 2:

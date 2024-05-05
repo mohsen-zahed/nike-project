@@ -22,7 +22,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
           child: CircularProgressIndicator(),
         ),
         errorWidget: (context, url, error) => Image.asset(
-          ImagesPaths.loadingImageError,
+          ImagesPaths.loadingImageErrorPath,
           fit: BoxFit.cover,
         ),
       ),

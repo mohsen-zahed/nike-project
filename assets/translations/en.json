@@ -32,5 +32,7 @@
   "item_added_to_cart_successfully": "Item successfully added to your cart!",
   "currency_unit_text": "Toman",
   "remove_from_cart": "Remove from Cart",
-  "count_text": "Count"
+  "count_text": "Count",
+  "login_to_see_cart_items": "Login to your account to see your cart items!",
+  "your_cart_is_empty": "You have not added any item to your cart yet!"
 }

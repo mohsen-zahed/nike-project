@@ -14,7 +14,7 @@ import 'package:nike_project/features/presenation/screens/home_screens/bottom_na
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
 import 'package:nike_project/utils/media_query.dart';
-import 'package:nike_project/widgets/custom_cached_network_image.dart';
+import 'package:nike_project/widgets_common_in_all_screens/custom_cached_network_image.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final ProductModel product;

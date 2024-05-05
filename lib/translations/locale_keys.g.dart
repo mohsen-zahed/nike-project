@@ -35,5 +35,7 @@ abstract class  LocaleKeys {
   static const currency_unit_text = 'currency_unit_text';
   static const remove_from_cart = 'remove_from_cart';
   static const count_text = 'count_text';
+  static const login_to_see_cart_items = 'login_to_see_cart_items';
+  static const your_cart_is_empty = 'your_cart_is_empty';
 
 }
