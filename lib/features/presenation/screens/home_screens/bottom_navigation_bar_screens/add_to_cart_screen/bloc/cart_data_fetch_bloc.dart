@@ -36,7 +36,7 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
         if (event.authInfoModel == null ||
             event.authInfoModel!.accessToken.isEmpty) {
           emit(CartAuthRequested());
-        //* second condition when user logs back in...
+          //* second condition when user logs back in...
         } else {
           await loadCartItems(emit);
         }

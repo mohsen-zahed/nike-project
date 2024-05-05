@@ -1,6 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class AppExceptionWidget extends StatelessWidget {
