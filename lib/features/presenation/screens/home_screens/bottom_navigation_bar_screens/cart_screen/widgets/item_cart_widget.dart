@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
@@ -12,10 +13,14 @@ import 'package:nike_project/widgets_common_in_all_screens/custom_divider_widget
 class ItemCartWidget extends StatelessWidget {
   final int index;
   final List<CartItemModel> itemProduct;
+  final VoidCallback onRemoveItemTap;
+  // final bool isRemoveButtonClicked;
   const ItemCartWidget({
     super.key,
     required this.itemProduct,
     required this.index,
+    required this.onRemoveItemTap,
+    // required this.isRemoveButtonClicked,
   });
 
   @override
@@ -141,10 +146,15 @@ class ItemCartWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               vertical: getMediaQueryHeight(context, kDefaultPaddingHeight15),
             ),
-            child: Text(
-              LocaleKeys.remove_from_cart.tr(),
-              style: Theme.of(context).textTheme.titleSmall,
-            ),
+            child: itemProduct[index].deleteButtonLoading
+                ? const Center(child: CupertinoActivityIndicator())
+                : GestureDetector(
+                    onTap: onRemoveItemTap,
+                    child: Text(
+                      LocaleKeys.remove_from_cart.tr(),
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                  ),
           ),
         ],
       ),

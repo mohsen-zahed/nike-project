@@ -33,9 +33,7 @@ class CartRepositoryImp extends ICartRepository {
   }
 
   @override
-  Future<void> delete(int cartItemId) {
-    throw UnimplementedError();
-  }
+  Future<void> delete(int cartItemId) => iCartDataSource.delete(cartItemId);
 
   @override
   Future<CartResponseModel> getAll() => iCartDataSource.getAll();

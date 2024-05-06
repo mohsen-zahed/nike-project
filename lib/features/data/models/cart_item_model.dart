@@ -38,6 +38,7 @@ class CartItemModel {
   final ProductModel product;
   final int cartItemId;
   final int count;
+  bool deleteButtonLoading = false;
 
   CartItemModel.fromJson(Map<String, dynamic> json)
       : cartItemId = json['cart_item_id'],

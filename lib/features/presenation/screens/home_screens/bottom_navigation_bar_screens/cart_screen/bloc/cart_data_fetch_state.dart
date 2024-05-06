@@ -1,10 +1,7 @@
 part of 'cart_data_fetch_bloc.dart';
 
-sealed class CartDataFetchState extends Equatable {
+sealed class CartDataFetchState {
   const CartDataFetchState();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class CartDataFetchLoading extends CartDataFetchState {}
@@ -17,9 +14,8 @@ final class CartDataFetchFailed extends CartDataFetchState {
 
 final class CartDataFetchSuccess extends CartDataFetchState {
   final CartResponseModel cartResponseItems;
-  @override
+
   const CartDataFetchSuccess({required this.cartResponseItems});
-  List<Object> get props => [cartResponseItems];
 }
 
 final class CartAuthRequested extends CartDataFetchState {}

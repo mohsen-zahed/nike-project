@@ -33,8 +33,10 @@ class CartDataSourceImp extends ICartDataSource {
   }
 
   @override
-  Future<void> delete(int cartItemId) {
-    throw UnimplementedError();
+  Future<void> delete(int cartItemId) async {
+    await httpClient.post('cart/remove', data: {
+      'cart_item_id': cartItemId,
+    });
   }
 
   @override

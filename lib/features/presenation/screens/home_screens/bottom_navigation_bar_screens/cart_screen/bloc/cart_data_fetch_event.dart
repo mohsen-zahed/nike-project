@@ -21,3 +21,9 @@ final class CartAuthInfoChanged extends CartDataFetchEvent {
 
   const CartAuthInfoChanged({required this.authInfoModel});
 }
+
+final class CartRemoveButtonIsClicked extends CartDataFetchEvent {
+  final int removingItemId;
+
+  const CartRemoveButtonIsClicked({required this.removingItemId});
+}

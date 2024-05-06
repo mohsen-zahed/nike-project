@@ -80,7 +80,17 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     return Column(
                       children: [
                         //* Entire item card...
-                        ItemCartWidget(itemProduct: itemProduct, index: index),
+                        ItemCartWidget(
+                          itemProduct: itemProduct,
+                          index: index,
+                          onRemoveItemTap: () {
+                            cartBloc?.add(
+                              CartRemoveButtonIsClicked(
+                                removingItemId: itemProduct[index].cartItemId,
+                              ),
+                            );
+                          },
+                        ),
                         CustomDividerWidget(
                           space: 1,
                           thickness: 7,

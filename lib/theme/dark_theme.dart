@@ -6,8 +6,8 @@ ThemeData darkTheme() {
   return ThemeData(
     appBarTheme: const AppBarTheme(
       backgroundColor: kSnackbarColor,
-      elevation: 0.3,
       foregroundColor: kWhiteColor,
+      centerTitle: true,
     ),
     scaffoldBackgroundColor: kPrimaryColor,
     colorScheme: const ColorScheme.dark(),

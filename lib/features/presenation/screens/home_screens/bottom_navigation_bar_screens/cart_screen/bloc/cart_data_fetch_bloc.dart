@@ -40,6 +40,35 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
         } else {
           await loadCartItems(emit);
         }
+      } else if (event is CartRemoveButtonIsClicked) {
+        try {
+          if (state is CartDataFetchSuccess) {
+            final successState = (state as CartDataFetchSuccess);
+            final index = successState.cartResponseItems.cartItems.indexWhere(
+                (element) => element.cartItemId == event.removingItemId);
+            successState
+                .cartResponseItems.cartItems[index].deleteButtonLoading = true;
+            emit(CartDataFetchSuccess(
+                cartResponseItems: successState.cartResponseItems));
+          }
+          await Future.delayed(const Duration(seconds: 2));
+          await cartRepository.delete(event.removingItemId);
+          if (state is CartDataFetchSuccess) {
+            final successState = (state as CartDataFetchSuccess);
+            successState.cartResponseItems.cartItems.removeWhere(
+              (element) => element.cartItemId == event.removingItemId,
+            );
+
+            if (successState.cartResponseItems.cartItems.isEmpty) {
+              emit(CartEmptyData());
+            } else {
+              emit(CartDataFetchSuccess(
+                  cartResponseItems: successState.cartResponseItems));
+            }
+          }
+        } catch (e) {
+          throw LocaleKeys.something_went_wrong.tr();
+        }
       }
     });
   }
