@@ -39,5 +39,10 @@
   "refresh_completed_text": "Successfully refreshed",
   "pull_down_to_refresh_text": "Pull down to refresh",
   "refreshing_text": "Refreshing...",
-  "refresh_failed_text": "Couldn't refresh"
+  "refresh_failed_text": "Couldn't refresh",
+  "shopping_details_text": "Shopping details",
+  "total_price_text": "Total price",
+  "shipping_cost_text": "Shipping cost",
+  "payable_price_text": "Payable price",
+  "free_text": "Free"
 }

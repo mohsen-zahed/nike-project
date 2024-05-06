@@ -39,5 +39,10 @@
   "refresh_completed_text": "موفقانه بروزرسانی شد",
   "pull_down_to_refresh_text": "برای بروزرسانی پایین بکشید",
   "refreshing_text": "درحال بروزرسانی...",
-  "refresh_failed_text": "خطا در بروزرسانی"
+  "refresh_failed_text": "خطا در بروزرسانی",
+  "shopping_details_text": "جزئیات خرید",
+  "total_price_text": "قیمت کل",
+  "shipping_cost_text": "هزینه ارسال",
+  "payable_price_text": "هزینه قابل پرداخت",
+  "free_text": "رایگان"
 }

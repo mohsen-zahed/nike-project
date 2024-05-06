@@ -115,10 +115,10 @@ class ItemCartWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: getMediaQueryWidth(context, 0.2),
+                    width: getMediaQueryWidth(context, 0.5),
                     child: Text(
                       itemProduct[index].product.previousPrice.withPriceLabel,
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.end,
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                           color: kCaptionsTextColor,
                           decoration: TextDecoration.lineThrough),
@@ -127,10 +127,11 @@ class ItemCartWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: getMediaQueryWidth(context, 0.2),
+                    width: getMediaQueryWidth(context, 0.5),
                     child: Text(
                       itemProduct[index].product.price.withPriceLabel,
                       style: Theme.of(context).textTheme.titleMedium,
+                      textAlign: TextAlign.end,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),

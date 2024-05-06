@@ -61,8 +61,7 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
             if (successState.cartResponseItems.cartItems.isEmpty) {
               emit(CartEmptyData());
             } else {
-              emit(CartDataFetchSuccess(
-                  cartResponseItems: successState.cartResponseItems));
+              emit(calculateShoppingDetails(successState.cartResponseItems));
             }
           }
         } catch (e) {
@@ -112,5 +111,21 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
         ));
       }
     }
+  }
+
+  CartDataFetchSuccess calculateShoppingDetails(
+      CartResponseModel cartResponseModel) {
+    int totalPrice = 0;
+    int shippingCost = 0;
+    int payablePrice = 0;
+    cartResponseModel.cartItems.forEach((cartItem) {
+      totalPrice += cartItem.product.previousPrice * cartItem.count;
+      payablePrice += cartItem.product.price * cartItem.count;
+    });
+    shippingCost = payablePrice >= 300 ? 0 : 5000;
+    cartResponseModel.totalPrice = totalPrice;
+    cartResponseModel.shippingCost = shippingCost;
+    cartResponseModel.payablePrice = payablePrice;
+    return CartDataFetchSuccess(cartResponseItems: cartResponseModel);
   }
 }

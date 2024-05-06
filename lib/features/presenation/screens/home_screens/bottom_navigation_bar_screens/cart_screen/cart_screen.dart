@@ -4,13 +4,19 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
+import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/bloc/cart_data_fetch_bloc.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/item_cart_widget.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/refresher_indicator_widget.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/two_horizontal_widgets.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/registration_screen.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
+import 'package:nike_project/utils/currency_unit_extension.dart';
+import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets_common_in_all_screens/app_exception_widget.dart';
 import 'package:nike_project/widgets_common_in_all_screens/custom_divider_widget.dart';
 import 'package:nike_project/widgets_common_in_all_screens/empty_screen_widget.dart';
@@ -24,9 +30,19 @@ class AddToCartScreen extends StatefulWidget {
 }
 
 class _AddToCartScreenState extends State<AddToCartScreen> {
-  StreamSubscription? _refreshStream;
-  final RefreshController _refreshController = RefreshController();
   CartDataFetchBloc? cartBloc;
+
+  final RefreshController _refreshController = RefreshController();
+  StreamSubscription? _refreshStream;
+
+  @override
+  void dispose() {
+    super.dispose();
+    AuthRepositoryImpl.authChangeNotifier.removeListener(() {});
+    cartBloc?.close();
+    _refreshStream?.cancel();
+  }
+
   @override
   void initState() {
     super.initState();
@@ -39,14 +55,6 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
       CartAuthInfoChanged(
           authInfoModel: AuthRepositoryImpl.authChangeNotifier.value),
     );
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    AuthRepositoryImpl.authChangeNotifier.removeListener(() {});
-    cartBloc?.close();
-    _refreshStream?.cancel();
   }
 
   @override
@@ -94,35 +102,77 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                             AuthRepositoryImpl.authChangeNotifier.value));
                   },
                   child: ListView.builder(
-                    itemCount: state.cartResponseItems.cartItems.length,
+                    itemCount: state.cartResponseItems.cartItems.length + 1,
                     itemBuilder: (context, index) {
                       var itemProduct = state.cartResponseItems.cartItems;
                       //* Column containing Card with Divider widgets vertically...
-                      return Column(
-                        children: [
-                          //* Entire item card...
-                          ItemCartWidget(
-                            itemProduct: itemProduct,
-                            index: index,
-                            onRemoveItemTap: () {
-                              cartBloc?.add(
-                                CartRemoveButtonIsClicked(
-                                  removingItemId: itemProduct[index].cartItemId,
-                                ),
-                              );
-                            },
-                          ),
-                          CustomDividerWidget(
-                            space: 1,
-                            thickness: 7,
-                            color: Theme.of(context)
-                                .textTheme
-                                .labelSmall!
-                                .color!
-                                .withOpacity(0.2),
-                          ),
-                        ],
-                      );
+                      if (index < state.cartResponseItems.cartItems.length) {
+                        return Column(
+                          children: [
+                            //* Entire item card...
+                            ItemCartWidget(
+                              itemProduct: itemProduct,
+                              index: index,
+                              onRemoveItemTap: () {
+                                cartBloc?.add(
+                                  CartRemoveButtonIsClicked(
+                                    removingItemId:
+                                        itemProduct[index].cartItemId,
+                                  ),
+                                );
+                              },
+                            ),
+                            CustomDividerWidget(
+                              space: 1,
+                              thickness: 7,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .color!
+                                  .withOpacity(0.2),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: getMediaQueryWidth(
+                                    context, kDefaultPaddingWidth20),
+                                vertical: getMediaQueryHeight(
+                                    context, kDefaultPaddingHeight15),
+                              ),
+                              child: Text(
+                                LocaleKeys.shopping_details_text.tr(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(color: kCaptionsTextColor),
+                              ),
+                            ),
+                            TwoHorzontalWidgets(
+                              text: LocaleKeys.total_price_text.tr(),
+                              value:
+                                  '${state.cartResponseItems.totalPrice.separateByComma} ',
+                              isGreyApplied: true,
+                            ),
+                            TwoHorzontalWidgets(
+                              text: LocaleKeys.shipping_cost_text.tr(),
+                              value:
+                                  '${state.cartResponseItems.shippingCost.separateByComma} ',
+                              isGreyApplied: false,
+                            ),
+                            TwoHorzontalWidgets(
+                              text: LocaleKeys.payable_price_text.tr(),
+                              value:
+                                  '${state.cartResponseItems.payablePrice.separateByComma} ',
+                              isGreyApplied: false,
+                            ),
+                          ],
+                        );
+                      }
                     },
                   ),
                 );
@@ -152,46 +202,6 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class RefresherIndicatorWidget extends StatelessWidget {
-  final VoidCallback onRefresh;
-  final Widget child;
-  const RefresherIndicatorWidget({
-    super.key,
-    required RefreshController refreshController,
-    required this.onRefresh,
-    required this.child,
-  }) : _refreshController = refreshController;
-
-  final RefreshController _refreshController;
-
-  @override
-  Widget build(BuildContext context) {
-    return SmartRefresher(
-      controller: _refreshController,
-      onRefresh: onRefresh,
-      header: ClassicHeader(
-        refreshingIcon: const CupertinoActivityIndicator(radius: 8),
-        completeIcon: Icon(
-          CupertinoIcons.check_mark_circled,
-          size: 20,
-          color: Theme.of(context).textTheme.labelSmall!.color,
-        ),
-        releaseIcon: Icon(
-          CupertinoIcons.refresh,
-          size: 20,
-          color: Theme.of(context).textTheme.labelSmall!.color,
-        ),
-        completeText: LocaleKeys.refresh_completed_text.tr(),
-        refreshingText: LocaleKeys.refreshing_text.tr(),
-        idleText: LocaleKeys.pull_down_to_refresh_text.tr(),
-        releaseText: LocaleKeys.release_to_refresh_text.tr(),
-        spacing: 10,
-      ),
-      child: child,
     );
   }
 }

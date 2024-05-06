@@ -30,7 +30,7 @@
   "no_user_existed_error": "د دې کارن-نوم یا بریښنالیک پتې سره هیڅ کارن شتون نلری!",
   "email_username_already_exists_error": "مخکې د دې بریښنالیک پته او کارن نوم سره ثبت شوی!",
   "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!",
-  "currency_unit_text": "تومان",
+  "currency_unit_text": "تومن",
   "remove_from_cart": "د پیرودلو ټوکرۍ څخه لرې کړئ",
   "count_text": "شمېره",
   "login_to_see_cart_items": "د پیرود لیدلو لپاره ، خپل حساب دننه کړئ!",
@@ -39,5 +39,10 @@
   "refresh_completed_text": "په بریالیتوب سره اوسمهالیز شوی",
   "pull_down_to_refresh_text": "د اوسمهالولو لپاره راکښ کړئ",
   "refreshing_text": "تازه کیږی...",
-  "refresh_failed_text": "تېروتنه وسمهالیز کړئ"
+  "refresh_failed_text": "تېروتنه وسمهالیز کړئ",
+  "shopping_details_text": "د پیرود تفصیلات",
+  "total_price_text": "ټول قیمت",
+  "shipping_cost_text": "د سپارنې فیس",
+  "payable_price_text": "د تادیې وړ فیس",
+  "free_text": "پاتې"
 }

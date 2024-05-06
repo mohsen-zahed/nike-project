@@ -55,7 +55,12 @@ class CodegenLoader extends AssetLoader{
   "refresh_completed_text": "Successfully refreshed",
   "pull_down_to_refresh_text": "Pull down to refresh",
   "refreshing_text": "Refreshing...",
-  "refresh_failed_text": "Couldn't refresh"
+  "refresh_failed_text": "Couldn't refresh",
+  "shopping_details_text": "Shopping details",
+  "total_price_text": "Total price",
+  "shipping_cost_text": "Shipping cost",
+  "payable_price_text": "Payable price",
+  "free_text": "Free"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -98,7 +103,12 @@ static const Map<String,dynamic> fa = {
   "refresh_completed_text": "موفقانه بروزرسانی شد",
   "pull_down_to_refresh_text": "برای بروزرسانی پایین بکشید",
   "refreshing_text": "درحال بروزرسانی...",
-  "refresh_failed_text": "خطا در بروزرسانی"
+  "refresh_failed_text": "خطا در بروزرسانی",
+  "shopping_details_text": "جزئیات خرید",
+  "total_price_text": "قیمت کل",
+  "shipping_cost_text": "هزینه ارسال",
+  "payable_price_text": "هزینه قابل پرداخت",
+  "free_text": "رایگان"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -132,7 +142,7 @@ static const Map<String,dynamic> ps = {
   "no_user_existed_error": "د دې کارن-نوم یا بریښنالیک پتې سره هیڅ کارن شتون نلری!",
   "email_username_already_exists_error": "مخکې د دې بریښنالیک پته او کارن نوم سره ثبت شوی!",
   "item_added_to_cart_successfully": "دا محصول په بریالیتوب سره ستاسو د خریدارۍ ټوکرۍ کې اضافه شوی!",
-  "currency_unit_text": "تومان",
+  "currency_unit_text": "تومن",
   "remove_from_cart": "د پیرودلو ټوکرۍ څخه لرې کړئ",
   "count_text": "شمېره",
   "login_to_see_cart_items": "د پیرود لیدلو لپاره ، خپل حساب دننه کړئ!",
@@ -141,7 +151,12 @@ static const Map<String,dynamic> ps = {
   "refresh_completed_text": "په بریالیتوب سره اوسمهالیز شوی",
   "pull_down_to_refresh_text": "د اوسمهالولو لپاره راکښ کړئ",
   "refreshing_text": "تازه کیږی...",
-  "refresh_failed_text": "تېروتنه وسمهالیز کړئ"
+  "refresh_failed_text": "تېروتنه وسمهالیز کړئ",
+  "shopping_details_text": "د پیرود تفصیلات",
+  "total_price_text": "ټول قیمت",
+  "shipping_cost_text": "د سپارنې فیس",
+  "payable_price_text": "د تادیې وړ فیس",
+  "free_text": "پاتې"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

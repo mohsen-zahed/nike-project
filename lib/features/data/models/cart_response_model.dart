@@ -2,9 +2,9 @@ import 'package:nike_project/features/data/models/cart_item_model.dart';
 
 class CartResponseModel {
   final List<CartItemModel> cartItems;
-  final int payablePrice;
-  final int totalPrice;
-  final int shippingCost;
+  int payablePrice;
+  int totalPrice;
+  int shippingCost;
 
   CartResponseModel.fromJson(Map<String, dynamic> json)
       : cartItems = CartItemModel.parseJsonArray(json['cart_items']),

@@ -42,5 +42,10 @@ abstract class  LocaleKeys {
   static const pull_down_to_refresh_text = 'pull_down_to_refresh_text';
   static const refreshing_text = 'refreshing_text';
   static const refresh_failed_text = 'refresh_failed_text';
+  static const shopping_details_text = 'shopping_details_text';
+  static const total_price_text = 'total_price_text';
+  static const shipping_cost_text = 'shipping_cost_text';
+  static const payable_price_text = 'payable_price_text';
+  static const free_text = 'free_text';
 
 }

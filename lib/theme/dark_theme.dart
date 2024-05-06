@@ -70,7 +70,6 @@ ThemeData darkTheme() {
       ),
       labelSmall: const TextStyle(
         color: kCaptionsTextColor,
-        decoration: TextDecoration.lineThrough,
       ),
     ),
     floatingActionButtonTheme: const FloatingActionButtonThemeData(
