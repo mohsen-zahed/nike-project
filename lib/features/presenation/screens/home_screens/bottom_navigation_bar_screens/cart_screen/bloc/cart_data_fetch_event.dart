@@ -9,8 +9,10 @@ sealed class CartDataFetchEvent extends Equatable {
 
 final class CartDataFetchStarted extends CartDataFetchEvent {
   final AuthInfoModel? authInfoModel;
+  final bool isRefreshing;
 
-  const CartDataFetchStarted({required this.authInfoModel});
+  const CartDataFetchStarted(
+      {required this.authInfoModel, this.isRefreshing = false});
 }
 
 //* The below event is when user has already visited the cart_screen but has logged in or out after visiting screen once...

@@ -37,5 +37,10 @@ abstract class  LocaleKeys {
   static const count_text = 'count_text';
   static const login_to_see_cart_items = 'login_to_see_cart_items';
   static const your_cart_is_empty = 'your_cart_is_empty';
+  static const release_to_refresh_text = 'release_to_refresh_text';
+  static const refresh_completed_text = 'refresh_completed_text';
+  static const pull_down_to_refresh_text = 'pull_down_to_refresh_text';
+  static const refreshing_text = 'refreshing_text';
+  static const refresh_failed_text = 'refresh_failed_text';
 
 }

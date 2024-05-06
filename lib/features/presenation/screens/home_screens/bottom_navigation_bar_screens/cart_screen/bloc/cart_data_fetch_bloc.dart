@@ -19,9 +19,8 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
       //* interacted with cart_screen yet...
       if (event is CartDataFetchStarted) {
         final accessToken = AuthRepositoryImpl.authChangeNotifier.value;
-        emit(CartDataFetchLoading());
         if (accessToken != null && accessToken.accessToken.isNotEmpty) {
-          await loadCartItems(emit);
+          await loadCartItems(emit, true);
         } else {
           emit(CartAuthRequested());
         }
@@ -38,7 +37,7 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
           emit(CartAuthRequested());
           //* second condition when user logs back in...
         } else {
-          await loadCartItems(emit);
+          await loadCartItems(emit, false);
         }
       } else if (event is CartRemoveButtonIsClicked) {
         try {
@@ -73,9 +72,13 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
     });
   }
 
-  Future<void> loadCartItems(Emitter<CartDataFetchState> emit) async {
+  Future<void> loadCartItems(
+      Emitter<CartDataFetchState> emit, bool isRefreshing) async {
     try {
       final result = await iCartRepository.getAll();
+      if (!isRefreshing) {
+        emit(CartDataFetchLoading());
+      }
       if (result.cartItems.isEmpty) {
         emit(CartEmptyData());
       } else {

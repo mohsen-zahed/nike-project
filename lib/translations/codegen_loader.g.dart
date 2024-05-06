@@ -50,7 +50,12 @@ class CodegenLoader extends AssetLoader{
   "remove_from_cart": "Remove from Cart",
   "count_text": "Count",
   "login_to_see_cart_items": "Login to your account to see your cart items!",
-  "your_cart_is_empty": "You have not added any item to your cart yet!"
+  "your_cart_is_empty": "You have not added any item to your cart yet!",
+  "release_to_refresh_text": "Release to refresh",
+  "refresh_completed_text": "Successfully refreshed",
+  "pull_down_to_refresh_text": "Pull down to refresh",
+  "refreshing_text": "Refreshing...",
+  "refresh_failed_text": "Couldn't refresh"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -88,7 +93,12 @@ static const Map<String,dynamic> fa = {
   "remove_from_cart": "حذف از سبد خرید",
   "count_text": "تعداد",
   "login_to_see_cart_items": "برای مشاهده خرید ها، وارد حساب کاربری خود شوید!",
-  "your_cart_is_empty": "هنوز هیچ خریدی به سبد خرید خود ثبت نکرده اید!"
+  "your_cart_is_empty": "هنوز هیچ خریدی به سبد خرید خود ثبت نکرده اید!",
+  "release_to_refresh_text": "برای بروزرسانی رها کنید",
+  "refresh_completed_text": "موفقانه بروزرسانی شد",
+  "pull_down_to_refresh_text": "برای بروزرسانی پایین بکشید",
+  "refreshing_text": "درحال بروزرسانی...",
+  "refresh_failed_text": "خطا در بروزرسانی"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -126,7 +136,12 @@ static const Map<String,dynamic> ps = {
   "remove_from_cart": "د پیرودلو ټوکرۍ څخه لرې کړئ",
   "count_text": "شمېره",
   "login_to_see_cart_items": "د پیرود لیدلو لپاره ، خپل حساب دننه کړئ!",
-  "your_cart_is_empty": "تاسو لاهم د خپل پلورنځی باسکیټ کې هیڅ پیرود نه دی راجستر کړی!"
+  "your_cart_is_empty": "تاسو لاهم د خپل پلورنځی باسکیټ کې هیڅ پیرود نه دی راجستر کړی!",
+  "release_to_refresh_text": "د اوسمهالیزولو لپاره وغورځوئ",
+  "refresh_completed_text": "په بریالیتوب سره اوسمهالیز شوی",
+  "pull_down_to_refresh_text": "د اوسمهالولو لپاره راکښ کړئ",
+  "refreshing_text": "تازه کیږی...",
+  "refresh_failed_text": "تېروتنه وسمهالیز کړئ"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

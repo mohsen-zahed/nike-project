@@ -34,5 +34,10 @@
   "remove_from_cart": "Remove from Cart",
   "count_text": "Count",
   "login_to_see_cart_items": "Login to your account to see your cart items!",
-  "your_cart_is_empty": "You have not added any item to your cart yet!"
+  "your_cart_is_empty": "You have not added any item to your cart yet!",
+  "release_to_refresh_text": "Release to refresh",
+  "refresh_completed_text": "Successfully refreshed",
+  "pull_down_to_refresh_text": "Pull down to refresh",
+  "refreshing_text": "Refreshing...",
+  "refresh_failed_text": "Couldn't refresh"
 }

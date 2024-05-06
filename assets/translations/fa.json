@@ -34,5 +34,10 @@
   "remove_from_cart": "حذف از سبد خرید",
   "count_text": "تعداد",
   "login_to_see_cart_items": "برای مشاهده خرید ها، وارد حساب کاربری خود شوید!",
-  "your_cart_is_empty": "هنوز هیچ خریدی به سبد خرید خود ثبت نکرده اید!"
+  "your_cart_is_empty": "هنوز هیچ خریدی به سبد خرید خود ثبت نکرده اید!",
+  "release_to_refresh_text": "برای بروزرسانی رها کنید",
+  "refresh_completed_text": "موفقانه بروزرسانی شد",
+  "pull_down_to_refresh_text": "برای بروزرسانی پایین بکشید",
+  "refreshing_text": "درحال بروزرسانی...",
+  "refresh_failed_text": "خطا در بروزرسانی"
 }
