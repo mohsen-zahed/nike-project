@@ -31,7 +31,7 @@ class TwoHorzontalWidgets extends StatelessWidget {
           Text(text),
           Text.rich(
             TextSpan(
-              text: value,
+              text: '$value ',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     fontWeight: FontWeight.bold,
                     color: isGreyApplied ? kCaptionsTextColor : null,

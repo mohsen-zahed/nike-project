@@ -61,7 +61,14 @@ class CodegenLoader extends AssetLoader{
   "shipping_cost_text": "Shipping cost",
   "payable_price_text": "Payable price",
   "free_text": "Free",
-  "complete_payment_text": "Complete payment"
+  "complete_payment_text": "Complete payment",
+  "choosing_client_and_payment_text": "Choose client and payment method",
+  "name_and_last_name_text": "Name and Last name",
+  "postal_code_text": "Postal cod",
+  "phone_number_text": "Phone numbe",
+  "client_address_text": "Client's address",
+  "pay_in_place_text": "Payment on Delivery",
+  "online_payment_text": "Online payment"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -110,7 +117,14 @@ static const Map<String,dynamic> fa = {
   "shipping_cost_text": "هزینه ارسال",
   "payable_price_text": "هزینه قابل پرداخت",
   "free_text": "رایگان",
-  "complete_payment_text": "اتمام پرداخت"
+  "complete_payment_text": "اتمام پرداخت",
+  "choosing_client_and_payment_text": "انتخاب تحویل گیرنده و نحوه پرداخت",
+  "name_and_last_name_text": "نام و نام خانوادگی",
+  "postal_code_text": "کد پستی",
+  "phone_number_text": "شماره تماس",
+  "client_address_text": "آدرس تحویل گیرنده",
+  "pay_in_place_text": "پرداخت هنگام تحویل کالا",
+  "online_payment_text": "پرداخت اینترنتی"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -159,7 +173,14 @@ static const Map<String,dynamic> ps = {
   "shipping_cost_text": "د سپارنې فیس",
   "payable_price_text": "د تادیې وړ فیس",
   "free_text": "پاتې",
-  "complete_payment_text": "د پای تادیات"
+  "complete_payment_text": "د پای تادیات",
+  "choosing_client_and_payment_text": "د ترلاسه کونکی غوره کول او څنګه تادیه کول",
+  "name_and_last_name_text": "نوم او نوم نوم",
+  "postal_code_text": "زیپ شفر",
+  "phone_number_text": "د اړیکو شمیره",
+  "client_address_text": "د ترلاسونی د سپارلو پته",
+  "pay_in_place_text": "د توکو رسولو پر مهال تادیه",
+  "online_payment_text": "انټرنیټ تادیه"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

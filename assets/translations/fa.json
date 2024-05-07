@@ -45,5 +45,12 @@
   "shipping_cost_text": "هزینه ارسال",
   "payable_price_text": "هزینه قابل پرداخت",
   "free_text": "رایگان",
-  "complete_payment_text": "اتمام پرداخت"
+  "complete_payment_text": "اتمام پرداخت",
+  "choosing_client_and_payment_text": "انتخاب تحویل گیرنده و نحوه پرداخت",
+  "name_and_last_name_text": "نام و نام خانوادگی",
+  "postal_code_text": "کد پستی",
+  "phone_number_text": "شماره تماس",
+  "client_address_text": "آدرس تحویل گیرنده",
+  "pay_in_place_text": "پرداخت هنگام تحویل کالا",
+  "online_payment_text": "پرداخت اینترنتی"
 }

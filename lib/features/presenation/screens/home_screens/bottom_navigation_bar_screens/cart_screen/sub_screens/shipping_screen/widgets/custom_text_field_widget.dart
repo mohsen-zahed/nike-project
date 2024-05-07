@@ -1,0 +1,57 @@
+import 'package:flutter/material.dart';
+import 'package:nike_project/core/constants/numeric_contants.dart';
+import 'package:nike_project/utils/media_query.dart';
+
+class CustomTextFieldForm extends StatelessWidget {
+  final String hintText;
+  final TextEditingController controller;
+  final FocusNode focusNode;
+  final Function(String) onSubmitted;
+  final TextInputAction textInputAction;
+  const CustomTextFieldForm({
+    super.key,
+    required this.hintText,
+    required this.controller,
+    required this.focusNode,
+    required this.onSubmitted,
+    required this.textInputAction,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20)),
+      child: TextField(
+        textInputAction: textInputAction,
+        onSubmitted: onSubmitted,
+        focusNode: focusNode,
+        controller: controller,
+        decoration: InputDecoration(
+          hintText: hintText,
+          enabledBorder: OutlineInputBorder(
+            borderRadius:
+                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+            borderSide: BorderSide(
+                color: Theme.of(context)
+                    .textTheme
+                    .labelSmall!
+                    .color!
+                    .withOpacity(0.5)),
+          ),
+          labelText: hintText,
+          border: OutlineInputBorder(
+            borderRadius:
+                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius:
+                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+            borderSide: BorderSide(
+                color: Theme.of(context).textTheme.labelSmall!.color!),
+          ),
+        ),
+      ),
+    );
+  }
+}

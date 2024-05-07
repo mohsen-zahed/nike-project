@@ -48,5 +48,12 @@ abstract class  LocaleKeys {
   static const payable_price_text = 'payable_price_text';
   static const free_text = 'free_text';
   static const complete_payment_text = 'complete_payment_text';
+  static const choosing_client_and_payment_text = 'choosing_client_and_payment_text';
+  static const name_and_last_name_text = 'name_and_last_name_text';
+  static const postal_code_text = 'postal_code_text';
+  static const phone_number_text = 'phone_number_text';
+  static const client_address_text = 'client_address_text';
+  static const pay_in_place_text = 'pay_in_place_text';
+  static const online_payment_text = 'online_payment_text';
 
 }

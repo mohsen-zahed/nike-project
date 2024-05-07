@@ -5,6 +5,9 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 ThemeData darkTheme() {
   return ThemeData(
     appBarTheme: AppBarTheme(
+      iconTheme: const IconThemeData(
+        color: kWhiteColor,
+      ),
       backgroundColor: kSnackbarColor,
       foregroundColor: kWhiteColor,
       centerTitle: true,
@@ -64,7 +67,9 @@ ThemeData darkTheme() {
       bodySmall: const TextStyle(
         color: kCaptionsTextColor,
       ),
-      labelLarge: const TextStyle(),
+      labelLarge: const TextStyle(
+        color: kPrimaryTextColor,
+      ),
       labelMedium: TextStyle(
         color: kGreyColorShade400,
       ),

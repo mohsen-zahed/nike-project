@@ -45,5 +45,12 @@
   "shipping_cost_text": "د سپارنې فیس",
   "payable_price_text": "د تادیې وړ فیس",
   "free_text": "پاتې",
-  "complete_payment_text": "د پای تادیات"
+  "complete_payment_text": "د پای تادیات",
+  "choosing_client_and_payment_text": "د ترلاسه کونکی غوره کول او څنګه تادیه کول",
+  "name_and_last_name_text": "نوم او نوم نوم",
+  "postal_code_text": "زیپ شفر",
+  "phone_number_text": "د اړیکو شمیره",
+  "client_address_text": "د ترلاسونی د سپارلو پته",
+  "pay_in_place_text": "د توکو رسولو پر مهال تادیه",
+  "online_payment_text": "انټرنیټ تادیه"
 }

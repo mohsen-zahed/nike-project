@@ -45,5 +45,12 @@
   "shipping_cost_text": "Shipping cost",
   "payable_price_text": "Payable price",
   "free_text": "Free",
-  "complete_payment_text": "Complete payment"
+  "complete_payment_text": "Complete payment",
+  "choosing_client_and_payment_text": "Choose client and payment method",
+  "name_and_last_name_text": "Name and Last name",
+  "postal_code_text": "Postal cod",
+  "phone_number_text": "Phone numbe",
+  "client_address_text": "Client's address",
+  "pay_in_place_text": "Payment on Delivery",
+  "online_payment_text": "Online payment"
 }
