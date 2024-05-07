@@ -60,7 +60,8 @@ class CodegenLoader extends AssetLoader{
   "total_price_text": "Total price",
   "shipping_cost_text": "Shipping cost",
   "payable_price_text": "Payable price",
-  "free_text": "Free"
+  "free_text": "Free",
+  "complete_payment_text": "Complete payment"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -108,7 +109,8 @@ static const Map<String,dynamic> fa = {
   "total_price_text": "قیمت کل",
   "shipping_cost_text": "هزینه ارسال",
   "payable_price_text": "هزینه قابل پرداخت",
-  "free_text": "رایگان"
+  "free_text": "رایگان",
+  "complete_payment_text": "اتمام پرداخت"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -156,7 +158,8 @@ static const Map<String,dynamic> ps = {
   "total_price_text": "ټول قیمت",
   "shipping_cost_text": "د سپارنې فیس",
   "payable_price_text": "د تادیې وړ فیس",
-  "free_text": "پاتې"
+  "free_text": "پاتې",
+  "complete_payment_text": "د پای تادیات"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

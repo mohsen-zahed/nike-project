@@ -44,5 +44,6 @@
   "total_price_text": "قیمت کل",
   "shipping_cost_text": "هزینه ارسال",
   "payable_price_text": "هزینه قابل پرداخت",
-  "free_text": "رایگان"
+  "free_text": "رایگان",
+  "complete_payment_text": "اتمام پرداخت"
 }

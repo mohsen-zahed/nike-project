@@ -10,7 +10,7 @@ import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/bloc/product_add_to_cart_bloc.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/comments/comments_list_widget.dart';
-import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/widgets/custom_floating_action_button.dart';
+import 'package:nike_project/widgets_common_in_all_screens/custom_floating_action_button.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
 import 'package:nike_project/utils/media_query.dart';

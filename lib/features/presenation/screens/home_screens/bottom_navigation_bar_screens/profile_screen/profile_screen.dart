@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () {
                     if (isUserAthenticated) {
-                      cartRepository.cartItemCountNotifier.value = 0;
+                      CartRepositoryImp.cartItemCountNotifier.value = 0;
                       authRepository.logout();
                     } else {
                       Navigator.of(context, rootNavigator: true).push(
@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                   onPressed: () async {
                     await authRepository.refreshToken();
                   },
-                  child: Text(
+                  child: const Text(
                     'Refresh token',
                   ),
                 ),

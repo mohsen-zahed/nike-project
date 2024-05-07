@@ -44,5 +44,6 @@
   "total_price_text": "Total price",
   "shipping_cost_text": "Shipping cost",
   "payable_price_text": "Payable price",
-  "free_text": "Free"
+  "free_text": "Free",
+  "complete_payment_text": "Complete payment"
 }

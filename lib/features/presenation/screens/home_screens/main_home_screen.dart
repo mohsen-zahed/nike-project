@@ -92,7 +92,7 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
                   Positioned(
                     right: -8,
                     child: ValueListenableBuilder<int>(
-                      valueListenable: cartRepository.cartItemCountNotifier,
+                      valueListenable: CartRepositoryImp.cartItemCountNotifier,
                       builder: (context, value, child) => CartBadge(
                         value: value,
                         selectedHomeIndex: selectedHomeIndex,

@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
-import 'package:nike_project/features/data/models/auth_info_model.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/bloc/cart_data_fetch_bloc.dart';
@@ -20,6 +19,7 @@ import 'package:nike_project/utils/currency_unit_extension.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets_common_in_all_screens/app_exception_widget.dart';
 import 'package:nike_project/widgets_common_in_all_screens/custom_divider_widget.dart';
+import 'package:nike_project/widgets_common_in_all_screens/custom_floating_action_button.dart';
 import 'package:nike_project/widgets_common_in_all_screens/empty_screen_widget.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -58,30 +58,49 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
     );
   }
 
+  bool showPaymentButton = false;
+
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CartDataFetchBloc>(
-      create: (context) {
-        final bloc = CartDataFetchBloc(cartRepository);
-        cartBloc = bloc;
-        _refreshStream = cartBloc?.stream.listen((state) {
-          if (_refreshController.isRefresh) {
-            if (state is CartDataFetchSuccess) {
-              _refreshController.refreshCompleted();
-            }
-          }
-        });
-        bloc.add(CartDataFetchStarted(
-            authInfoModel: AuthRepositoryImpl.authChangeNotifier.value));
-        return bloc;
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            LocaleKeys.cart_text.tr(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          LocaleKeys.cart_text.tr(),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: Visibility(
+        visible: showPaymentButton,
+        child: CustomFloatingActionButton(
+          onPressed: () {},
+          widget: Text(
+            LocaleKeys.complete_payment_text.tr(),
+            style: Theme.of(context)
+                .textTheme
+                .titleMedium!
+                .copyWith(color: kWhiteColor),
           ),
         ),
-        body: SafeArea(
+      ),
+      body: BlocProvider<CartDataFetchBloc>(
+        create: (context) {
+          final bloc = CartDataFetchBloc(cartRepository);
+          cartBloc = bloc;
+          _refreshStream = cartBloc?.stream.listen((state) {
+            setState(() {
+              showPaymentButton = state is CartDataFetchSuccess;
+            });
+            if (_refreshController.isRefresh) {
+              if (state is CartDataFetchSuccess) {
+                _refreshController.refreshCompleted();
+              }
+            }
+          });
+          bloc.add(CartDataFetchStarted(
+              authInfoModel: AuthRepositoryImpl.authChangeNotifier.value));
+          return bloc;
+        },
+        child: SafeArea(
           child: BlocBuilder<CartDataFetchBloc, CartDataFetchState>(
             builder: (context, state) {
               if (state is CartDataFetchLoading) {

@@ -44,5 +44,6 @@
   "total_price_text": "ټول قیمت",
   "shipping_cost_text": "د سپارنې فیس",
   "payable_price_text": "د تادیې وړ فیس",
-  "free_text": "پاتې"
+  "free_text": "پاتې",
+  "complete_payment_text": "د پای تادیات"
 }

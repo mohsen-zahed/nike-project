@@ -47,5 +47,6 @@ abstract class  LocaleKeys {
   static const shipping_cost_text = 'shipping_cost_text';
   static const payable_price_text = 'payable_price_text';
   static const free_text = 'free_text';
+  static const complete_payment_text = 'complete_payment_text';
 
 }

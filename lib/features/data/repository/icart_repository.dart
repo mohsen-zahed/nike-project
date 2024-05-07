@@ -17,7 +17,7 @@ abstract class ICartRepository {
 
 class CartRepositoryImp extends ICartRepository {
   final ICartDataSource iCartDataSource;
-  ValueNotifier<int> cartItemCountNotifier = ValueNotifier(0);
+  static ValueNotifier<int> cartItemCountNotifier = ValueNotifier(0);
 
   CartRepositoryImp({required this.iCartDataSource});
   @override
