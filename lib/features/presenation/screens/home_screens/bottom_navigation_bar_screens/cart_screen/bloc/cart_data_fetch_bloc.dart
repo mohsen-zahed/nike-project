@@ -53,6 +53,7 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
           }
           await Future.delayed(const Duration(seconds: 2));
           await cartRepository.delete(event.removingItemId);
+          await cartRepository.count();
           if (state is CartDataFetchSuccess) {
             final successState = (state as CartDataFetchSuccess);
             successState.cartResponseItems.cartItems.removeWhere(
@@ -92,6 +93,7 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
                 ? ++successState.cartResponseItems.cartItems[index].count
                 : --successState.cartResponseItems.cartItems[index].count;
             await cartRepository.changeCount(cartItemId, newCount);
+            await cartRepository.count();
             //* After coming the response back, we check our list for coming updates...
             //* The first index that we reach in our list is the item that its count should update...
             successState.cartResponseItems.cartItems

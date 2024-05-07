@@ -6,6 +6,7 @@ import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
+import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/bloc/auth_bloc.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/account_text_and_login_signup.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/widgets/custom_email_text_field.dart';
@@ -34,7 +35,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: SingleChildScrollView(
         child: BlocProvider<AuthBloc>(
           create: (context) {
-            final bloc = AuthBloc(authRepository: authRepository);
+            final bloc = AuthBloc(
+              iCartRepository: cartRepository,
+              authRepository: authRepository,
+            );
             bloc.add(AuthStarted());
             bloc.stream.forEach((blocState) {
               if (blocState is AuthSuccess) {

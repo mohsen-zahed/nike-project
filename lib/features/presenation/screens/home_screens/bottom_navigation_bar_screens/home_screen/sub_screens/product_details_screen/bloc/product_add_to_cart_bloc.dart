@@ -19,6 +19,7 @@ class ProductAddToCartBloc
           emit(ProductAddToCartLoading());
 
           final result = await iCartRepository.add(event.productId);
+          await iCartRepository.count();
           emit(ProductAddToCartSuccess());
         } on DioException catch (e) {
           if (e.type == DioExceptionType.badResponse) {

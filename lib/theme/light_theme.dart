@@ -54,7 +54,7 @@ ThemeData lightTheme() {
         color: kPrimaryTextColor,
       ),
       titleSmall: TextStyle(
-        color: kBlueColor,
+        color: kSecondaryColor,
       ),
       bodyLarge: TextStyle(
         color: kCaptionsTextColor,

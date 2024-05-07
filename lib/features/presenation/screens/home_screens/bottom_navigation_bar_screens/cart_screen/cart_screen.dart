@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
+import 'package:nike_project/features/data/models/auth_info_model.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/bloc/cart_data_fetch_bloc.dart';
@@ -97,9 +98,11 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                 return RefresherIndicatorWidget(
                   refreshController: _refreshController,
                   onRefresh: () {
-                    cartBloc?.add(CartDataFetchStarted(
-                        authInfoModel:
-                            AuthRepositoryImpl.authChangeNotifier.value));
+                    cartBloc?.add(
+                      CartDataFetchStarted(
+                          authInfoModel:
+                              AuthRepositoryImpl.authChangeNotifier.value),
+                    );
                   },
                   child: ListView.builder(
                     itemCount: state.cartResponseItems.cartItems.length + 1,

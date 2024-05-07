@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
+import 'package:nike_project/features/data/repository/icart_repository.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -8,7 +9,11 @@ part 'auth_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   bool isLoginMode;
   final IAuthRepository authRepository;
-  AuthBloc({this.isLoginMode = true, required this.authRepository})
+  final ICartRepository iCartRepository;
+  AuthBloc(
+      {required this.iCartRepository,
+      this.isLoginMode = true,
+      required this.authRepository})
       : super(const AuthInitial(true)) {
     on<AuthEvent>((event, emit) async {
       try {
@@ -16,9 +21,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(AuthLoading(isLoginMode));
           if (isLoginMode) {
             await authRepository.login(event.username, event.password);
+            await iCartRepository.count();
             emit(AuthSuccess(isLoginMode));
           } else {
             await authRepository.register(event.username, event.password);
+            await iCartRepository.count();
             emit(AuthSuccess(isLoginMode));
           }
         } else if (event is AuthModeChangeIsClicked) {

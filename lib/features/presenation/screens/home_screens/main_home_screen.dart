@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nike_project/core/constants/colors.dart';
+import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/cart_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/home_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/profile_screen/profile_screen.dart';
@@ -18,6 +20,12 @@ class MainHomeScreen extends StatefulWidget {
 }
 
 class _MainHomeScreenState extends State<MainHomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    cartRepository.count();
+  }
+
   int selectedHomeIndex = homeIndex;
   final List<int> _history = [];
   final GlobalKey<NavigatorState> _homeKey = GlobalKey();
@@ -75,8 +83,23 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               label: LocaleKeys.home_text.tr(),
             ),
             BottomNavigationBarItem(
-              icon: const Icon(
-                CupertinoIcons.cart,
+              icon: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  const Icon(
+                    CupertinoIcons.cart,
+                  ),
+                  Positioned(
+                    right: -8,
+                    child: ValueListenableBuilder<int>(
+                      valueListenable: cartRepository.cartItemCountNotifier,
+                      builder: (context, value, child) => CartBadge(
+                        value: value,
+                        selectedHomeIndex: selectedHomeIndex,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               label: LocaleKeys.cart_text.tr(),
             ),
@@ -104,5 +127,41 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               ),
             ),
           );
+  }
+}
+
+class CartBadge extends StatelessWidget {
+  const CartBadge({
+    super.key,
+    required this.selectedHomeIndex,
+    required this.value,
+  });
+
+  final int selectedHomeIndex;
+  final int value;
+
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      visible: value > 0,
+      child: Container(
+        width: 12,
+        decoration: BoxDecoration(
+          color: cartIndex != selectedHomeIndex
+              ? kGreyColorShade600
+              : Theme.of(context).textTheme.titleSmall!.color,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Center(
+          child: Text(
+            '$value',
+            style: Theme.of(context)
+                .textTheme
+                .labelSmall!
+                .copyWith(color: kWhiteColor),
+          ),
+        ),
+      ),
+    );
   }
 }

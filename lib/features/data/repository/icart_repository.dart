@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:nike_project/features/data/models/add_to_cart_response_model.dart';
 import 'package:nike_project/features/data/models/cart_response_model.dart';
 import 'package:nike_project/features/data/source/icart_data_source.dart';
@@ -16,6 +17,7 @@ abstract class ICartRepository {
 
 class CartRepositoryImp extends ICartRepository {
   final ICartDataSource iCartDataSource;
+  ValueNotifier<int> cartItemCountNotifier = ValueNotifier(0);
 
   CartRepositoryImp({required this.iCartDataSource});
   @override
@@ -27,8 +29,10 @@ class CartRepositoryImp extends ICartRepository {
       iCartDataSource.changeCount(cartItemId, count);
 
   @override
-  Future<int> count() {
-    throw UnimplementedError();
+  Future<int> count() async {
+    final count = await iCartDataSource.count();
+    cartItemCountNotifier.value = count;
+    return count;
   }
 
   @override

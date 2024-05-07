@@ -32,8 +32,9 @@ class CartDataSourceImp extends ICartDataSource {
   }
 
   @override
-  Future<int> count() {
-    throw UnimplementedError();
+  Future<int> count() async {
+    final response = await httpClient.get('cart/count');
+    return response.data['count'];
   }
 
   @override

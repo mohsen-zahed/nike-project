@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/features/data/models/auth_info_model.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
+import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/registration_screen.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 
@@ -28,13 +29,15 @@ class ProfileScreen extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    isUserAthenticated
-                        ? authRepository.logout()
-                        : Navigator.of(context, rootNavigator: true).push(
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const RegistrationScreen()),
-                          );
+                    if (isUserAthenticated) {
+                      cartRepository.cartItemCountNotifier.value = 0;
+                      authRepository.logout();
+                    } else {
+                      Navigator.of(context, rootNavigator: true).push(
+                        MaterialPageRoute(
+                            builder: (context) => const RegistrationScreen()),
+                      );
+                    }
                   },
                   child: Text(
                     isUserAthenticated
