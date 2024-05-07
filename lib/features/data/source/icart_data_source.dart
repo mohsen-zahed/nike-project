@@ -23,8 +23,12 @@ class CartDataSourceImp extends ICartDataSource {
   }
 
   @override
-  Future<AddToCartResponseModel> changeCount(int cartItemId, int count) {
-    throw UnimplementedError();
+  Future<AddToCartResponseModel> changeCount(int cartItemId, int count) async {
+    final response = await httpClient.post('cart/changeCount', data: {
+      "cart_item_id": cartItemId,
+      "count": count,
+    });
+    return AddToCartResponseModel.fromJson(response.data);
   }
 
   @override

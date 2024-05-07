@@ -29,3 +29,19 @@ final class CartRemoveButtonIsClicked extends CartDataFetchEvent {
 
   const CartRemoveButtonIsClicked({required this.removingItemId});
 }
+
+final class IncreaseButtonIsClicked extends CartDataFetchEvent {
+  final int cartItemId;
+
+  const IncreaseButtonIsClicked({required this.cartItemId});
+  @override
+  List<Object> get props => [cartItemId];
+}
+
+final class DecreaseButtonIsClicked extends CartDataFetchEvent {
+  final int cartItemId;
+
+  const DecreaseButtonIsClicked({required this.cartItemId});
+  @override
+  List<Object> get props => [cartItemId];
+}

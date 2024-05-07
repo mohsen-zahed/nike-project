@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/features/data/models/auth_info_model.dart';
 import 'package:nike_project/features/data/models/cart_response_model.dart';
@@ -66,6 +67,43 @@ class CartDataFetchBloc extends Bloc<CartDataFetchEvent, CartDataFetchState> {
           }
         } catch (e) {
           throw LocaleKeys.something_went_wrong.tr();
+        }
+      } else if (event is IncreaseButtonIsClicked ||
+          event is DecreaseButtonIsClicked) {
+        try {
+          if (state is CartDataFetchSuccess) {
+            final successState = (state as CartDataFetchSuccess);
+            int cartItemId = 0;
+            if (event is IncreaseButtonIsClicked) {
+              cartItemId = event.cartItemId;
+            } else if (event is DecreaseButtonIsClicked) {
+              cartItemId = event.cartItemId;
+            }
+            //* Here we specify the index of cartItem that has been pressed by user...
+            final index = successState.cartResponseItems.cartItems
+                .indexWhere((element) => element.cartItemId == cartItemId);
+            successState.cartResponseItems.cartItems[index].countLoading = true;
+            //* Updating the state to show user a loading widget on UI...
+            emit(CartDataFetchSuccess(
+                cartResponseItems: successState.cartResponseItems));
+            //* Increasing or Deacreasing the count value according to event...
+            //* The count value is changed first and then the new value will be sent to server...
+            final newCount = event is IncreaseButtonIsClicked
+                ? ++successState.cartResponseItems.cartItems[index].count
+                : --successState.cartResponseItems.cartItems[index].count;
+            await cartRepository.changeCount(cartItemId, newCount);
+            //* After coming the response back, we check our list for coming updates...
+            //* The first index that we reach in our list is the item that its count should update...
+            successState.cartResponseItems.cartItems
+                .firstWhere((element) => element.cartItemId == cartItemId)
+              ..count = newCount
+              ..countLoading = false;
+            //* Finaly updating UI to latest updates...
+            emit(CartDataFetchSuccess(
+                cartResponseItems: successState.cartResponseItems));
+          }
+        } catch (e) {
+          debugPrint(e.toString());
         }
       }
     });

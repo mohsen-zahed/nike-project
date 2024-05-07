@@ -37,8 +37,9 @@ import 'package:nike_project/features/data/models/product_model.dart';
 class CartItemModel {
   final ProductModel product;
   final int cartItemId;
-  final int count;
+  int count;
   bool deleteButtonLoading = false;
+  bool countLoading = false;
 
   CartItemModel.fromJson(Map<String, dynamic> json)
       : cartItemId = json['cart_item_id'],

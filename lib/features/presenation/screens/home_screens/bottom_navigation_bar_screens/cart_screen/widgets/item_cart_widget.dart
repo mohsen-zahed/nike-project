@@ -14,13 +14,17 @@ class ItemCartWidget extends StatelessWidget {
   final int index;
   final List<CartItemModel> itemProduct;
   final VoidCallback onRemoveItemTap;
-  // final bool isRemoveButtonClicked;
+  final VoidCallback onIncreaseButtonTap;
+  final VoidCallback onDecreaseButtonTap;
+  final Widget countWidget;
   const ItemCartWidget({
     super.key,
     required this.itemProduct,
     required this.index,
     required this.onRemoveItemTap,
-    // required this.isRemoveButtonClicked,
+    required this.onIncreaseButtonTap,
+    required this.onDecreaseButtonTap,
+    required this.countWidget,
   });
 
   @override
@@ -73,16 +77,21 @@ class ItemCartWidget extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(
-                            color:
-                                Theme.of(context).textTheme.labelSmall!.color!,
+                      GestureDetector(
+                        onTap: onIncreaseButtonTap,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .color!,
+                            ),
                           ),
-                        ),
-                        child: const Center(
-                          child: Icon(Icons.add),
+                          child: const Center(
+                            child: Icon(Icons.add),
+                          ),
                         ),
                       ),
                       Padding(
@@ -90,21 +99,23 @@ class ItemCartWidget extends StatelessWidget {
                           horizontal: getMediaQueryWidth(
                               context, kDefaultPaddingWidth10),
                         ),
-                        child: Text(
-                          itemProduct[index].count.toString(),
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
+                        child: countWidget,
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          border: Border.all(
-                            color:
-                                Theme.of(context).textTheme.labelSmall!.color!,
+                      GestureDetector(
+                        onTap: onDecreaseButtonTap,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            border: Border.all(
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .color!,
+                            ),
                           ),
-                        ),
-                        child: const Center(
-                          child: Icon(Icons.remove),
+                          child: const Center(
+                            child: Icon(Icons.remove),
+                          ),
                         ),
                       ),
                     ],

@@ -111,6 +111,27 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                           children: [
                             //* Entire item card...
                             ItemCartWidget(
+                              countWidget: itemProduct[index].countLoading
+                                  ? const CupertinoActivityIndicator()
+                                  : Text(
+                                      itemProduct[index].count.toString(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge,
+                                    ),
+                              onIncreaseButtonTap: () {
+                                cartBloc?.add(IncreaseButtonIsClicked(
+                                    cartItemId: itemProduct[index].cartItemId));
+                              },
+                              onDecreaseButtonTap: () {
+                                if (itemProduct[index].count > 1) {
+                                  cartBloc?.add(
+                                    DecreaseButtonIsClicked(
+                                        cartItemId:
+                                            itemProduct[index].cartItemId),
+                                  );
+                                }
+                              },
                               itemProduct: itemProduct,
                               index: index,
                               onRemoveItemTap: () {
