@@ -47,7 +47,6 @@
   "free_text": "رایگان",
   "complete_payment_text": "اتمام پرداخت",
   "choosing_client_and_payment_text": "انتخاب تحویل گیرنده و نحوه پرداخت",
-  "name_and_last_name_text": "نام و نام خانوادگی",
   "postal_code_text": "کد پستی",
   "phone_number_text": "شماره تماس",
   "client_address_text": "آدرس تحویل گیرنده",
@@ -59,9 +58,12 @@
   "paid_text": "پرداخت شده",
   "payment_was_made_successfully_text": "پرداخت با موفقیت انجام شد!",
   "back_to_home": "بازگشت به صفحه اصلی",
-  "name_last_name_required_text": "نام و نام خانوادگی الزامی میباشند",
   "posta_code_required_error_text": "کد پستی الزامی میباشد",
   "phone_number_required_error_text": "شماره تماس الزامی میباشد",
   "client_address_required_error_text": "آدرس تحویل گیرنده الزامی میباشد",
-  "client_information_text": "مشخصات تحویل گیرنده"
+  "client_information_text": "مشخصات تحویل گیرنده",
+  "first_name_text": "نام",
+  "first_name_required_text": "نام الزامی میباشد",
+  "last_name_text": "نام خانوادگی",
+  "last_name_required_text": "نام خانوادگی الزامی میباشد"
 }

@@ -49,7 +49,6 @@ abstract class  LocaleKeys {
   static const free_text = 'free_text';
   static const complete_payment_text = 'complete_payment_text';
   static const choosing_client_and_payment_text = 'choosing_client_and_payment_text';
-  static const name_and_last_name_text = 'name_and_last_name_text';
   static const postal_code_text = 'postal_code_text';
   static const phone_number_text = 'phone_number_text';
   static const client_address_text = 'client_address_text';
@@ -61,10 +60,13 @@ abstract class  LocaleKeys {
   static const paid_text = 'paid_text';
   static const payment_was_made_successfully_text = 'payment_was_made_successfully_text';
   static const back_to_home = 'back_to_home';
-  static const name_last_name_required_text = 'name_last_name_required_text';
   static const posta_code_required_error_text = 'posta_code_required_error_text';
   static const phone_number_required_error_text = 'phone_number_required_error_text';
   static const client_address_required_error_text = 'client_address_required_error_text';
   static const client_information_text = 'client_information_text';
+  static const first_name_text = 'first_name_text';
+  static const first_name_required_text = 'first_name_required_text';
+  static const last_name_text = 'last_name_text';
+  static const last_name_required_text = 'last_name_required_text';
 
 }

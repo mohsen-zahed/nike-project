@@ -63,7 +63,6 @@ class CodegenLoader extends AssetLoader{
   "free_text": "Free",
   "complete_payment_text": "Complete payment",
   "choosing_client_and_payment_text": "Choose client and payment method",
-  "name_and_last_name_text": "Name and Last name",
   "postal_code_text": "Postal cod",
   "phone_number_text": "Phone numbe",
   "client_address_text": "Client's address",
@@ -75,11 +74,14 @@ class CodegenLoader extends AssetLoader{
   "paid_text": "Paid",
   "payment_was_made_successfully_text": "Payment was made successfully!",
   "back_to_home": "Back to home",
-  "name_last_name_required_text": "Name&Last name are required",
   "posta_code_required_error_text": "Postal code is required",
   "phone_number_required_error_text": "Phone number is required",
   "client_address_required_error_text": "Client's address is required",
-  "client_information_text": "Client's information"
+  "client_information_text": "Client's information",
+  "first_name_text": "First name",
+  "first_name_required_text": "First name is required",
+  "last_name_text": "Last name",
+  "last_name_required_text": "Last name is require"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -130,7 +132,6 @@ static const Map<String,dynamic> fa = {
   "free_text": "رایگان",
   "complete_payment_text": "اتمام پرداخت",
   "choosing_client_and_payment_text": "انتخاب تحویل گیرنده و نحوه پرداخت",
-  "name_and_last_name_text": "نام و نام خانوادگی",
   "postal_code_text": "کد پستی",
   "phone_number_text": "شماره تماس",
   "client_address_text": "آدرس تحویل گیرنده",
@@ -142,11 +143,14 @@ static const Map<String,dynamic> fa = {
   "paid_text": "پرداخت شده",
   "payment_was_made_successfully_text": "پرداخت با موفقیت انجام شد!",
   "back_to_home": "بازگشت به صفحه اصلی",
-  "name_last_name_required_text": "نام و نام خانوادگی الزامی میباشند",
   "posta_code_required_error_text": "کد پستی الزامی میباشد",
   "phone_number_required_error_text": "شماره تماس الزامی میباشد",
   "client_address_required_error_text": "آدرس تحویل گیرنده الزامی میباشد",
-  "client_information_text": "مشخصات تحویل گیرنده"
+  "client_information_text": "مشخصات تحویل گیرنده",
+  "first_name_text": "نام",
+  "first_name_required_text": "نام الزامی میباشد",
+  "last_name_text": "نام خانوادگی",
+  "last_name_required_text": "نام خانوادگی الزامی میباشد"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -197,7 +201,6 @@ static const Map<String,dynamic> ps = {
   "free_text": "پاتې",
   "complete_payment_text": "د پای تادیات",
   "choosing_client_and_payment_text": "د ترلاسه کونکی غوره کول او څنګه تادیه کول",
-  "name_and_last_name_text": "نوم او نوم نوم",
   "postal_code_text": "زیپ شفر",
   "phone_number_text": "د اړیکو شمیره",
   "client_address_text": "د ترلاسونی د سپارلو پته",
@@ -209,11 +212,14 @@ static const Map<String,dynamic> ps = {
   "paid_text": "پیسې",
   "payment_was_made_successfully_text": "پیسې په بریالیتوب سره ترسره شوې!",
   "back_to_home": "بېرته کور ته",
-  "name_last_name_required_text": "د نوم لیکنې او نوم لیکنې ته اړتیا ده",
   "posta_code_required_error_text": "د پستی خدمتونو ته اړتیا ده",
   "phone_number_required_error_text": "د اړتیا وړ اړیکلوری شمیره",
   "client_address_required_error_text": "د ترلاسه کونکی ادرس اړین دی",
-  "client_information_text": "د ترلاسونی د سپارلو مشخصات"
+  "client_information_text": "د ترلاسونی د سپارلو مشخصات",
+  "first_name_text": "نوم",
+  "first_name_required_text": "نوم لیکنه اړینه ده",
+  "last_name_text": "ولسمشر",
+  "last_name_required_text": "ولسمشر اړین دی"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

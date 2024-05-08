@@ -47,7 +47,6 @@
   "free_text": "پاتې",
   "complete_payment_text": "د پای تادیات",
   "choosing_client_and_payment_text": "د ترلاسه کونکی غوره کول او څنګه تادیه کول",
-  "name_and_last_name_text": "نوم او نوم نوم",
   "postal_code_text": "زیپ شفر",
   "phone_number_text": "د اړیکو شمیره",
   "client_address_text": "د ترلاسونی د سپارلو پته",
@@ -59,9 +58,12 @@
   "paid_text": "پیسې",
   "payment_was_made_successfully_text": "پیسې په بریالیتوب سره ترسره شوې!",
   "back_to_home": "بېرته کور ته",
-  "name_last_name_required_text": "د نوم لیکنې او نوم لیکنې ته اړتیا ده",
   "posta_code_required_error_text": "د پستی خدمتونو ته اړتیا ده",
   "phone_number_required_error_text": "د اړتیا وړ اړیکلوری شمیره",
   "client_address_required_error_text": "د ترلاسه کونکی ادرس اړین دی",
-  "client_information_text": "د ترلاسونی د سپارلو مشخصات"
+  "client_information_text": "د ترلاسونی د سپارلو مشخصات",
+  "first_name_text": "نوم",
+  "first_name_required_text": "نوم لیکنه اړینه ده",
+  "last_name_text": "ولسمشر",
+  "last_name_required_text": "ولسمشر اړین دی"
 }

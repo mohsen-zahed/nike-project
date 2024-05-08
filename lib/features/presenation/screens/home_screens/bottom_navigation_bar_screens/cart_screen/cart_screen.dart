@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nike_project/core/constants/bouncing_effect.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
@@ -16,6 +17,7 @@ import 'package:nike_project/features/presenation/screens/home_screens/bottom_na
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/registration_screen.dart';
 import 'package:nike_project/functions/theme_checker.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
+import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets_common_in_all_screens/app_exception_widget.dart';
 import 'package:nike_project/widgets_common_in_all_screens/custom_divider_widget.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/custom_floating_action_button.dart';
@@ -142,7 +144,10 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
                     );
                   },
                   child: ListView.builder(
+                    physics: defaultBouncingEffect,
                     itemCount: state.cartResponseItems.cartItems.length + 1,
+                    padding: EdgeInsets.only(
+                        bottom: getMediaQueryHeight(context, 0.1)),
                     itemBuilder: (context, index) {
                       var itemProduct = state.cartResponseItems.cartItems;
                       //* Column containing Card with Divider widgets vertically...

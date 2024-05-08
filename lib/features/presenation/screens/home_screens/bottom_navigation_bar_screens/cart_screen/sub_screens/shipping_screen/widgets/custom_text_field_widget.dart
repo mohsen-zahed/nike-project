@@ -11,6 +11,7 @@ class CustomTextFieldForm extends StatelessWidget {
   final TextInputAction textInputAction;
   final String errorText;
   final Function(String) onChanged;
+  final TextInputType? textInputType;
   const CustomTextFieldForm({
     super.key,
     required this.hintText,
@@ -20,6 +21,7 @@ class CustomTextFieldForm extends StatelessWidget {
     required this.textInputAction,
     required this.errorText,
     required this.onChanged,
+    this.textInputType,
   });
 
   @override
@@ -28,6 +30,7 @@ class CustomTextFieldForm extends StatelessWidget {
       padding: EdgeInsets.symmetric(
           horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20)),
       child: TextField(
+        keyboardType: textInputType ?? TextInputType.text,
         textInputAction: textInputAction,
         onSubmitted: onSubmitted,
         focusNode: focusNode,
@@ -53,7 +56,7 @@ class CustomTextFieldForm extends StatelessWidget {
                     .color!
                     .withOpacity(0.5)),
           ),
-          labelText: hintText,
+          labelText: '$hintText *',
           border: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(kDefaultTextFieldBorderRadius10),

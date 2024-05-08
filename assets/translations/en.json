@@ -47,7 +47,6 @@
   "free_text": "Free",
   "complete_payment_text": "Complete payment",
   "choosing_client_and_payment_text": "Choose client and payment method",
-  "name_and_last_name_text": "Name and Last name",
   "postal_code_text": "Postal cod",
   "phone_number_text": "Phone numbe",
   "client_address_text": "Client's address",
@@ -59,9 +58,12 @@
   "paid_text": "Paid",
   "payment_was_made_successfully_text": "Payment was made successfully!",
   "back_to_home": "Back to home",
-  "name_last_name_required_text": "Name&Last name are required",
   "posta_code_required_error_text": "Postal code is required",
   "phone_number_required_error_text": "Phone number is required",
   "client_address_required_error_text": "Client's address is required",
-  "client_information_text": "Client's information"
+  "client_information_text": "Client's information",
+  "first_name_text": "First name",
+  "first_name_required_text": "First name is required",
+  "last_name_text": "Last name",
+  "last_name_required_text": "Last name is require"
 }

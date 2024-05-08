@@ -11,17 +11,20 @@ import 'package:nike_project/features/presenation/screens/home_screens/bottom_na
 
 class PaymentDoneScreen extends StatelessWidget {
   final int payablePrice;
-  final String nameLastName;
+  final String firstName;
+  final String lastName;
   final String postalCode;
   final String phoneNumber;
   final String address;
-  const PaymentDoneScreen(
-      {super.key,
-      required this.payablePrice,
-      required this.nameLastName,
-      required this.postalCode,
-      required this.phoneNumber,
-      required this.address});
+  const PaymentDoneScreen({
+    super.key,
+    required this.payablePrice,
+    required this.firstName,
+    required this.postalCode,
+    required this.phoneNumber,
+    required this.address,
+    required this.lastName,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +89,12 @@ class PaymentDoneScreen extends StatelessWidget {
                         ),
                         SizedBox(height: getMediaQueryHeight(context, 0.01)),
                         TwoTextsWidgetsHorizontally(
-                            title: LocaleKeys.name_and_last_name_text.tr(),
-                            value: nameLastName),
+                            title: LocaleKeys.first_name_text.tr(),
+                            value: firstName),
+                        SizedBox(height: getMediaQueryHeight(context, 0.01)),
+                        TwoTextsWidgetsHorizontally(
+                            title: LocaleKeys.last_name_text.tr(),
+                            value: lastName),
                         SizedBox(height: getMediaQueryHeight(context, 0.01)),
                         TwoTextsWidgetsHorizontally(
                             title: LocaleKeys.postal_code_text.tr(),
