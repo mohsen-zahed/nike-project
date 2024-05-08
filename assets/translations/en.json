@@ -65,5 +65,7 @@
   "first_name_text": "First name",
   "first_name_required_text": "First name is required",
   "last_name_text": "Last name",
-  "last_name_required_text": "Last name is require"
+  "last_name_required_text": "Last name is require",
+  "payment_was_not_successful_text": "Payment was not successful",
+  "payment_pending_text": "Pending"
 }

@@ -68,5 +68,7 @@ abstract class  LocaleKeys {
   static const first_name_required_text = 'first_name_required_text';
   static const last_name_text = 'last_name_text';
   static const last_name_required_text = 'last_name_required_text';
+  static const payment_was_not_successful_text = 'payment_was_not_successful_text';
+  static const payment_pending_text = 'payment_pending_text';
 
 }

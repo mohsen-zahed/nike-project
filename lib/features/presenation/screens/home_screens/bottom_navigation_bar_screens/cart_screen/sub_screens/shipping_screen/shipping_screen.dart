@@ -93,7 +93,6 @@ class _ShippingScreenState extends State<ShippingScreen> {
                             postalCode: postalCodeController.text,
                             phoneNumber: phoneNumberController.text,
                             address: clientAddressController.text,
-                            payablePrice: widget.payablePrice,
                             orderId: state.createdOrderResultModel.orderId,
                           )));
             } else if (state is ShippingFailed) {

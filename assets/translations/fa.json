@@ -65,5 +65,7 @@
   "first_name_text": "نام",
   "first_name_required_text": "نام الزامی میباشد",
   "last_name_text": "نام خانوادگی",
-  "last_name_required_text": "نام خانوادگی الزامی میباشد"
+  "last_name_required_text": "نام خانوادگی الزامی میباشد",
+  "payment_was_not_successful_text": "پرداخت موفق نبود",
+  "payment_pending_text": "در حال انتظار"
 }

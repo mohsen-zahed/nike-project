@@ -81,7 +81,9 @@ class CodegenLoader extends AssetLoader{
   "first_name_text": "First name",
   "first_name_required_text": "First name is required",
   "last_name_text": "Last name",
-  "last_name_required_text": "Last name is require"
+  "last_name_required_text": "Last name is require",
+  "payment_was_not_successful_text": "Payment was not successful",
+  "payment_pending_text": "Pending"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -150,7 +152,9 @@ static const Map<String,dynamic> fa = {
   "first_name_text": "نام",
   "first_name_required_text": "نام الزامی میباشد",
   "last_name_text": "نام خانوادگی",
-  "last_name_required_text": "نام خانوادگی الزامی میباشد"
+  "last_name_required_text": "نام خانوادگی الزامی میباشد",
+  "payment_was_not_successful_text": "پرداخت موفق نبود",
+  "payment_pending_text": "در حال انتظار"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -219,7 +223,9 @@ static const Map<String,dynamic> ps = {
   "first_name_text": "نوم",
   "first_name_required_text": "نوم لیکنه اړینه ده",
   "last_name_text": "ولسمشر",
-  "last_name_required_text": "ولسمشر اړین دی"
+  "last_name_required_text": "ولسمشر اړین دی",
+  "payment_was_not_successful_text": "پیسې په بریالیتوب سره نه وې.",
+  "payment_pending_text": "تمه کیږی"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

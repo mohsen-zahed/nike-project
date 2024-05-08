@@ -65,5 +65,7 @@
   "first_name_text": "نوم",
   "first_name_required_text": "نوم لیکنه اړینه ده",
   "last_name_text": "ولسمشر",
-  "last_name_required_text": "ولسمشر اړین دی"
+  "last_name_required_text": "ولسمشر اړین دی",
+  "payment_was_not_successful_text": "پیسې په بریالیتوب سره نه وې.",
+  "payment_pending_text": "تمه کیږی"
 }

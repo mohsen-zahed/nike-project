@@ -14,7 +14,6 @@ import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/payment_done_screen/widgets/back_to_home_button.dart';
 
 class PaymentDoneScreen extends StatelessWidget {
-  final int payablePrice;
   final String firstName;
   final String lastName;
   final String postalCode;
@@ -23,7 +22,6 @@ class PaymentDoneScreen extends StatelessWidget {
   final int orderId;
   const PaymentDoneScreen({
     super.key,
-    required this.payablePrice,
     required this.firstName,
     required this.postalCode,
     required this.phoneNumber,
@@ -69,7 +67,11 @@ class PaymentDoneScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            state.paymentReceiptResultModel.purchaseSuccess ? LocaleKeys.payment_was_made_successfully_text.tr() : 'failed',
+                            state.paymentReceiptResultModel.purchaseSuccess
+                                ? LocaleKeys.payment_was_made_successfully_text
+                                    .tr()
+                                : LocaleKeys.payment_was_not_successful_text
+                                    .tr(),
                             style: ThemeChecker.isCurrentThemeLight(context)
                                 ? Theme.of(context)
                                     .textTheme
@@ -83,11 +85,13 @@ class PaymentDoneScreen extends StatelessWidget {
                           SizedBox(height: getMediaQueryHeight(context, 0.03)),
                           TwoTextsWidgetsHorizontally(
                               title: LocaleKeys.order_status_text.tr(),
-                              value: LocaleKeys.paid_text.tr()),
+                              value: state
+                                  .paymentReceiptResultModel.paymentStatus),
                           Divider(height: getMediaQueryHeight(context, 0.04)),
                           TwoTextsWidgetsHorizontally(
                               title: LocaleKeys.sum_text.tr(),
-                              value: payablePrice.withPriceLabel),
+                              value: state.paymentReceiptResultModel
+                                  .payablePrice.withPriceLabel),
                           SizedBox(height: getMediaQueryHeight(context, 0.03)),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
