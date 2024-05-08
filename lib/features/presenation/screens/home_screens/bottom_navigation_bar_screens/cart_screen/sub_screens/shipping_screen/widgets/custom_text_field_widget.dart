@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/utils/media_query.dart';
 
@@ -8,6 +9,8 @@ class CustomTextFieldForm extends StatelessWidget {
   final FocusNode focusNode;
   final Function(String) onSubmitted;
   final TextInputAction textInputAction;
+  final String errorText;
+  final Function(String) onChanged;
   const CustomTextFieldForm({
     super.key,
     required this.hintText,
@@ -15,6 +18,8 @@ class CustomTextFieldForm extends StatelessWidget {
     required this.focusNode,
     required this.onSubmitted,
     required this.textInputAction,
+    required this.errorText,
+    required this.onChanged,
   });
 
   @override
@@ -27,8 +32,17 @@ class CustomTextFieldForm extends StatelessWidget {
         onSubmitted: onSubmitted,
         focusNode: focusNode,
         controller: controller,
+        onChanged: onChanged,
         decoration: InputDecoration(
+          errorMaxLines: 1,
+          errorText: errorText.isEmpty
+              ? null
+              : errorText, // Set errorText to null when there is no error
           hintText: hintText,
+          errorStyle: Theme.of(context)
+              .textTheme
+              .labelSmall!
+              .copyWith(color: kRedColorShade700),
           enabledBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(kDefaultTextFieldBorderRadius10),

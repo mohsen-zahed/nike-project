@@ -52,5 +52,16 @@
   "phone_number_text": "Phone numbe",
   "client_address_text": "Client's address",
   "pay_in_place_text": "Payment on Delivery",
-  "online_payment_text": "Online payment"
+  "online_payment_text": "Online payment",
+  "payment_bill_text": "Payment bill",
+  "order_status_text": "Order status",
+  "sum_text": "Payment amount",
+  "paid_text": "Paid",
+  "payment_was_made_successfully_text": "Payment was made successfully!",
+  "back_to_home": "Back to home",
+  "name_last_name_required_text": "Name&Last name are required",
+  "posta_code_required_error_text": "Postal code is required",
+  "phone_number_required_error_text": "Phone number is required",
+  "client_address_required_error_text": "Client's address is required",
+  "client_information_text": "Client's information"
 }

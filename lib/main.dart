@@ -39,8 +39,8 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       themeMode: ThemeMode.system,
       title: 'Nike App',
-      theme: lightTheme(),
-      darkTheme: darkTheme(),
+      theme: lightTheme(context),
+      darkTheme: darkTheme(context),
       home: const MainHomeScreen(),
     );
   }

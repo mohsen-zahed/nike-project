@@ -52,5 +52,16 @@
   "phone_number_text": "د اړیکو شمیره",
   "client_address_text": "د ترلاسونی د سپارلو پته",
   "pay_in_place_text": "د توکو رسولو پر مهال تادیه",
-  "online_payment_text": "انټرنیټ تادیه"
+  "online_payment_text": "انټرنیټ تادیه",
+  "payment_bill_text": "د تادیاتو رسیدونه",
+  "order_status_text": "د اوډون حالت",
+  "sum_text": "د تادیاتو اندازه",
+  "paid_text": "پیسې",
+  "payment_was_made_successfully_text": "پیسې په بریالیتوب سره ترسره شوې!",
+  "back_to_home": "بېرته کور ته",
+  "name_last_name_required_text": "د نوم لیکنې او نوم لیکنې ته اړتیا ده",
+  "posta_code_required_error_text": "د پستی خدمتونو ته اړتیا ده",
+  "phone_number_required_error_text": "د اړتیا وړ اړیکلوری شمیره",
+  "client_address_required_error_text": "د ترلاسه کونکی ادرس اړین دی",
+  "client_information_text": "د ترلاسونی د سپارلو مشخصات"
 }

@@ -55,5 +55,16 @@ abstract class  LocaleKeys {
   static const client_address_text = 'client_address_text';
   static const pay_in_place_text = 'pay_in_place_text';
   static const online_payment_text = 'online_payment_text';
+  static const payment_bill_text = 'payment_bill_text';
+  static const order_status_text = 'order_status_text';
+  static const sum_text = 'sum_text';
+  static const paid_text = 'paid_text';
+  static const payment_was_made_successfully_text = 'payment_was_made_successfully_text';
+  static const back_to_home = 'back_to_home';
+  static const name_last_name_required_text = 'name_last_name_required_text';
+  static const posta_code_required_error_text = 'posta_code_required_error_text';
+  static const phone_number_required_error_text = 'phone_number_required_error_text';
+  static const client_address_required_error_text = 'client_address_required_error_text';
+  static const client_information_text = 'client_information_text';
 
 }

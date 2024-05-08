@@ -68,7 +68,18 @@ class CodegenLoader extends AssetLoader{
   "phone_number_text": "Phone numbe",
   "client_address_text": "Client's address",
   "pay_in_place_text": "Payment on Delivery",
-  "online_payment_text": "Online payment"
+  "online_payment_text": "Online payment",
+  "payment_bill_text": "Payment bill",
+  "order_status_text": "Order status",
+  "sum_text": "Payment amount",
+  "paid_text": "Paid",
+  "payment_was_made_successfully_text": "Payment was made successfully!",
+  "back_to_home": "Back to home",
+  "name_last_name_required_text": "Name&Last name are required",
+  "posta_code_required_error_text": "Postal code is required",
+  "phone_number_required_error_text": "Phone number is required",
+  "client_address_required_error_text": "Client's address is required",
+  "client_information_text": "Client's information"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -124,7 +135,18 @@ static const Map<String,dynamic> fa = {
   "phone_number_text": "شماره تماس",
   "client_address_text": "آدرس تحویل گیرنده",
   "pay_in_place_text": "پرداخت هنگام تحویل کالا",
-  "online_payment_text": "پرداخت اینترنتی"
+  "online_payment_text": "پرداخت اینترنتی",
+  "payment_bill_text": "رسید پرداخت",
+  "order_status_text": "وضعیت سفارش",
+  "sum_text": "مبلغ پرداخت",
+  "paid_text": "پرداخت شده",
+  "payment_was_made_successfully_text": "پرداخت با موفقیت انجام شد!",
+  "back_to_home": "بازگشت به صفحه اصلی",
+  "name_last_name_required_text": "نام و نام خانوادگی الزامی میباشند",
+  "posta_code_required_error_text": "کد پستی الزامی میباشد",
+  "phone_number_required_error_text": "شماره تماس الزامی میباشد",
+  "client_address_required_error_text": "آدرس تحویل گیرنده الزامی میباشد",
+  "client_information_text": "مشخصات تحویل گیرنده"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -180,7 +202,18 @@ static const Map<String,dynamic> ps = {
   "phone_number_text": "د اړیکو شمیره",
   "client_address_text": "د ترلاسونی د سپارلو پته",
   "pay_in_place_text": "د توکو رسولو پر مهال تادیه",
-  "online_payment_text": "انټرنیټ تادیه"
+  "online_payment_text": "انټرنیټ تادیه",
+  "payment_bill_text": "د تادیاتو رسیدونه",
+  "order_status_text": "د اوډون حالت",
+  "sum_text": "د تادیاتو اندازه",
+  "paid_text": "پیسې",
+  "payment_was_made_successfully_text": "پیسې په بریالیتوب سره ترسره شوې!",
+  "back_to_home": "بېرته کور ته",
+  "name_last_name_required_text": "د نوم لیکنې او نوم لیکنې ته اړتیا ده",
+  "posta_code_required_error_text": "د پستی خدمتونو ته اړتیا ده",
+  "phone_number_required_error_text": "د اړتیا وړ اړیکلوری شمیره",
+  "client_address_required_error_text": "د ترلاسه کونکی ادرس اړین دی",
+  "client_information_text": "د ترلاسونی د سپارلو مشخصات"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

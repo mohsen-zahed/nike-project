@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
-import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/cart_screen.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/payment_done_screen/payment_done_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/shipping_screen/widgets/custom_text_field_widget.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/shopping_details_widget.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 
@@ -30,6 +31,10 @@ class _ShippingScreenState extends State<ShippingScreen> {
   final FocusNode postalCodeFocusNode = FocusNode();
   final FocusNode phoneNumberFocusNode = FocusNode();
   final FocusNode clientAddressFocusNode = FocusNode();
+  String nameLastNameEmptyError = '';
+  String postalCodeEmptyError = '';
+  String phoneNumberEmptyError = '';
+  String clientAddressEmptyError = '';
   @override
   void dispose() {
     super.dispose();
@@ -56,6 +61,13 @@ class _ShippingScreenState extends State<ShippingScreen> {
           children: [
             SizedBox(height: kDefautlVerticalGap20),
             CustomTextFieldForm(
+              onChanged: (nameLastName) {
+                setState(() {
+                  nameLastNameController.text = nameLastName;
+                  nameLastNameEmptyError = '';
+                });
+              },
+              errorText: nameLastNameEmptyError,
               textInputAction: TextInputAction.next,
               onSubmitted: (value) {
                 nameLastNameFocusNode.unfocus();
@@ -67,6 +79,13 @@ class _ShippingScreenState extends State<ShippingScreen> {
             ),
             SizedBox(height: kDefautlVerticalGap10),
             CustomTextFieldForm(
+              onChanged: (postalCode) {
+                setState(() {
+                  postalCodeController.text = postalCode;
+                  postalCodeEmptyError = '';
+                });
+              },
+              errorText: postalCodeEmptyError,
               textInputAction: TextInputAction.next,
               onSubmitted: (value) {
                 postalCodeFocusNode.unfocus();
@@ -78,6 +97,13 @@ class _ShippingScreenState extends State<ShippingScreen> {
             ),
             SizedBox(height: kDefautlVerticalGap10),
             CustomTextFieldForm(
+              onChanged: (phoneNumber) {
+                setState(() {
+                  phoneNumberController.text = phoneNumber;
+                  phoneNumberEmptyError = '';
+                });
+              },
+              errorText: phoneNumberEmptyError,
               textInputAction: TextInputAction.next,
               onSubmitted: (value) {
                 phoneNumberFocusNode.unfocus();
@@ -89,6 +115,13 @@ class _ShippingScreenState extends State<ShippingScreen> {
             ),
             SizedBox(height: kDefautlVerticalGap10),
             CustomTextFieldForm(
+              onChanged: (clientAddress) {
+                setState(() {
+                  clientAddressController.text = clientAddress;
+                  clientAddressEmptyError = '';
+                });
+              },
+              errorText: clientAddressEmptyError,
               textInputAction: TextInputAction.done,
               onSubmitted: (value) {
                 clientAddressFocusNode.unfocus();
@@ -111,13 +144,51 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 children: [
                   Expanded(
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        if (nameLastNameController.text.isNotEmpty &&
+                            postalCodeController.text.isNotEmpty &&
+                            phoneNumberController.text.isNotEmpty &&
+                            clientAddressController.text.isNotEmpty) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => PaymentDoneScreen(
+                                    nameLastName: nameLastNameController.text,
+                                    postalCode: postalCodeController.text,
+                                    phoneNumber: phoneNumberController.text,
+                                    address: clientAddressController.text,
+                                    payablePrice: widget.payablePrice,
+                                  )));
+                        } else {
+                          setState(() {
+                            if (nameLastNameController.text.isEmpty) {
+                              nameLastNameFocusNode.requestFocus();
+                              nameLastNameEmptyError =
+                                  LocaleKeys.name_last_name_required_text.tr();
+                            }
+                            if (postalCodeController.text.isEmpty) {
+                              postalCodeFocusNode.requestFocus();
+                              postalCodeEmptyError = LocaleKeys
+                                  .posta_code_required_error_text
+                                  .tr();
+                            }
+                            if (phoneNumberController.text.isEmpty) {
+                              phoneNumberFocusNode.requestFocus();
+                              phoneNumberEmptyError = LocaleKeys
+                                  .phone_number_required_error_text
+                                  .tr();
+                            }
+                            if (clientAddressController.text.isEmpty) {
+                              clientAddressFocusNode.requestFocus();
+                              clientAddressEmptyError = LocaleKeys
+                                  .client_address_required_error_text
+                                  .tr();
+                            }
+                          });
+                        }
+                      },
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .color!,
+                            color:
+                                Theme.of(context).textTheme.labelLarge!.color!,
                             borderRadius: BorderRadius.circular(
                                 kDefaultTextFieldBorderRadius10),
                             boxShadow: [
@@ -153,10 +224,8 @@ class _ShippingScreenState extends State<ShippingScreen> {
                       onTap: () {},
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Theme.of(context)
-                                .textTheme
-                                .titleSmall!
-                                .color!,
+                            color:
+                                Theme.of(context).textTheme.titleSmall!.color!,
                             borderRadius: BorderRadius.circular(
                                 kDefaultTextFieldBorderRadius10),
                             boxShadow: [

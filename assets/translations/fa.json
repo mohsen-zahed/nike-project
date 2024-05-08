@@ -52,5 +52,16 @@
   "phone_number_text": "شماره تماس",
   "client_address_text": "آدرس تحویل گیرنده",
   "pay_in_place_text": "پرداخت هنگام تحویل کالا",
-  "online_payment_text": "پرداخت اینترنتی"
+  "online_payment_text": "پرداخت اینترنتی",
+  "payment_bill_text": "رسید پرداخت",
+  "order_status_text": "وضعیت سفارش",
+  "sum_text": "مبلغ پرداخت",
+  "paid_text": "پرداخت شده",
+  "payment_was_made_successfully_text": "پرداخت با موفقیت انجام شد!",
+  "back_to_home": "بازگشت به صفحه اصلی",
+  "name_last_name_required_text": "نام و نام خانوادگی الزامی میباشند",
+  "posta_code_required_error_text": "کد پستی الزامی میباشد",
+  "phone_number_required_error_text": "شماره تماس الزامی میباشد",
+  "client_address_required_error_text": "آدرس تحویل گیرنده الزامی میباشد",
+  "client_information_text": "مشخصات تحویل گیرنده"
 }

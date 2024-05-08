@@ -58,15 +58,15 @@ flutter:
   fonts:
     - family: IranYekan
       fonts:
-        - asset: assets/fonts/persian_fonts/yekan_regular.ttf
-        - asset: assets/fonts/persian_fonts/yekan_bold.ttf
+        - asset: assets/fonts/dari_pashto_fonts/yekan_regular.ttf
+        - asset: assets/fonts/dari_pashto_fonts/yekan_bold.ttf
           weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-    - family: Koufiya
+    - family: Noto
       fonts:
-        - asset: assets/fonts/pashto_fonts/koufiya_regular.ttf
-        - asset: assets/fonts/pashto_fonts/koufiya_bold.ttf
+        - asset: assets/fonts/dari_pashto_fonts/noto_regular.ttf
+        - asset: assets/fonts/dari_pashto_fonts/noto_bold.ttf
           weight: 700
 
 

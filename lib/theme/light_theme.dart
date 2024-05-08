@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/core/constants/colors.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 
-ThemeData lightTheme() {
+ThemeData lightTheme(BuildContext context) {
   return ThemeData(
     appBarTheme: AppBarTheme(
       iconTheme: const IconThemeData(
@@ -20,7 +21,11 @@ ThemeData lightTheme() {
     colorScheme: const ColorScheme.light(),
     brightness: Brightness.light,
     useMaterial3: true,
-    fontFamily: 'IranYekan',
+    fontFamily: context.locale.languageCode == 'fa'
+        ? 'IranYekan'
+        : context.locale.languageCode == 'en'
+            ? 'IranYekan'
+            : 'Noto',
     // fontFamilyFallback: const ['Koufiya'],
     primaryColor: kPrimaryColor,
 

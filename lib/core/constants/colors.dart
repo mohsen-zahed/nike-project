@@ -8,6 +8,7 @@ const Color kCaptionsTextColor = Color(0xffb3b6be);
 const Color kBlackColor = Colors.black;
 const Color kWhiteColor = Colors.white;
 const Color kRedColor = Colors.red;
+Color kRedColorShade700 = Colors.redAccent.shade700;
 const Color kBlueColor = Colors.blue;
 const Color kTransparentColor = Colors.transparent;
 const Color kGreyColor = Colors.grey;
