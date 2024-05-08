@@ -158,31 +158,38 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                     payablePrice: widget.payablePrice,
                                   )));
                         } else {
-                          setState(() {
-                            if (nameLastNameController.text.isEmpty) {
-                              nameLastNameFocusNode.requestFocus();
-                              nameLastNameEmptyError =
-                                  LocaleKeys.name_last_name_required_text.tr();
-                            }
-                            if (postalCodeController.text.isEmpty) {
-                              postalCodeFocusNode.requestFocus();
-                              postalCodeEmptyError = LocaleKeys
-                                  .posta_code_required_error_text
-                                  .tr();
-                            }
-                            if (phoneNumberController.text.isEmpty) {
-                              phoneNumberFocusNode.requestFocus();
-                              phoneNumberEmptyError = LocaleKeys
-                                  .phone_number_required_error_text
-                                  .tr();
-                            }
-                            if (clientAddressController.text.isEmpty) {
-                              clientAddressFocusNode.requestFocus();
-                              clientAddressEmptyError = LocaleKeys
-                                  .client_address_required_error_text
-                                  .tr();
-                            }
-                          });
+                          for (var i = 0; i < 3; i++) {
+                            setState(() {
+                              if (nameLastNameController.text.isEmpty) {
+                                nameLastNameFocusNode.requestFocus();
+                                nameLastNameEmptyError = LocaleKeys
+                                    .name_last_name_required_text
+                                    .tr();
+                                return;
+                              }
+                              if (postalCodeController.text.isEmpty) {
+                                postalCodeFocusNode.requestFocus();
+                                postalCodeEmptyError = LocaleKeys
+                                    .posta_code_required_error_text
+                                    .tr();
+                                return;
+                              }
+                              if (phoneNumberController.text.isEmpty) {
+                                phoneNumberFocusNode.requestFocus();
+                                phoneNumberEmptyError = LocaleKeys
+                                    .phone_number_required_error_text
+                                    .tr();
+                                return;
+                              }
+                              if (clientAddressController.text.isEmpty) {
+                                clientAddressFocusNode.requestFocus();
+                                clientAddressEmptyError = LocaleKeys
+                                    .client_address_required_error_text
+                                    .tr();
+                                return;
+                              }
+                            });
+                          }
                         }
                       },
                       child: Container(
