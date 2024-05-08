@@ -13,6 +13,7 @@ import 'package:nike_project/features/presenation/screens/home_screens/bottom_na
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/shopping_details_widget.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ShippingScreen extends StatefulWidget {
   final int totalPrice;
@@ -84,17 +85,29 @@ class _ShippingScreenState extends State<ShippingScreen> {
           final bloc = ShippingBloc(orderRepository);
           streamSubscription = bloc.stream.listen((state) {
             if (state is ShippingSuccess) {
-              Navigator.push(
+              if (state.createdOrderResultModel.bankGatewayUrl.isEmpty) {
+                Navigator.push(
+                    (context),
+                    MaterialPageRoute(
+                      builder: (context) => PaymentDoneScreen(
+                        firstName: firstNameController.text,
+                        lastName: lastNameController.text,
+                        postalCode: postalCodeController.text,
+                        phoneNumber: phoneNumberController.text,
+                        address: clientAddressController.text,
+                        orderId: state.createdOrderResultModel.orderId,
+                      ),
+                    ));
+              } else {
+                Navigator.push(
                   (context),
                   MaterialPageRoute(
-                      builder: (context) => PaymentDoneScreen(
-                            firstName: firstNameController.text,
-                            lastName: lastNameController.text,
-                            postalCode: postalCodeController.text,
-                            phoneNumber: phoneNumberController.text,
-                            address: clientAddressController.text,
-                            orderId: state.createdOrderResultModel.orderId,
-                          )));
+                    builder: (context) => BankGatewayWebviewScreen(
+                        bankGatewayUrl:
+                            state.createdOrderResultModel.bankGatewayUrl),
+                  ),
+                );
+              }
             } else if (state is ShippingFailed) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.errorMessage)),
@@ -214,75 +227,28 @@ class _ShippingScreenState extends State<ShippingScreen> {
                               Expanded(
                                 child: GestureDetector(
                                   onTap: () {
-                                    if (firstNameController.text.isNotEmpty &&
-                                        lastNameController.text.isNotEmpty &&
-                                        postalCodeController.text.isNotEmpty &&
-                                        phoneNumberController.text.isNotEmpty &&
-                                        clientAddressController
-                                            .text.isNotEmpty) {
-                                      BlocProvider.of<ShippingBloc>(context)
-                                          .add(
-                                        SubmitOrder(
-                                          orderModel: OrderModel(
-                                            firstName: firstNameController.text,
-                                            lastName: lastNameController.text,
-                                            phoneNumber:
-                                                phoneNumberController.text,
-                                            postalCode:
-                                                postalCodeController.text,
-                                            address:
-                                                clientAddressController.text,
-                                            paymentMethod:
-                                                PaymentMethod.cashOnDelivery,
+                                    _validateAndSubmitOrder(
+                                      () {
+                                        BlocProvider.of<ShippingBloc>(context)
+                                            .add(
+                                          SubmitOrder(
+                                            orderModel: OrderModel(
+                                              firstName:
+                                                  firstNameController.text,
+                                              lastName: lastNameController.text,
+                                              phoneNumber:
+                                                  phoneNumberController.text,
+                                              postalCode:
+                                                  postalCodeController.text,
+                                              address:
+                                                  clientAddressController.text,
+                                              paymentMethod:
+                                                  PaymentMethod.cashOnDelivery,
+                                            ),
                                           ),
-                                        ),
-                                      );
-                                    } else {
-                                      for (var i = 0; i < 4; i++) {
-                                        setState(() {
-                                          if (firstNameController
-                                              .text.isEmpty) {
-                                            firstNameFocusNode.requestFocus();
-                                            firstNameEmptyError = LocaleKeys
-                                                .first_name_required_text
-                                                .tr();
-                                            return;
-                                          }
-                                          if (lastNameController.text.isEmpty) {
-                                            lastNameFocusNode.requestFocus();
-                                            lastNameEmptyError = LocaleKeys
-                                                .last_name_required_text
-                                                .tr();
-                                            return;
-                                          }
-                                          if (postalCodeController
-                                              .text.isEmpty) {
-                                            postalCodeFocusNode.requestFocus();
-                                            postalCodeEmptyError = LocaleKeys
-                                                .posta_code_required_error_text
-                                                .tr();
-                                            return;
-                                          }
-                                          if (phoneNumberController
-                                              .text.isEmpty) {
-                                            phoneNumberFocusNode.requestFocus();
-                                            phoneNumberEmptyError = LocaleKeys
-                                                .phone_number_required_error_text
-                                                .tr();
-                                            return;
-                                          }
-                                          if (clientAddressController
-                                              .text.isEmpty) {
-                                            clientAddressFocusNode
-                                                .requestFocus();
-                                            clientAddressEmptyError = LocaleKeys
-                                                .client_address_required_error_text
-                                                .tr();
-                                            return;
-                                          }
-                                        });
-                                      }
-                                    }
+                                        );
+                                      },
+                                    );
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -323,7 +289,30 @@ class _ShippingScreenState extends State<ShippingScreen> {
                               const SizedBox(width: 20),
                               Expanded(
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () {
+                                    _validateAndSubmitOrder(
+                                      () {
+                                        BlocProvider.of<ShippingBloc>(context)
+                                            .add(
+                                          SubmitOrder(
+                                            orderModel: OrderModel(
+                                              firstName:
+                                                  firstNameController.text,
+                                              lastName: lastNameController.text,
+                                              phoneNumber:
+                                                  phoneNumberController.text,
+                                              postalCode:
+                                                  postalCodeController.text,
+                                              address:
+                                                  clientAddressController.text,
+                                              paymentMethod:
+                                                  PaymentMethod.online,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
                                   child: Container(
                                     decoration: BoxDecoration(
                                         color: Theme.of(context)
@@ -367,6 +356,80 @@ class _ShippingScreenState extends State<ShippingScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  void _validateAndSubmitOrder(Function() function) {
+    if (firstNameController.text.isNotEmpty &&
+        lastNameController.text.isNotEmpty &&
+        postalCodeController.text.isNotEmpty &&
+        phoneNumberController.text.isNotEmpty &&
+        clientAddressController.text.isNotEmpty) {
+      function();
+    } else {
+      for (var i = 0; i < 4; i++) {
+        setState(() {
+          if (firstNameController.text.isEmpty) {
+            firstNameFocusNode.requestFocus();
+            firstNameEmptyError = LocaleKeys.first_name_required_text.tr();
+            return;
+          }
+          if (lastNameController.text.isEmpty) {
+            lastNameFocusNode.requestFocus();
+            lastNameEmptyError = LocaleKeys.last_name_required_text.tr();
+            return;
+          }
+          if (postalCodeController.text.isEmpty) {
+            postalCodeFocusNode.requestFocus();
+            postalCodeEmptyError =
+                LocaleKeys.posta_code_required_error_text.tr();
+            return;
+          }
+          if (phoneNumberController.text.isEmpty) {
+            phoneNumberFocusNode.requestFocus();
+            phoneNumberEmptyError =
+                LocaleKeys.phone_number_required_error_text.tr();
+            return;
+          }
+          if (clientAddressController.text.isEmpty) {
+            clientAddressFocusNode.requestFocus();
+            clientAddressEmptyError =
+                LocaleKeys.client_address_required_error_text.tr();
+            return;
+          }
+        });
+      }
+    }
+  }
+}
+
+class BankGatewayWebviewScreen extends StatefulWidget {
+  const BankGatewayWebviewScreen({super.key, required this.bankGatewayUrl});
+
+  final String bankGatewayUrl;
+
+  @override
+  State<BankGatewayWebviewScreen> createState() =>
+      _BankGatewayWebviewScreenState();
+}
+
+class _BankGatewayWebviewScreenState extends State<BankGatewayWebviewScreen> {
+  WebViewController _webViewController = WebViewController();
+  @override
+  void initState() {
+    super.initState();
+    _webViewController = WebViewController()
+      ..setNavigationDelegate(NavigationDelegate(
+        onPageStarted: (url) {},
+      ))
+      ..setJavaScriptMode(JavaScriptMode.disabled)
+      ..loadRequest(Uri.parse(widget.bankGatewayUrl));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return WebViewWidget(
+      controller: _webViewController,
     );
   }
 }
