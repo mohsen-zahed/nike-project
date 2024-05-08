@@ -8,7 +8,7 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/models/order_model.dart';
 import 'package:nike_project/features/data/repository/iorder_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/payment_done_screen/payment_done_screen.dart';
-import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/shipping_screen/bloc/create_order_bloc.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/shipping_screen/bloc/shipping_bloc.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/shipping_screen/widgets/custom_text_field_widget.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/shopping_details_widget.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
@@ -30,11 +30,16 @@ class ShippingScreen extends StatefulWidget {
 }
 
 class _ShippingScreenState extends State<ShippingScreen> {
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
-  final TextEditingController postalCodeController = TextEditingController();
-  final TextEditingController phoneNumberController = TextEditingController();
-  final TextEditingController clientAddressController = TextEditingController();
+  final TextEditingController firstNameController =
+      TextEditingController(text: 'امیر محسن');
+  final TextEditingController lastNameController =
+      TextEditingController(text: 'زاهد');
+  final TextEditingController postalCodeController =
+      TextEditingController(text: '۱۲۳۴۵۶۷۸۹۰');
+  final TextEditingController phoneNumberController =
+      TextEditingController(text: '۱۲۳۴۵۶۷۸۹۰۰');
+  final TextEditingController clientAddressController =
+      TextEditingController(text: 'بتنیمکشتیمکشتبسشیبنسشیتکبسینشمکبتیسش');
   final FocusNode firstNameFocusNode = FocusNode();
   final FocusNode lastNameFocusNode = FocusNode();
   final FocusNode postalCodeFocusNode = FocusNode();
@@ -74,21 +79,24 @@ class _ShippingScreenState extends State<ShippingScreen> {
           LocaleKeys.choosing_client_and_payment_text.tr(),
         ),
       ),
-      body: BlocProvider<CreateOrderBloc>(
+      body: BlocProvider<ShippingBloc>(
         create: (context) {
-          final bloc = CreateOrderBloc(orderRepository);
+          final bloc = ShippingBloc(orderRepository);
           streamSubscription = bloc.stream.listen((state) {
-            if (state is CreateOrderSuccess) {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => PaymentDoneScreen(
-                        firstName: firstNameController.text,
-                        lastName: lastNameController.text,
-                        postalCode: postalCodeController.text,
-                        phoneNumber: phoneNumberController.text,
-                        address: clientAddressController.text,
-                        payablePrice: widget.payablePrice,
-                      )));
-            } else if (state is CreateOrderFailed) {
+            if (state is ShippingSuccess) {
+              Navigator.push(
+                  (context),
+                  MaterialPageRoute(
+                      builder: (context) => PaymentDoneScreen(
+                            firstName: firstNameController.text,
+                            lastName: lastNameController.text,
+                            postalCode: postalCodeController.text,
+                            phoneNumber: phoneNumberController.text,
+                            address: clientAddressController.text,
+                            payablePrice: widget.payablePrice,
+                            orderId: state.createdOrderResultModel.orderId,
+                          )));
+            } else if (state is ShippingFailed) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text(state.errorMessage)),
               );
@@ -199,9 +207,9 @@ class _ShippingScreenState extends State<ShippingScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal: getMediaQueryWidth(context, 0.1)),
-                child: BlocBuilder<CreateOrderBloc, CreateOrderState>(
+                child: BlocBuilder<ShippingBloc, ShippingState>(
                   builder: (context, state) {
-                    return state is! CreateOrderLoading
+                    return state is! ShippingLoading
                         ? Row(
                             children: [
                               Expanded(
@@ -213,9 +221,9 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                         phoneNumberController.text.isNotEmpty &&
                                         clientAddressController
                                             .text.isNotEmpty) {
-                                      BlocProvider.of<CreateOrderBloc>(context)
+                                      BlocProvider.of<ShippingBloc>(context)
                                           .add(
-                                        CreateOrder(
+                                        SubmitOrder(
                                           orderModel: OrderModel(
                                             firstName: firstNameController.text,
                                             lastName: lastNameController.text,

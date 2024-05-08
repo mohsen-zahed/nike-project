@@ -8,4 +8,5 @@ class ImagesPaths {
   static String authRequiredSvgPath = 'assets/images/svg_type/auth_required.svg';
   static String emptyCartSvgPath = 'assets/images/svg_type/empty_cart.svg';
   static String noDataSvgPath = 'assets/images/svg_type/no_data.svg';
+  static String notResponding = 'assets/images/other_type/screen_backgrounds/not_responding.png';
 }

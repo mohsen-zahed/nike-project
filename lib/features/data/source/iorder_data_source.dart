@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:nike_project/features/data/models/created_order_result_model.dart';
 import 'package:nike_project/features/data/models/order_model.dart';
+import 'package:nike_project/features/data/models/payment_receipt_result_model.dart';
 
 abstract class IOrderDataSource {
   Future<CreatedOrderResultModel> createOrder(OrderModel order);
+  Future<PaymentReceiptResultModel> getPaymentReceipt(int orderId);
 }
 
 class OrderDataSourceImp implements IOrderDataSource {
@@ -23,5 +25,11 @@ class OrderDataSourceImp implements IOrderDataSource {
           : 'cash_on_delivery',
     });
     return CreatedOrderResultModel.fromJson(response.data);
+  }
+
+  @override
+  Future<PaymentReceiptResultModel> getPaymentReceipt(int orderId) async {
+    final response = await httpClient.get('order/checkout?order_id=$orderId');
+    return PaymentReceiptResultModel.fromJson(response.data);
   }
 }
