@@ -9,7 +9,6 @@ ThemeData lightTheme(BuildContext context) {
       iconTheme: const IconThemeData(
         color: kPrimaryColor,
       ),
-      // backgroundColor: kWhiteColor,
       foregroundColor: kPrimaryTextColor,
       toolbarTextStyle: Theme.of(context).textTheme.titleMedium,
       centerTitle: true,
@@ -17,7 +16,6 @@ ThemeData lightTheme(BuildContext context) {
       elevation: 1,
       shadowColor: kGreyColorShade100.withOpacity(0.3),
     ),
-
     scaffoldBackgroundColor: kWhiteColor,
     colorScheme: const ColorScheme.light(),
     brightness: Brightness.light,
@@ -27,9 +25,7 @@ ThemeData lightTheme(BuildContext context) {
         : context.locale.languageCode == 'en'
             ? 'IranYekan'
             : 'Noto',
-    // fontFamilyFallback: const ['Koufiya'],
     primaryColor: kPrimaryColor,
-
     textButtonTheme: const TextButtonThemeData(
       style: ButtonStyle(
         padding: MaterialStatePropertyAll(
@@ -43,7 +39,6 @@ ThemeData lightTheme(BuildContext context) {
         ),
       ),
     ),
-
     dividerTheme: DividerThemeData(
       color: kGreyColorShade300,
       thickness: 1,
@@ -54,7 +49,6 @@ ThemeData lightTheme(BuildContext context) {
         overlayColor: MaterialStatePropertyAll(kGreyColorShade400),
       ),
     ),
-
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         color: kPrimaryTextColor,
@@ -153,6 +147,11 @@ ThemeData lightTheme(BuildContext context) {
         color: kWhiteColor,
         fontFamily: "IranYekan",
       ),
+    ),
+    dialogBackgroundColor: kWhiteColor,
+    dialogTheme: const DialogTheme(
+      surfaceTintColor: kWhiteColor,
+      backgroundColor: kWhiteColor,
     ),
   );
 }

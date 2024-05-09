@@ -31,6 +31,7 @@ class AuthDataSourceImp implements IAuthDataSource {
       return AuthInfoModel(
         accessToken: response.data["access_token"],
         refreshToken: response.data["refresh_token"],
+        email: username,
       );
     } catch (e) {
       debugPrint(e.toString());
@@ -52,9 +53,9 @@ class AuthDataSourceImp implements IAuthDataSource {
         throw response.statusMessage.toString();
       }
       return AuthInfoModel(
-        accessToken: response.data["access_token"],
-        refreshToken: response.data["refresh_token"],
-      );
+          accessToken: response.data["access_token"],
+          refreshToken: response.data["refresh_token"],
+          email: '');
     } catch (e) {
       debugPrint(e.toString());
       throw "User already submitted, refresh token expired";

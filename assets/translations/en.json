@@ -18,7 +18,7 @@
   "cart_text": "Cart",
   "profile_text": "Profile",
   "login_to_account_text": "Login to your account!",
-  "login_text": "Logi",
+  "login_text": "Login to account",
   "dont_have_an_account": "Don't have an account?",
   "password_text": "Passwor",
   "email_address_text": "Email address",
@@ -26,7 +26,7 @@
   "signup_text": "Sign up",
   "already_have_an_account": "Already have an account?",
   "signup_to_account_text": "Enter a valid E-mail address and Password to continue!",
-  "logout_text": "Logout",
+  "logout_text": "Logout from account",
   "no_user_existed_error": "No user is existed with this username or email!",
   "email_username_already_exists_error": "Already registered with this e-mail and username!",
   "item_added_to_cart_successfully": "Item successfully added to your cart!",
@@ -72,5 +72,12 @@
   "sport_shoes_text": "Sport shoes",
   "price_high_to_low_text": "Downside price",
   "price_low_to_high_text": "Bullish price",
-  "sort_text": "Sort"
+  "sort_text": "Sort",
+  "favorites_list_text": "Favourites",
+  "order_history_text": "Order history",
+  "guest_user_text": "Guest user",
+  "logout_short_text": "Logout",
+  "sure_you_want_to_logout_from_account_text": "Are you sure you want to exit your account?",
+  "yes_text": "Yes",
+  "no_text": "No"
 }

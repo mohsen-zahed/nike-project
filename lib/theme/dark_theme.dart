@@ -25,8 +25,6 @@ ThemeData darkTheme(BuildContext context) {
         : context.locale.languageCode == 'en'
             ? 'IranYekan'
             : 'Noto',
-    // fontFamilyFallback: const ['Koufiya'],
-
     primaryColor: kPrimaryColor,
     textButtonTheme: const TextButtonThemeData(
       style: ButtonStyle(
@@ -41,7 +39,6 @@ ThemeData darkTheme(BuildContext context) {
         ),
       ),
     ),
-
     dividerTheme: DividerThemeData(
       color: kGreyColorShade700,
       thickness: 1,
@@ -109,7 +106,6 @@ ThemeData darkTheme(BuildContext context) {
       unselectedItemColor: kGreyColor,
       unselectedLabelStyle: TextStyle(color: kGreyColor),
     ),
-
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: kWhiteColor,
     ),
@@ -155,6 +151,11 @@ ThemeData darkTheme(BuildContext context) {
         color: kWhiteColor,
         fontFamily: "IranYekan",
       ),
+    ),
+    dialogBackgroundColor: kSnackbarColor,
+    dialogTheme: const DialogTheme(
+      surfaceTintColor: kSnackbarColor,
+      backgroundColor: kSnackbarColor,
     ),
   );
 }

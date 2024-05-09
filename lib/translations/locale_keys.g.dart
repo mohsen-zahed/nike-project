@@ -75,5 +75,12 @@ abstract class  LocaleKeys {
   static const price_high_to_low_text = 'price_high_to_low_text';
   static const price_low_to_high_text = 'price_low_to_high_text';
   static const sort_text = 'sort_text';
+  static const favorites_list_text = 'favorites_list_text';
+  static const order_history_text = 'order_history_text';
+  static const guest_user_text = 'guest_user_text';
+  static const logout_short_text = 'logout_short_text';
+  static const sure_you_want_to_logout_from_account_text = 'sure_you_want_to_logout_from_account_text';
+  static const yes_text = 'yes_text';
+  static const no_text = 'no_text';
 
 }
