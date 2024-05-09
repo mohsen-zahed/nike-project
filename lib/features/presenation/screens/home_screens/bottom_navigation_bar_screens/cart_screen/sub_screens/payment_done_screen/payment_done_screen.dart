@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/colors.dart';
-import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/repository/iorder_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/payment_done_screen/bloc/payment_receipt_bloc.dart';
@@ -12,6 +11,7 @@ import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/payment_done_screen/widgets/back_to_home_button.dart';
+import 'package:nike_project/widgets_common_in_all_screens/default_failed_widget.dart';
 
 class PaymentDoneScreen extends StatelessWidget {
   final String firstName;
@@ -150,17 +150,7 @@ class PaymentDoneScreen extends StatelessWidget {
               child: CircularProgressIndicator(),
             );
           } else {
-            return Container(
-              width: getMediaQueryWidth(context),
-              height: getMediaQueryHeight(context),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(ImagesPaths.notResponding),
-                  opacity: 0.5,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            );
+            return const DefaultFailedWidget();
           }
         }),
       ),

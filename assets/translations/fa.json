@@ -67,5 +67,9 @@
   "last_name_text": "نام خانوادگی",
   "last_name_required_text": "نام خانوادگی الزامی میباشد",
   "payment_was_not_successful_text": "پرداخت موفق نبود",
-  "payment_pending_text": "در حال انتظار"
+  "payment_pending_text": "در حال انتظار",
+  "products_list_text": "لیست محصولات",
+  "sport_shoes_text": "کفش های ورزشی",
+  "price_high_to_low_text": "قیمت نزولی",
+  "price_low_to_high_text": "قیمت صعودی"
 }

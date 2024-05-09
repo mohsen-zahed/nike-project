@@ -67,5 +67,9 @@
   "last_name_text": "ولسمشر",
   "last_name_required_text": "ولسمشر اړین دی",
   "payment_was_not_successful_text": "پیسې په بریالیتوب سره نه وې.",
-  "payment_pending_text": "تمه کیږی"
+  "payment_pending_text": "تمه کیږی",
+  "products_list_text": "د محصولاتو لیست",
+  "sport_shoes_text": "لوبې بوټان",
+  "price_high_to_low_text": "بازونه غوره تړنه",
+  "price_low_to_high_text": "بازونه لږ تړنه"
 }

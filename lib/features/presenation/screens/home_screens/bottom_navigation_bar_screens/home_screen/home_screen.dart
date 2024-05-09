@@ -3,16 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/core/constants/images_paths.dart';
 import 'package:nike_project/core/constants/numeric_contants.dart';
-import 'package:nike_project/core/exception/app_exception.dart';
+import 'package:nike_project/core/constants/products_sort_cons.dart';
 import 'package:nike_project/features/data/repository/ibanners_repository.dart';
 import 'package:nike_project/features/data/repository/iproducts_repository.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/bloc/home_bloc.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/products_list_screen/products_list_screen.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/widgets/banner_slider_widget.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/widgets/card_title_and_see_all_texts.dart';
 import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/home_screen/widgets/horizontal_list_view_builder.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets_common_in_all_screens/app_exception_widget.dart';
+import 'package:nike_project/widgets_common_in_all_screens/default_failed_widget.dart';
 import 'package:nike_project/widgets_common_in_all_screens/nike_image_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -48,7 +50,6 @@ class HomeScreen extends StatelessWidget {
                         banners: state.banners,
                         borderRadius: kDefaultBorderRadius20,
                       );
-
                     case 3:
                       return Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +57,15 @@ class HomeScreen extends StatelessWidget {
                           //* latest and seeAll widgets...
                           CardTitleAndSeeAllTexts(
                             title: LocaleKeys.newest_text.tr(),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).push(
+                                MaterialPageRoute(
+                                  builder: (context) => ProductsListScreen(
+                                    sortNumber: ProductsSortCons.latest,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                           //* latest horizontal scrolling list...
                           HorizontalListViewBuilder(
@@ -66,7 +75,15 @@ class HomeScreen extends StatelessWidget {
                           //* popular and seeAll widgets...
                           CardTitleAndSeeAllTexts(
                             title: LocaleKeys.most_viewed_text.tr(),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.of(context, rootNavigator: true).push(
+                                MaterialPageRoute(
+                                  builder: (context) => ProductsListScreen(
+                                    sortNumber: ProductsSortCons.popular,
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                           //* popular horizontal scrolling list...
                           HorizontalListViewBuilder(
@@ -94,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                 child: CircularProgressIndicator(),
               );
             } else {
-              throw AppException(errorException: 'state is not provided.');
+              return const DefaultFailedWidget();
             }
           },
         ),

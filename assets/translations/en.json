@@ -67,5 +67,9 @@
   "last_name_text": "Last name",
   "last_name_required_text": "Last name is require",
   "payment_was_not_successful_text": "Payment was not successful",
-  "payment_pending_text": "Pending"
+  "payment_pending_text": "Pending",
+  "products_list_text": "Products list",
+  "sport_shoes_text": "Sport shoes",
+  "price_high_to_low_text": "Downside price",
+  "price_low_to_high_text": "Bullish price"
 }

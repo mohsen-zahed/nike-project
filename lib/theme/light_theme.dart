@@ -9,11 +9,12 @@ ThemeData lightTheme(BuildContext context) {
       iconTheme: const IconThemeData(
         color: kPrimaryColor,
       ),
-      backgroundColor: kWhiteColor,
+      // backgroundColor: kWhiteColor,
       foregroundColor: kPrimaryTextColor,
+      toolbarTextStyle: Theme.of(context).textTheme.titleMedium,
       centerTitle: true,
       surfaceTintColor: kWhiteColor,
-      elevation: 0.3,
+      elevation: 1,
       shadowColor: kGreyColorShade100.withOpacity(0.3),
     ),
 

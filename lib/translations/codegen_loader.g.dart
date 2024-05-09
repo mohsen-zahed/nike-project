@@ -83,7 +83,11 @@ class CodegenLoader extends AssetLoader{
   "last_name_text": "Last name",
   "last_name_required_text": "Last name is require",
   "payment_was_not_successful_text": "Payment was not successful",
-  "payment_pending_text": "Pending"
+  "payment_pending_text": "Pending",
+  "products_list_text": "Products list",
+  "sport_shoes_text": "Sport shoes",
+  "price_high_to_low_text": "Downside price",
+  "price_low_to_high_text": "Bullish price"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -154,7 +158,11 @@ static const Map<String,dynamic> fa = {
   "last_name_text": "نام خانوادگی",
   "last_name_required_text": "نام خانوادگی الزامی میباشد",
   "payment_was_not_successful_text": "پرداخت موفق نبود",
-  "payment_pending_text": "در حال انتظار"
+  "payment_pending_text": "در حال انتظار",
+  "products_list_text": "لیست محصولات",
+  "sport_shoes_text": "کفش های ورزشی",
+  "price_high_to_low_text": "قیمت نزولی",
+  "price_low_to_high_text": "قیمت صعودی"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -225,7 +233,11 @@ static const Map<String,dynamic> ps = {
   "last_name_text": "ولسمشر",
   "last_name_required_text": "ولسمشر اړین دی",
   "payment_was_not_successful_text": "پیسې په بریالیتوب سره نه وې.",
-  "payment_pending_text": "تمه کیږی"
+  "payment_pending_text": "تمه کیږی",
+  "products_list_text": "د محصولاتو لیست",
+  "sport_shoes_text": "لوبې بوټان",
+  "price_high_to_low_text": "بازونه غوره تړنه",
+  "price_low_to_high_text": "بازونه لږ تړنه"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

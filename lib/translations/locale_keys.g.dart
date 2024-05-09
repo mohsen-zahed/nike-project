@@ -70,5 +70,9 @@ abstract class  LocaleKeys {
   static const last_name_required_text = 'last_name_required_text';
   static const payment_was_not_successful_text = 'payment_was_not_successful_text';
   static const payment_pending_text = 'payment_pending_text';
+  static const products_list_text = 'products_list_text';
+  static const sport_shoes_text = 'sport_shoes_text';
+  static const price_high_to_low_text = 'price_high_to_low_text';
+  static const price_low_to_high_text = 'price_low_to_high_text';
 
 }
