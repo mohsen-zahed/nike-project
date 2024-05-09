@@ -87,7 +87,8 @@ class CodegenLoader extends AssetLoader{
   "products_list_text": "Products list",
   "sport_shoes_text": "Sport shoes",
   "price_high_to_low_text": "Downside price",
-  "price_low_to_high_text": "Bullish price"
+  "price_low_to_high_text": "Bullish price",
+  "sort_text": "Sort"
 };
 static const Map<String,dynamic> fa = {
   "welcome_text": "سلام، به برنامه نایکی خوش آمدید!",
@@ -162,7 +163,8 @@ static const Map<String,dynamic> fa = {
   "products_list_text": "لیست محصولات",
   "sport_shoes_text": "کفش های ورزشی",
   "price_high_to_low_text": "قیمت نزولی",
-  "price_low_to_high_text": "قیمت صعودی"
+  "price_low_to_high_text": "قیمت صعودی",
+  "sort_text": "مرتب سازی"
 };
 static const Map<String,dynamic> ps = {
   "welcome_text": "سلامونه او نیکې هیلې!",
@@ -237,7 +239,8 @@ static const Map<String,dynamic> ps = {
   "products_list_text": "د محصولاتو لیست",
   "sport_shoes_text": "لوبې بوټان",
   "price_high_to_low_text": "بازونه غوره تړنه",
-  "price_low_to_high_text": "بازونه لږ تړنه"
+  "price_low_to_high_text": "بازونه لږ تړنه",
+  "sort_text": "اڼل"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "fa": fa, "ps": ps};
 }

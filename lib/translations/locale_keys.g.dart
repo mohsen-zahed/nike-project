@@ -74,5 +74,6 @@ abstract class  LocaleKeys {
   static const sport_shoes_text = 'sport_shoes_text';
   static const price_high_to_low_text = 'price_high_to_low_text';
   static const price_low_to_high_text = 'price_low_to_high_text';
+  static const sort_text = 'sort_text';
 
 }
