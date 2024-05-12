@@ -1,3 +1,5 @@
+import 'package:nike_project/features/data/models/product_model.dart';
+
 class OrderModel {
   final String firstName;
   final String lastName;
@@ -25,3 +27,16 @@ class OrderModel {
 }
 
 enum PaymentMethod { online, cashOnDelivery }
+
+class OrderHistoryModel {
+  final int id;
+  final int payablePrice;
+  final List<ProductModel> products;
+
+  OrderHistoryModel.fromJson(Map<String, dynamic> json)
+      : id = json['id'],
+        payablePrice = json['payable'],
+        products = (json['order_items'] as List)
+            .map((element) => ProductModel.fromJson(element['product']))
+            .toList();
+}

@@ -6,6 +6,7 @@ import 'package:nike_project/features/data/models/payment_receipt_result_model.d
 abstract class IOrderDataSource {
   Future<CreatedOrderResultModel> createOrder(OrderModel order);
   Future<PaymentReceiptResultModel> getPaymentReceipt(int orderId);
+  Future<List<OrderHistoryModel>> getAllOrders();
 }
 
 class OrderDataSourceImp implements IOrderDataSource {
@@ -31,5 +32,18 @@ class OrderDataSourceImp implements IOrderDataSource {
   Future<PaymentReceiptResultModel> getPaymentReceipt(int orderId) async {
     final response = await httpClient.get('order/checkout?order_id=$orderId');
     return PaymentReceiptResultModel.fromJson(response.data);
+  }
+
+  @override
+  Future<List<OrderHistoryModel>> getAllOrders() async {
+    final response = await httpClient.get('order/list');
+    print('data: ${response.data}');
+    if (response.data is List) {
+      return (response.data as List)
+          .map((e) => OrderHistoryModel.fromJson(e))
+          .toList();
+    } else {
+      throw Exception('Response data is not a list');
+    }
   }
 }

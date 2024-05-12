@@ -10,6 +10,7 @@ final orderRepository = OrderRepositoryImp(
 abstract class IOrderRepository {
   Future<CreatedOrderResultModel> createOrder(OrderModel order);
   Future<PaymentReceiptResultModel> getPaymentReceipt(int orderId);
+  Future<List<OrderHistoryModel>> getAllOrders();
 }
 
 class OrderRepositoryImp implements IOrderRepository {
@@ -23,4 +24,8 @@ class OrderRepositoryImp implements IOrderRepository {
   @override
   Future<PaymentReceiptResultModel> getPaymentReceipt(int orderId) =>
       iOrderDataSource.getPaymentReceipt(orderId);
+
+  @override
+  Future<List<OrderHistoryModel>> getAllOrders() =>
+      iOrderDataSource.getAllOrders();
 }

@@ -7,6 +7,7 @@ import 'package:nike_project/core/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/models/auth_info_model.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
+import 'package:nike_project/features/presenation/screens/home_screens/bottom_navigation_bar_screens/profile_screen/order_history_screen/order_history_screen.dart';
 import 'package:nike_project/features/presenation/screens/initial_screens/registration_screen/registration_screen.dart';
 import 'package:nike_project/functions/theme_checker.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
@@ -35,7 +36,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
           builder: (context, authState, child) {
             isUserAthenticated =
                 authState != null && authState.accessToken.isNotEmpty;
-
             return Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -85,23 +85,69 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     padding: EdgeInsets.symmetric(
                         horizontal: getMediaQueryWidth(
                             context, kDefaultPaddingWidth20)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        const Icon(CupertinoIcons.bag),
-                        const SizedBox(width: 15),
-                        Text(
-                          LocaleKeys.order_history_text.tr(),
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(
+                              builder: (context) => const OrderHistoryScreen()),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const Icon(CupertinoIcons.bag),
+                          const SizedBox(width: 15),
+                          Text(
+                            LocaleKeys.order_history_text.tr(),
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: getMediaQueryHeight(context, 0.03)),
                   GestureDetector(
                     onTap: () {
                       isUserAthenticated
-                          ? showLogoutDialog(context)
+                          ? showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                title: Text(LocaleKeys.logout_short_text.tr()),
+                                content: Text(
+                                  LocaleKeys
+                                      .sure_you_want_to_logout_from_account_text
+                                      .tr(),
+                                  style: const TextStyle(height: 2.5),
+                                ),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      LocaleKeys.no_text.tr(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium,
+                                    ),
+                                  ),
+                                  TextButton(
+                                    onPressed: () async {
+                                      CartRepositoryImp
+                                          .cartItemCountNotifier.value = 0;
+                                      Navigator.pop(context);
+                                      await authRepository.logout();
+                                    },
+                                    child: Text(
+                                      LocaleKeys.yes_text.tr(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
                           : Navigator.of(context, rootNavigator: true).push(
                               MaterialPageRoute(
                                   builder: (context) =>
@@ -133,41 +179,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             );
           },
         ),
-      ),
-    );
-  }
-
-  Future<dynamic> showLogoutDialog(BuildContext context) {
-    return showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(LocaleKeys.logout_short_text.tr()),
-        content: Text(
-          LocaleKeys.sure_you_want_to_logout_from_account_text.tr(),
-          style: const TextStyle(height: 2.5),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text(
-              LocaleKeys.no_text.tr(),
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ),
-          TextButton(
-            onPressed: () async {
-              CartRepositoryImp.cartItemCountNotifier.value = 0;
-              Navigator.pop(context);
-              await authRepository.logout();
-            },
-            child: Text(
-              LocaleKeys.yes_text.tr(),
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-          ),
-        ],
       ),
     );
   }
