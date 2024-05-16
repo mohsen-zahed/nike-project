@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/custom_floating_action_button.dart';
@@ -60,12 +60,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             slivers: [
               SliverAppBar(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(kDefaultBorderRadius20),
+                  borderRadius: BorderRadius.circular(constantVariables.kDefaultBorderRadius20),
                 ),
                 expandedHeight: getMediaQueryWidth(context, 0.8),
                 flexibleSpace: CustomCachedNetworkImage(
                   imageUrl: widget.product.image,
-                  borderRadius: kDefautlVerticalGap20,
+                  borderRadius: constantVariables.kDefautlVerticalGap20,
                 ),
                 actions: const [
                   Icon(Icons.favorite_outline),
@@ -75,7 +75,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
+                    horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomTextFieldForm extends StatelessWidget {
@@ -28,7 +28,7 @@ class CustomTextFieldForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20)),
+          horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)),
       child: TextField(
         keyboardType: textInputType ?? TextInputType.text,
         textInputAction: textInputAction,
@@ -48,7 +48,7 @@ class CustomTextFieldForm extends StatelessWidget {
               .copyWith(color: kRedColorShade700),
           enabledBorder: OutlineInputBorder(
             borderRadius:
-                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+                BorderRadius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
             borderSide: BorderSide(
                 color: Theme.of(context)
                     .textTheme
@@ -59,11 +59,11 @@ class CustomTextFieldForm extends StatelessWidget {
           labelText: '$hintText *',
           border: OutlineInputBorder(
             borderRadius:
-                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+                BorderRadius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius:
-                BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+                BorderRadius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
             borderSide: BorderSide(
                 color: Theme.of(context).textTheme.labelSmall!.color!),
           ),

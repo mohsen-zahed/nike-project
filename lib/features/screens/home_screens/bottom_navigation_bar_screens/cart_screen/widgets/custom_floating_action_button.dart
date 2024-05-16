@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -17,7 +17,7 @@ class CustomFloatingActionButton extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
+        horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
       ),
       child: FloatingActionButton.extended(
         onPressed: onPressed,

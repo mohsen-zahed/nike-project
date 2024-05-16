@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:nike_project/features/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/product_details_screen.dart';
 import 'package:nike_project/utils/media_query.dart';
@@ -27,17 +26,17 @@ class SingleProductCardWidget extends StatelessWidget {
       padding: isGridView
           ? EdgeInsets.zero
           : EdgeInsets.fromLTRB(
-              getMediaQueryWidth(context, kDefaultPaddingWidth20),
+              getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
               0,
               index == 0
-                  ? getMediaQueryWidth(context, kDefaultPaddingWidth20)
+                  ? getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)
                   : 0,
               0),
       child: AspectRatio(
         aspectRatio: 0.55,
         child: InkWell(
           overlayColor: const MaterialStatePropertyAll(kTransparentColor),
-          borderRadius: BorderRadius.circular(kDefaultBorderRadius20),
+          borderRadius: BorderRadius.circular(constantVariables.kDefaultBorderRadius20),
           onTap: () {
             Navigator.push(
               context,

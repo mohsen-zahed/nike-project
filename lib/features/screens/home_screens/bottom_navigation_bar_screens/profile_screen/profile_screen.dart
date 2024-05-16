@@ -2,8 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/config/constants/images_paths.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/models/auth_info_model.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
@@ -34,8 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: ValueListenableBuilder<AuthInfoModel?>(
           valueListenable: AuthRepositoryImpl.authChangeNotifier,
           builder: (context, authState, child) {
-            isUserAthenticated =
-                authState != null && authState.accessToken.isNotEmpty;
+            isUserAthenticated = authState != null && authState.accessToken.isNotEmpty;
             return Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,9 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         border: Border.all(color: kGreyColor),
                         image: DecorationImage(
                           image: AssetImage(
-                            ThemeChecker.isCurrentThemeLight(context)
-                                ? ImagesPaths.darkAppLogoPath
-                                : ImagesPaths.lightAppLogoPath,
+                            themeChecker.isCurrentThemeLight(context) ? ImagesPaths.darkAppLogoPath : ImagesPaths.lightAppLogoPath,
                           ),
                         ),
                       ),
@@ -59,15 +56,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 15),
                   Text(
-                    AuthRepositoryImpl.authChangeNotifier.value?.email ??
-                        LocaleKeys.guest_user_text.tr(),
+                    AuthRepositoryImpl.authChangeNotifier.value?.email ?? LocaleKeys.guest_user_text.tr(),
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   SizedBox(height: getMediaQueryHeight(context, 0.04)),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: getMediaQueryWidth(
-                            context, kDefaultPaddingWidth20)),
+                    padding: EdgeInsets.symmetric(horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -82,14 +76,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   SizedBox(height: getMediaQueryHeight(context, 0.03)),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: getMediaQueryWidth(
-                            context, kDefaultPaddingWidth20)),
+                    padding: EdgeInsets.symmetric(horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context, rootNavigator: true).push(
-                          MaterialPageRoute(
-                              builder: (context) => const OrderHistoryScreen()),
+                          MaterialPageRoute(builder: (context) => const OrderHistoryScreen()),
                         );
                       },
                       child: Row(
@@ -114,9 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               builder: (context) => AlertDialog(
                                 title: Text(LocaleKeys.logout_short_text.tr()),
                                 content: Text(
-                                  LocaleKeys
-                                      .sure_you_want_to_logout_from_account_text
-                                      .tr(),
+                                  LocaleKeys.sure_you_want_to_logout_from_account_text.tr(),
                                   style: const TextStyle(height: 2.5),
                                 ),
                                 actions: [
@@ -126,38 +115,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                     },
                                     child: Text(
                                       LocaleKeys.no_text.tr(),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium,
+                                      style: Theme.of(context).textTheme.bodyMedium,
                                     ),
                                   ),
                                   TextButton(
                                     onPressed: () async {
-                                      CartRepositoryImp
-                                          .cartItemCountNotifier.value = 0;
+                                      CartRepositoryImp.cartItemCountNotifier.value = 0;
                                       Navigator.pop(context);
                                       await authRepository.logout();
                                     },
                                     child: Text(
                                       LocaleKeys.yes_text.tr(),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium,
+                                      style: Theme.of(context).textTheme.bodyMedium,
                                     ),
                                   ),
                                 ],
                               ),
                             )
                           : Navigator.of(context, rootNavigator: true).push(
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const RegistrationScreen()),
+                              MaterialPageRoute(builder: (context) => const RegistrationScreen()),
                             );
                     },
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal:
-                            getMediaQueryWidth(context, kDefaultPaddingWidth20),
+                        horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -165,9 +146,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Icon(isUserAthenticated ? Icons.logout : Icons.login),
                           const SizedBox(width: 15),
                           Text(
-                            isUserAthenticated
-                                ? LocaleKeys.logout_text.tr()
-                                : LocaleKeys.login_text.tr(),
+                            isUserAthenticated ? LocaleKeys.logout_text.tr() : LocaleKeys.login_text.tr(),
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ],

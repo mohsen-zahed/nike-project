@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/models/banner_model.dart';
 import 'package:nike_project/utils/media_query.dart';
 import 'package:nike_project/widgets_common_in_all_screens/custom_cached_network_image.dart';
@@ -28,7 +28,7 @@ class BannerSliderWidget extends StatelessWidget {
             itemBuilder: (context, index) => Padding(
               padding: EdgeInsets.symmetric(
                   horizontal:
-                      getMediaQueryWidth(context, kDefaultPaddingWidth20)),
+                      getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)),
               child: CustomCachedNetworkImage(
                 imageUrl: banners[index].image,
                 borderRadius: borderRadius,

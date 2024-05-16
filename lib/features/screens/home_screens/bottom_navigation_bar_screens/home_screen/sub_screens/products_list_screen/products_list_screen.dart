@@ -62,7 +62,7 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: ThemeChecker.isCurrentThemeLight(context)
+                        color: themeChecker.isCurrentThemeLight(context)
                             ? kWhiteColor
                             : kSnackbarColor,
                         boxShadow: [
@@ -189,7 +189,7 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
                 child: Container(
                   decoration: BoxDecoration(
                       color: selectedIndex == index
-                          ? ThemeChecker.isCurrentThemeLight(context)
+                          ? themeChecker.isCurrentThemeLight(context)
                               ? kGreyColorShade100.withOpacity(0.5)
                               : kGreyColorShade100.withOpacity(0.1)
                           : Theme.of(context).scaffoldBackgroundColor),

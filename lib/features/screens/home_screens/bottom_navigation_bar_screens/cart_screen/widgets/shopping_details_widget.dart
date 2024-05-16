@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/screens/home_screens/bottom_navigation_bar_screens/cart_screen/widgets/two_horizontal_widgets.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
@@ -25,15 +25,12 @@ class ShoppingDetailsWidget extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
-            vertical: getMediaQueryHeight(context, kDefaultPaddingHeight15),
+            horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
+            vertical: getMediaQueryHeight(context, constantVariables.kDefaultPaddingHeight15),
           ),
           child: Text(
             LocaleKeys.shopping_details_text.tr(),
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(color: kCaptionsTextColor),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(color: kCaptionsTextColor),
           ),
         ),
         TwoHorzontalWidgets(

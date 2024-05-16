@@ -3,8 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/config/constants/colors.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/config/constants/images_paths.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
 import 'package:nike_project/features/data/repository/icart_repository.dart';
 import 'package:nike_project/features/screens/initial_screens/registration_screen/bloc/auth_bloc.dart';
@@ -68,7 +68,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         imagePath: ImagesPaths.lightAppLogoPath,
                         height: getMediaQueryHeight(context, 0.1),
                       ),
-                      SizedBox(height: kDefautlVerticalGap20),
+                      SizedBox(height: constantVariables.kDefautlVerticalGap20),
                       //* Welcome text...
                       Text(
                         LocaleKeys.welcome_text.tr(),
@@ -76,7 +76,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               color: kWhiteColor,
                             ),
                       ),
-                      SizedBox(height: kDefautlTextFieldVerticalGap10),
+                      SizedBox(height: constantVariables.kDefautlTextFieldVerticalGap10),
                       //* Login or Signup texts...
                       Text(
                         state.isLoginMode ? LocaleKeys.login_to_account_text.tr() : LocaleKeys.signup_to_account_text.tr(),
@@ -91,14 +91,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         hintText: LocaleKeys.email_address_text.tr(),
                         labelText: LocaleKeys.email_address_text.tr(),
                       ),
-                      SizedBox(height: kDefautlTextFieldVerticalGap10),
+                      SizedBox(height: constantVariables.kDefautlTextFieldVerticalGap10),
                       //* Password textField...
                       CustomPasswordTextField(
                         controller: _passwordController,
                         labelText: LocaleKeys.password_text.tr(),
                         hintText: LocaleKeys.password_text.tr(),
                       ),
-                      SizedBox(height: kDefaultTextFieldBorderRadius10),
+                      SizedBox(height: constantVariables.kDefaultTextFieldBorderRadius10),
                       //* Login-Signup Elevated Button...
                       CustomRegistrationButton(
                         child: state is AuthLoading
@@ -115,7 +115,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           );
                         },
                       ),
-                      SizedBox(height: kDefaultTextFieldBorderRadius10 + 15),
+                      SizedBox(height: constantVariables.kDefaultTextFieldBorderRadius10 + 15),
                       //* Two texts under the Elevated Button...
                       AccountTextAndLoginSignup(
                         accountText: state.isLoginMode ? LocaleKeys.dont_have_an_account.tr() : LocaleKeys.already_have_an_account.tr(),

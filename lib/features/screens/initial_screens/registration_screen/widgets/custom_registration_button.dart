@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomRegistrationButton extends StatelessWidget {
@@ -18,14 +18,13 @@ class CustomRegistrationButton extends StatelessWidget {
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.06,
       margin: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
+        horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
       ),
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.circular(kDefaultTextFieldBorderRadius10),
+              borderRadius: BorderRadius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
             ),
             backgroundColor: kWhiteColor,
             foregroundColor: kPrimaryTextColor,

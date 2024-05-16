@@ -4,7 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/models/order_model.dart';
 import 'package:nike_project/features/data/repository/iorder_repository.dart';
 import 'package:nike_project/features/screens/home_screens/bottom_navigation_bar_screens/cart_screen/sub_screens/payment_done_screen/payment_done_screen.dart';
@@ -31,16 +31,11 @@ class ShippingScreen extends StatefulWidget {
 }
 
 class _ShippingScreenState extends State<ShippingScreen> {
-  final TextEditingController firstNameController =
-      TextEditingController(text: 'امیر محسن');
-  final TextEditingController lastNameController =
-      TextEditingController(text: 'زاهد');
-  final TextEditingController postalCodeController =
-      TextEditingController(text: '۱۲۳۴۵۶۷۸۹۰');
-  final TextEditingController phoneNumberController =
-      TextEditingController(text: '۱۲۳۴۵۶۷۸۹۰۰');
-  final TextEditingController clientAddressController =
-      TextEditingController(text: 'بتنیمکشتیمکشتبسشیبنسشیتکبسینشمکبتیسش');
+  final TextEditingController firstNameController = TextEditingController(text: 'امیر محسن');
+  final TextEditingController lastNameController = TextEditingController(text: 'زاهد');
+  final TextEditingController postalCodeController = TextEditingController(text: '۱۲۳۴۵۶۷۸۹۰');
+  final TextEditingController phoneNumberController = TextEditingController(text: '۱۲۳۴۵۶۷۸۹۰۰');
+  final TextEditingController clientAddressController = TextEditingController(text: 'بتنیمکشتیمکشتبسشیبنسشیتکبسینشمکبتیسش');
   final FocusNode firstNameFocusNode = FocusNode();
   final FocusNode lastNameFocusNode = FocusNode();
   final FocusNode postalCodeFocusNode = FocusNode();
@@ -102,9 +97,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 Navigator.push(
                   (context),
                   MaterialPageRoute(
-                    builder: (context) => BankGatewayWebviewScreen(
-                        bankGatewayUrl:
-                            state.createdOrderResultModel.bankGatewayUrl),
+                    builder: (context) => BankGatewayWebviewScreen(bankGatewayUrl: state.createdOrderResultModel.bankGatewayUrl),
                   ),
                 );
               }
@@ -119,7 +112,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: kDefautlVerticalGap20),
+              SizedBox(height: constantVariables.kDefautlVerticalGap20),
               CustomTextFieldForm(
                 onChanged: (firstName) {
                   setState(() {
@@ -137,7 +130,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 controller: firstNameController,
                 focusNode: firstNameFocusNode,
               ),
-              SizedBox(height: kDefautlVerticalGap10),
+              SizedBox(height: constantVariables.kDefautlVerticalGap10),
               CustomTextFieldForm(
                 onChanged: (lastName) {
                   setState(() {
@@ -155,7 +148,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 controller: lastNameController,
                 focusNode: lastNameFocusNode,
               ),
-              SizedBox(height: kDefautlVerticalGap10),
+              SizedBox(height: constantVariables.kDefautlVerticalGap10),
               CustomTextFieldForm(
                 onChanged: (postalCode) {
                   setState(() {
@@ -173,7 +166,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 controller: postalCodeController,
                 focusNode: postalCodeFocusNode,
               ),
-              SizedBox(height: kDefautlVerticalGap10),
+              SizedBox(height: constantVariables.kDefautlVerticalGap10),
               CustomTextFieldForm(
                 textInputType: const TextInputType.numberWithOptions(),
                 onChanged: (phoneNumber) {
@@ -192,7 +185,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 controller: phoneNumberController,
                 focusNode: phoneNumberFocusNode,
               ),
-              SizedBox(height: kDefautlVerticalGap10),
+              SizedBox(height: constantVariables.kDefautlVerticalGap10),
               CustomTextFieldForm(
                 onChanged: (clientAddress) {
                   setState(() {
@@ -209,7 +202,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                 controller: clientAddressController,
                 focusNode: clientAddressFocusNode,
               ),
-              SizedBox(height: kDefautlVerticalGap10),
+              SizedBox(height: constantVariables.kDefautlVerticalGap10),
               ShoppingDetailsWidget(
                 totalPrice: widget.totalPrice,
                 shippingCost: widget.shippingCost,
@@ -217,8 +210,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
               ),
               SizedBox(height: getMediaQueryHeight(context, 0.05)),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: getMediaQueryWidth(context, 0.1)),
+                padding: EdgeInsets.symmetric(horizontal: getMediaQueryWidth(context, 0.1)),
                 child: BlocBuilder<ShippingBloc, ShippingState>(
                   builder: (context, state) {
                     return state is! ShippingLoading
@@ -229,21 +221,15 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                   onTap: () {
                                     _validateAndSubmitOrder(
                                       () {
-                                        BlocProvider.of<ShippingBloc>(context)
-                                            .add(
+                                        BlocProvider.of<ShippingBloc>(context).add(
                                           SubmitOrder(
                                             orderModel: OrderModel(
-                                              firstName:
-                                                  firstNameController.text,
+                                              firstName: firstNameController.text,
                                               lastName: lastNameController.text,
-                                              phoneNumber:
-                                                  phoneNumberController.text,
-                                              postalCode:
-                                                  postalCodeController.text,
-                                              address:
-                                                  clientAddressController.text,
-                                              paymentMethod:
-                                                  PaymentMethod.cashOnDelivery,
+                                              phoneNumber: phoneNumberController.text,
+                                              postalCode: postalCodeController.text,
+                                              address: clientAddressController.text,
+                                              paymentMethod: PaymentMethod.cashOnDelivery,
                                             ),
                                           ),
                                         );
@@ -252,35 +238,22 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .labelLarge!
-                                            .color!,
-                                        borderRadius: BorderRadius.circular(
-                                            kDefaultTextFieldBorderRadius10),
+                                        color: Theme.of(context).textTheme.labelLarge!.color!,
+                                        borderRadius: BorderRadius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 4,
                                             offset: const Offset(0, 1),
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .bodySmall!
-                                                .color!
-                                                .withOpacity(0.2),
+                                            color: Theme.of(context).textTheme.bodySmall!.color!.withOpacity(0.2),
                                           ),
                                         ]),
                                     padding: EdgeInsets.symmetric(
-                                      vertical:
-                                          getMediaQueryHeight(context, 0.02),
+                                      vertical: getMediaQueryHeight(context, 0.02),
                                     ),
                                     child: Center(
                                       child: Text(
                                         LocaleKeys.pay_in_place_text.tr(),
-                                        style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .titleSmall!
-                                                .color!),
+                                        style: TextStyle(color: Theme.of(context).textTheme.titleSmall!.color!),
                                       ),
                                     ),
                                   ),
@@ -292,21 +265,15 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                   onTap: () {
                                     _validateAndSubmitOrder(
                                       () {
-                                        BlocProvider.of<ShippingBloc>(context)
-                                            .add(
+                                        BlocProvider.of<ShippingBloc>(context).add(
                                           SubmitOrder(
                                             orderModel: OrderModel(
-                                              firstName:
-                                                  firstNameController.text,
+                                              firstName: firstNameController.text,
                                               lastName: lastNameController.text,
-                                              phoneNumber:
-                                                  phoneNumberController.text,
-                                              postalCode:
-                                                  postalCodeController.text,
-                                              address:
-                                                  clientAddressController.text,
-                                              paymentMethod:
-                                                  PaymentMethod.online,
+                                              phoneNumber: phoneNumberController.text,
+                                              postalCode: postalCodeController.text,
+                                              address: clientAddressController.text,
+                                              paymentMethod: PaymentMethod.online,
                                             ),
                                           ),
                                         );
@@ -315,32 +282,22 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .titleSmall!
-                                            .color!,
-                                        borderRadius: BorderRadius.circular(
-                                            kDefaultTextFieldBorderRadius10),
+                                        color: Theme.of(context).textTheme.titleSmall!.color!,
+                                        borderRadius: BorderRadius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 4,
                                             offset: const Offset(0, 1),
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .bodySmall!
-                                                .color!,
+                                            color: Theme.of(context).textTheme.bodySmall!.color!,
                                           ),
                                         ]),
                                     padding: EdgeInsets.symmetric(
-                                      vertical:
-                                          getMediaQueryHeight(context, 0.02),
+                                      vertical: getMediaQueryHeight(context, 0.02),
                                     ),
                                     child: Center(
                                       child: Text(
                                         LocaleKeys.online_payment_text.tr(),
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .labelLarge,
+                                        style: Theme.of(context).textTheme.labelLarge,
                                       ),
                                     ),
                                   ),
@@ -381,20 +338,17 @@ class _ShippingScreenState extends State<ShippingScreen> {
           }
           if (postalCodeController.text.isEmpty) {
             postalCodeFocusNode.requestFocus();
-            postalCodeEmptyError =
-                LocaleKeys.posta_code_required_error_text.tr();
+            postalCodeEmptyError = LocaleKeys.posta_code_required_error_text.tr();
             return;
           }
           if (phoneNumberController.text.isEmpty) {
             phoneNumberFocusNode.requestFocus();
-            phoneNumberEmptyError =
-                LocaleKeys.phone_number_required_error_text.tr();
+            phoneNumberEmptyError = LocaleKeys.phone_number_required_error_text.tr();
             return;
           }
           if (clientAddressController.text.isEmpty) {
             clientAddressFocusNode.requestFocus();
-            clientAddressEmptyError =
-                LocaleKeys.client_address_required_error_text.tr();
+            clientAddressEmptyError = LocaleKeys.client_address_required_error_text.tr();
             return;
           }
         });
@@ -409,8 +363,7 @@ class BankGatewayWebviewScreen extends StatefulWidget {
   final String bankGatewayUrl;
 
   @override
-  State<BankGatewayWebviewScreen> createState() =>
-      _BankGatewayWebviewScreenState();
+  State<BankGatewayWebviewScreen> createState() => _BankGatewayWebviewScreenState();
 }
 
 class _BankGatewayWebviewScreenState extends State<BankGatewayWebviewScreen> {

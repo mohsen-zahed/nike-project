@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/repository/icomment_repository.dart';
 import 'package:nike_project/features/screens/home_screens/bottom_navigation_bar_screens/home_screen/sub_screens/product_details_screen/comments/bloc/comments_list_bloc.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
@@ -32,11 +32,11 @@ class CommentsListWidget extends StatelessWidget {
                 return Container(
                   width: getMediaQueryWidth(context),
                   padding: EdgeInsets.all(
-                    getMediaQueryWidth(context, kDefaultPaddingWidth20),
+                    getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
                   ),
                   margin: EdgeInsets.symmetric(
                     horizontal:
-                        getMediaQueryWidth(context, kDefaultPaddingWidth20),
+                        getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
                     vertical: 5,
                   ),
                   decoration: BoxDecoration(

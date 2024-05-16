@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/media_query.dart';
 
@@ -17,10 +17,10 @@ class CardTitleAndSeeAllTexts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.fromLTRB(
-        getMediaQueryWidth(context, kDefaultPaddingWidth20),
-        getMediaQueryWidth(context, kDefaultPaddingWidth20),
-        getMediaQueryWidth(context, kDefaultPaddingWidth20),
-        getMediaQueryHeight(context, kDefaultPaddingHeight15),
+        getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
+        getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
+        getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
+        getMediaQueryHeight(context, constantVariables.kDefaultPaddingHeight15),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,7 +28,7 @@ class CardTitleAndSeeAllTexts extends StatelessWidget {
           Text(
             title,
             style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontWeight: kDefaultTitleFontWeight700,
+                  fontWeight: constantVariables.kDefaultTitleFontWeight700,
                 ),
           ),
           GestureDetector(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class CustomEmailTextField extends StatelessWidget {
@@ -18,7 +18,7 @@ class CustomEmailTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
+        horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
       ),
       child: TextField(
         controller: controller,

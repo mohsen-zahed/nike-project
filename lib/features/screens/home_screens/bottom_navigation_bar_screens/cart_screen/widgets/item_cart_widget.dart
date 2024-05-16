@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/models/cart_item_model.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';
 import 'package:nike_project/utils/currency_unit_extension.dart';
@@ -31,15 +31,14 @@ class ItemCartWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: getMediaQueryWidth(context),
-      margin:
-          EdgeInsets.all(getMediaQueryWidth(context, kDefaultPaddingWidth20)),
+      margin: EdgeInsets.all(getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)),
       padding: EdgeInsets.fromLTRB(
-          getMediaQueryWidth(context, kDefaultPaddingWidth10),
-          getMediaQueryWidth(context, kDefaultPaddingWidth10),
-          getMediaQueryWidth(context, kDefaultPaddingWidth10),
+          getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth10),
+          getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth10),
+          getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth10),
           0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(kDefaultBorderRadius20),
+        borderRadius: BorderRadius.circular(constantVariables.kDefaultBorderRadius20),
       ),
       child: Column(
         children: [
@@ -49,11 +48,9 @@ class ItemCartWidget extends StatelessWidget {
               SizedBox(
                 height: getMediaQueryHeight(context, 0.13),
                 child: CustomCachedNetworkImage(
-                    borderRadius: kDefaultTextFieldBorderRadius10,
-                    imageUrl: itemProduct[index].product.image),
+                    borderRadius: constantVariables.kDefaultTextFieldBorderRadius10, imageUrl: itemProduct[index].product.image),
               ),
-              SizedBox(
-                  width: getMediaQueryWidth(context, kDefaultPaddingWidth20)),
+              SizedBox(width: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20)),
               Expanded(
                 child: Text(
                   itemProduct[index].product.title,
@@ -83,10 +80,7 @@ class ItemCartWidget extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .labelSmall!
-                                  .color!,
+                              color: Theme.of(context).textTheme.labelSmall!.color!,
                             ),
                           ),
                           child: const Center(
@@ -96,8 +90,7 @@ class ItemCartWidget extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsets.symmetric(
-                          horizontal: getMediaQueryWidth(
-                              context, kDefaultPaddingWidth10),
+                          horizontal: getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth10),
                         ),
                         child: countWidget,
                       ),
@@ -107,10 +100,7 @@ class ItemCartWidget extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
                             border: Border.all(
-                              color: Theme.of(context)
-                                  .textTheme
-                                  .labelSmall!
-                                  .color!,
+                              color: Theme.of(context).textTheme.labelSmall!.color!,
                             ),
                           ),
                           child: const Center(
@@ -130,9 +120,7 @@ class ItemCartWidget extends StatelessWidget {
                     child: Text(
                       itemProduct[index].product.previousPrice.withPriceLabel,
                       textAlign: TextAlign.end,
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          color: kCaptionsTextColor,
-                          decoration: TextDecoration.lineThrough),
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(color: kCaptionsTextColor, decoration: TextDecoration.lineThrough),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -156,7 +144,7 @@ class ItemCartWidget extends StatelessWidget {
           //* Remove item button...
           Container(
             padding: EdgeInsets.symmetric(
-              vertical: getMediaQueryHeight(context, kDefaultPaddingHeight15),
+              vertical: getMediaQueryHeight(context, constantVariables.kDefaultPaddingHeight15),
             ),
             child: itemProduct[index].deleteButtonLoading
                 ? const Center(child: CupertinoActivityIndicator())

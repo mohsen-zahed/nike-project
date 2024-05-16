@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class EmptyScreenWidget extends StatelessWidget {
@@ -30,7 +30,7 @@ class EmptyScreenWidget extends StatelessWidget {
           const SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: getMediaQueryWidth(context, kDefaultPaddingWidth20),
+              horizontal: getMediaQueryWidth(context, constantVariables.kDefaultBorderRadius20),
             ),
             child: Text(
               text,

@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/features/data/repository/iorder_repository.dart';
 import 'package:nike_project/features/screens/home_screens/bottom_navigation_bar_screens/profile_screen/order_history_screen/bloc/order_history_bloc.dart';
 import 'package:nike_project/utils/theme_checker.dart';
@@ -18,8 +18,7 @@ class OrderHistoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          OrderHistoryBloc(orderRepository)..add(OrderHistoryStarted()),
+      create: (context) => OrderHistoryBloc(orderRepository)..add(OrderHistoryStarted()),
       child: Scaffold(
         appBar: AppBar(
           title: Text(LocaleKeys.order_history_text.tr()),
@@ -30,13 +29,12 @@ class OrderHistoryScreen extends StatelessWidget {
               return ListView.builder(itemBuilder: (context, index) {
                 return Container(
                   margin: EdgeInsets.fromLTRB(
-                    getMediaQueryWidth(context, kDefaultPaddingWidth20),
+                    getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
                     index == 0 ? getMediaQueryHeight(context, 0.02) : 0,
-                    getMediaQueryWidth(context, kDefaultPaddingWidth20),
+                    getMediaQueryWidth(context, constantVariables.kDefaultPaddingWidth20),
                     getMediaQueryHeight(context, 0.01),
                   ),
-                  padding: EdgeInsets.symmetric(
-                      vertical: getMediaQueryHeight(context, 0.015)),
+                  padding: EdgeInsets.symmetric(vertical: getMediaQueryHeight(context, 0.015)),
                   decoration: BoxDecoration(
                     border: Border.all(color: kGreyColorShade300),
                     borderRadius: BorderRadius.circular(5),
@@ -44,33 +42,20 @@ class OrderHistoryScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: getMediaQueryWidth(context, 0.03)),
+                        padding: EdgeInsets.symmetric(horizontal: getMediaQueryWidth(context, 0.03)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'شناسه سفارش',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                    color: ThemeChecker.isCurrentThemeLight(
-                                            context)
-                                        ? kPrimaryTextColor
-                                        : kWhiteColor,
+                              style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                                    color: themeChecker.isCurrentThemeLight(context) ? kPrimaryTextColor : kWhiteColor,
                                   ),
                             ),
                             Text(
                               state.orders[index].id.toString(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .copyWith(
-                                    color: ThemeChecker.isCurrentThemeLight(
-                                            context)
-                                        ? kPrimaryTextColor
-                                        : kWhiteColor,
+                              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                                    color: themeChecker.isCurrentThemeLight(context) ? kPrimaryTextColor : kWhiteColor,
                                   ),
                             ),
                           ],
@@ -78,33 +63,20 @@ class OrderHistoryScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 25),
                       Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: getMediaQueryWidth(context, 0.03)),
+                        padding: EdgeInsets.symmetric(horizontal: getMediaQueryWidth(context, 0.03)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               LocaleKeys.total_price_text.tr(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                    color: ThemeChecker.isCurrentThemeLight(
-                                            context)
-                                        ? kPrimaryTextColor
-                                        : kWhiteColor,
+                              style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                                    color: themeChecker.isCurrentThemeLight(context) ? kPrimaryTextColor : kWhiteColor,
                                   ),
                             ),
                             Text(
                               state.orders[index].payablePrice.withPriceLabel,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .copyWith(
-                                    color: ThemeChecker.isCurrentThemeLight(
-                                            context)
-                                        ? kPrimaryTextColor
-                                        : kWhiteColor,
+                              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                                    color: themeChecker.isCurrentThemeLight(context) ? kPrimaryTextColor : kWhiteColor,
                                   ),
                             ),
                           ],
@@ -118,17 +90,11 @@ class OrderHistoryScreen extends StatelessWidget {
                           itemCount: state.orders[index].products.length,
                           itemBuilder: (context, index) {
                             return Padding(
-                              padding: EdgeInsets.fromLTRB(
-                                  getMediaQueryWidth(context, 0.02),
-                                  0,
-                                  index == 0
-                                      ? getMediaQueryWidth(context, 0.02)
-                                      : 0,
-                                  0),
+                              padding:
+                                  EdgeInsets.fromLTRB(getMediaQueryWidth(context, 0.02), 0, index == 0 ? getMediaQueryWidth(context, 0.02) : 0, 0),
                               child: CustomCachedNetworkImage(
                                 borderRadius: 10,
-                                imageUrl:
-                                    state.orders[index].products[index].image,
+                                imageUrl: state.orders[index].products[index].image,
                               ),
                             );
                           },

@@ -1,9 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:nike_project/config/constants/colors.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 
 class MyThemeData {
+  static MyThemeData? _myThemeData;
+  MyThemeData._();
+  static MyThemeData get instance {
+    _myThemeData ??= MyThemeData._();
+    return _myThemeData!;
+  }
+
   ThemeData darkTheme(BuildContext context) {
     return ThemeData(
       appBarTheme: AppBarTheme(
@@ -116,7 +123,7 @@ class MyThemeData {
         suffixIconColor: kGreyColorShade400,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(kDefaultTextFieldBorderRadius10),
+            Radius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
           ),
           borderSide: BorderSide(
             color: kGreyColorShade400,
@@ -124,7 +131,7 @@ class MyThemeData {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(kDefaultTextFieldBorderRadius10),
+            Radius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
           ),
           borderSide: BorderSide(
             color: kGreyColorShade400,
@@ -132,7 +139,7 @@ class MyThemeData {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(kDefaultTextFieldBorderRadius10),
+            Radius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
           ),
           borderSide: BorderSide(
             color: kGreyColorShade400,
@@ -271,7 +278,7 @@ class MyThemeData {
         suffixIconColor: kGreyColorShade400,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(kDefaultTextFieldBorderRadius10),
+            Radius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
           ),
           borderSide: const BorderSide(
             color: kWhiteColor,
@@ -279,7 +286,7 @@ class MyThemeData {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(kDefaultTextFieldBorderRadius10),
+            Radius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
           ),
           borderSide: const BorderSide(
             color: kWhiteColor,
@@ -287,7 +294,7 @@ class MyThemeData {
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(kDefaultTextFieldBorderRadius10),
+              Radius.circular(constantVariables.kDefaultTextFieldBorderRadius10),
             ),
             borderSide: const BorderSide(
               color: kWhiteColor,
@@ -315,4 +322,4 @@ class MyThemeData {
   }
 }
 
-final MyThemeData myThemeData = MyThemeData();
+final MyThemeData myThemeData = MyThemeData.instance;

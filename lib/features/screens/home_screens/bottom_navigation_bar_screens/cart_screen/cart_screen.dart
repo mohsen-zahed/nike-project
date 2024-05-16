@@ -90,7 +90,7 @@ class _AddToCartScreenState extends State<AddToCartScreen> {
           },
           widget: Text(
             LocaleKeys.complete_payment_text.tr(),
-            style: ThemeChecker.isCurrentThemeLight(context)
+            style: themeChecker.isCurrentThemeLight(context)
                 ? Theme.of(context)
                     .textTheme
                     .titleMedium!

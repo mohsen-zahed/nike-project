@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nike_project/config/constants/constant_variables.dart';
 import 'package:nike_project/config/constants/images_paths.dart';
-import 'package:nike_project/config/constants/numeric_contants.dart';
 import 'package:nike_project/config/constants/products_sort_cons.dart';
 import 'package:nike_project/features/data/repository/ibanners_repository.dart';
 import 'package:nike_project/features/data/repository/iproducts_repository.dart';
@@ -48,7 +48,7 @@ class HomeScreen extends StatelessWidget {
                       //! top banner slider
                       return BannerSliderWidget(
                         banners: state.banners,
-                        borderRadius: kDefaultBorderRadius20,
+                        borderRadius: constantVariables.kDefaultBorderRadius20,
                       );
                     case 3:
                       return Column(
@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                           HorizontalListViewBuilder(
                             listViewBuilderlist: state.latestProducts,
                           ),
-                          SizedBox(height: kDefautlVerticalGap20),
+                          SizedBox(height: constantVariables.kDefautlVerticalGap20),
                           //* popular and seeAll widgets...
                           CardTitleAndSeeAllTexts(
                             title: LocaleKeys.most_viewed_text.tr(),
