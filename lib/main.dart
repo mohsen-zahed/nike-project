@@ -1,9 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:nike_project/config/theme/my_theme_data.dart';
 import 'package:nike_project/features/data/repository/iauth_repository.dart';
-import 'package:nike_project/features/presenation/screens/home_screens/main_home_screen.dart';
-import 'package:nike_project/theme/dark_theme.dart';
-import 'package:nike_project/theme/light_theme.dart';
+import 'package:nike_project/features/screens/home_screens/main_home_screen.dart';
 import 'package:nike_project/translations/codegen_loader.g.dart';
 
 void main() async {
@@ -37,10 +36,10 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       debugShowCheckedModeBanner: false,
       locale: context.locale,
-      themeMode: ThemeMode.system,
       title: 'Nike App',
-      theme: lightTheme(context),
-      darkTheme: darkTheme(context),
+      themeMode: ThemeMode.system,
+      theme: myThemeData.lightTheme(context),
+      darkTheme: myThemeData.darkTheme(context),
       home: const MainHomeScreen(),
     );
   }

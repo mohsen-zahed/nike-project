@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:nike_project/core/constants/numeric_contants.dart';
+import 'package:nike_project/config/constants/numeric_contants.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class EmptyScreenWidget extends StatelessWidget {

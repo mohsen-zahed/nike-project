@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:nike_project/core/exception/app_exception.dart';
+import 'package:nike_project/config/exception/app_exception.dart';
 import 'package:nike_project/features/data/models/product_model.dart';
 import 'package:dio/dio.dart';
 import 'package:nike_project/translations/locale_keys.g.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nike_project/core/constants/images_paths.dart';
+import 'package:nike_project/config/constants/images_paths.dart';
 import 'package:nike_project/utils/media_query.dart';
 
 class DefaultFailedWidget extends StatelessWidget {

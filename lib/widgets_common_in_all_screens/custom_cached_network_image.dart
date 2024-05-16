@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_project/core/constants/images_paths.dart';
+import 'package:nike_project/config/constants/images_paths.dart';
 
 class CustomCachedNetworkImage extends StatelessWidget {
   final double borderRadius;
